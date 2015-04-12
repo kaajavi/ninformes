@@ -1,0 +1,21 @@
+{% load tg_alumno %}
+
+<label style="display:table; margin:0 auto;">
+    Alumnos del Colegio
+</label>
+<ul id="inscriptos" class="ms-list" tabindex="-1">
+    {% for alumno in alumnos %}
+
+    <li id="{{alumno.id}}" class="ms-elem-selectable transferible" >
+        {{alumno.presentacion_completa}}
+    </li>
+
+    {% empty %}
+
+    <li id="{{alumno.id}}" class="ms-elem-selectable" >
+        No hay alumnos con esta busqueda.
+    </li>
+
+    {% endfor %}
+</ul>
+

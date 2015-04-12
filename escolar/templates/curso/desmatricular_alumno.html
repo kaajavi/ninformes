@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+
+{% block header%}
+
+
+
+{% endblock %}
+
+{% block contenido %}
+<div class="page-header">
+    <h1>Desmatricular alumno</h1>
+
+</div>  
+
+<div id="page-wrapper">    
+    <br/>
+    <span id='span_formulario' >
+        <ul class="messages">                
+            <div class="alert alert-warning" role="alert">
+                <strong>Confirmar acción</strong>
+                <br>Está por <strong>desmatricular</strong> un alumno del curso. 
+                <br>Por favor, indique si esta opción es correcta.
+                <ul>
+                    <li><strong>Alumno:</strong> {{matriculaAlumno.alumno}}</li>
+                    <li><strong>Curso:</strong> {{matriculaAlumno.curso}}</li>
+                </ul>
+            </div>                
+        </ul>
+        <form action="{% url 'escolar:desmatricular_alumno' matriculaAlumno.id %}" id="form" method="post">
+            {% csrf_token %}                        
+            <input class="btn btn-lg btn-primary btn-danger pull-right btn-margin" name="si_desmatricular" type="submit" value="Desmatricular!"/>
+            <a class="btn btn-lg btn-primary btn-info pull-right btn-margin" href="{% url 'escolar:mostrar_alumnos_curso' matriculaAlumno.curso.id %}" > Volver </a>
+        </form>
+        <br>
+    </span>
+
+</div>
+
+
+{% endblock %}

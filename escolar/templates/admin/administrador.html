@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div id="page-wrapper">
+    <div class="row">
+	<div class="col-lg-12">
+	    <a href="{% url 'admin:index' %}"><h1 class="page-header">Administrar</h1></a>
+	</div>
+	<!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+	<div class="col-lg-6">
+	    <div class="panel panel-default">
+		<div class="panel-heading">
+		    Cursos
+		</div>
+		<div class="panel-body">
+		    <form role="form" method="post">{% csrf_token %}
+			
+			<div class="form-group">
+			    <select name="cursos" class="form-control">
+				{% for curso in cursos %}
+				<option value={{curso.id}}>{{curso}}</option>
+				{% endfor %}
+			    </select>
+			</div>
+			<button type="submit" name="infoCurso" class="btn btn-primary btn-block">Ver</button><br />
+			<button type="submit" name="nuevoCurso" class="btn btn-success btn-block">Nuevo</button>
+		    </form>
+		</div>
+	    </div>
+	</div>
+	
+	<div class="col-lg-6">
+	    <div class="panel panel-default">
+		<div class="panel-heading">
+		    Preceptores
+		</div>
+		<div class="panel-body">
+		    <form role="form" method="post">{% csrf_token %}
+			
+			<div class="form-group">
+			    <select name="preceptores" class="form-control">
+				{% for pre in preceptores %}
+				<option value={{pre.id}}>{{pre}}</option>
+				{% endfor %}
+			    </select>
+			</div>
+			<button type="submit" name="verPreceptor" class="btn btn-primary btn-block">Ver</button><br />
+			<button type="submit" name="nuevoPreceptor" class="btn btn-success btn-block">Nuevo</button>
+		    </form>
+		</div>
+	    </div>
+	</div>
+    </div>
+</div>
+{% endblock %}

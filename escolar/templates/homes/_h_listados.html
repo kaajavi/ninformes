@@ -1,0 +1,32 @@
+{% extends 'homes/home.html' %}
+{% block  wrapper %}
+<div id='listados'>
+
+    <h2>Listados</h2>
+
+    <div class="list-group">
+        {% for a in '1' %}
+        <a href="#" class="list-group-item">Listados, ejemplo, matricula gdipe- En Construcción</a>                
+        {% endfor %}
+    </div>
+
+</div>
+
+<span id='span_formulario' style="display:None" >
+    <form action="{% url 'escolar:listados' %}" id="form_formulario" method="post">
+        {% csrf_token %}
+        <input type="hidden" id="tabs_control" name="tabs_control" value="{{tabs_control}}">
+        <select name="ciclo" class="form-control" onchange="submit()">
+            {% for anio in anios_disponibles %}
+            {% if anio in ciclo_actual %}
+            <option value='{{anio}}' selected >-- {{anio}}</option>
+            {% else %}
+            <option value='{{anio}}'>{{anio}}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+    </form>
+
+</span>
+
+{% endblock %}

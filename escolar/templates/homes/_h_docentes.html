@@ -1,0 +1,47 @@
+{% extends 'homes/home.html' %}
+{% block  wrapper %}
+<div id='docentes'>
+
+    <h2>Docentes Matriculados</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Usuario</th>
+                <th>Salas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for docente in docentes %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{docente.nombreCompleto}}</td>
+                <td>{{docente.username}}</td>
+                <td>{{docente.cursos_del_docente|safe}}</td>                        
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+<span id='span_formulario' style="display:None" >
+    <form action="{% url 'escolar:docentes' %}" id="form_formulario" method="post">
+        {% csrf_token %}
+        <input type="hidden" id="tabs_control" name="tabs_control" value="{{tabs_control}}">
+        <select name="ciclo" class="form-control" onchange="submit()">
+            {% for anio in anios_disponibles %}
+            {% if anio in ciclo_actual %}
+            <option value='{{anio}}' selected >-- {{anio}}</option>
+            {% else %}
+            <option value='{{anio}}'>{{anio}}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+    </form>
+
+</span>
+
+
+{% endblock %}

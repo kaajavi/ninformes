@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<div class="page-header">
+    <h1>{{campo}}</h1>    
+    <h2>{{campo.curso}}</h2>    
+    <hr>
+    <a class="label label-primary"> Editar Campo</a>    
+    <a class="label label-warning"> Borrador 1° Etapa</a>
+    <a class="label label-warning"> Borrador 2° Etapa</a>
+</div>
+
+<div id="page-wrapper">  
+    <h3>Descripción:</h3>
+    {{campo.descripcion}}
+    <hr>
+    <h3>Items a evaluar:</h3>
+    {{campo.items_a_evaluar}}
+</div>
+
+{% endblock %}

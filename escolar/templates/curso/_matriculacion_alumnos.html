@@ -1,0 +1,110 @@
+{% extends 'curso/home_curso.html' %}
+{% load tg_curso %}
+{% block wrapper %}
+
+<div id="matriculas">
+    {% menu_curso 2 curso user.id %}
+    <h2>Matriculaciones</h2>
+
+    <div class="input-group">
+        <input type="text" class="form-control" id="search_alumno"/>
+        <span class="input-group-addon">
+            <i class="fa fa-search"></i>
+            <button class="btn btn-xs btn-default" type="button" id='button_filters'>
+                <i class="fa fa-filter"></i>
+            </button>            
+        </span>
+    </div><p></p>
+
+
+
+    <div class="input-group form-control" id='filters'>
+
+        <h5>Filtros:</h5>
+        <hr/>
+        <row>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="from">Fecha de Nacimiento desde:</label>
+                    <input type="text" id="from" name="from" class='form-control'></div>
+                <div class="col-md-6">
+                    <label for="to">Hasta:</label>
+                    <input type="text" id="to" name="to" class='form-control'>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="from">Sexo:</label>
+                    <select id="sexo_search" name="my-select" class='form-control'>
+                        <option value='todos' selected='True'>Todos</option>
+                        <option value='varon'>Varón</option>
+                        <option value='nena'>Nena</option>
+                    </select>
+                </div>            
+            </div>
+
+        </row>
+    </div>
+    <p></p>
+    <div id="selector">        
+
+        <div id="contenedor_completo" class="ms-container centrar_algo">
+
+            <div id="contenedor_alumnos_escuela" class="ms-selectable">
+                {% include "curso/_matriculacion_alumnos_select.html" %}
+            </div>
+
+            <div id="contenedor_alumnos_matriculados" class="ms-selection">
+
+                <label style="display:table; margin:0 auto;">
+
+                    Alumnos Matriculados
+
+                </label>                                                
+
+
+                <ul id="matriculados" class="ms-list" tabindex="-1">
+                    {% for matriculado in matriculados %}
+
+                    <li id="{{matriculado.id}}" class="ms-elem-selectable disabled matriculado" >
+                        {{matriculado.presentacion_completa}}
+                    </li>
+
+                    {% empty %}
+
+                    <li id="z" class="ms-elem-selectable" >
+                        
+                    </li>
+
+                    {% endfor %}
+
+                </ul>
+            </div>
+        </div>
+
+        <p></p>
+
+
+        <button id="sendMatricular" class="btn btn-lg btn-primary btn-success pull-right btn-margin" type="button" disabled="True">
+            <i class="fa fa-save"></i> Guardar
+        </button>
+        
+        <a href="{% url 'escolar:matricular_curso' curso.id %}" class="btn btn-lg btn-primary btn-danger pull-right btn-margin">
+        <i class="fa fa-ban"></i> Cancelar
+        </a>
+
+        <a class="btn btn-lg btn-primary btn-primary pull-right btn-margin" href="{% url 'escolar:agregar_alumno' curso.id %}">
+            <i class="fa fa-plus"></i> Nuevo Alumno
+        </a>  
+        <form id="form_matricular" action="{% url 'escolar:matricular_alumnos' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" id="d_curso" name="id_curso" value="{{curso.id}}">
+            <input type="hidden" id="input_matricular" name="input_matricular" value="">
+        </form>
+
+        <br/>
+    </div>
+</div>
+
+
+{% endblock %}

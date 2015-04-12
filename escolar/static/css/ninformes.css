@@ -1,0 +1,56 @@
+body {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+
+
+.selmul_fixed_heigth{
+    height: 500px;   
+    width: 100%;
+}
+
+.centrar_algo{
+    display:table; 
+    margin:0 auto;   
+}
+
+.btn-margin{
+    margin-left:5px;
+}
+
+
+::-webkit-input-placeholder {
+   color: red;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: red;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: red;  
+}
+
+:-ms-input-placeholder {  
+   color: red;  
+}

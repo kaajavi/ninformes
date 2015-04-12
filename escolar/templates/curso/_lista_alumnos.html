@@ -1,0 +1,84 @@
+{% extends 'curso/home_curso.html' %}
+{% load tg_curso %}
+{% block wrapper %}
+
+<div id='alumnos'>
+    {% menu_curso 0 curso user.id %}
+
+    <h2>Alumnos matriculados:</h2>    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Apellido</th>                                               
+                <th>Nombre</th>
+                <th>Dni</th>
+                <th>Acciones</th>   
+            </tr>
+        </thead>
+        <tbody>
+            {% for matricula in matriculados %}
+            <tr>
+                <td>                            
+                    <img type="image/png" src="{{matricula.alumno.sex_icon}}" />
+                    {{forloop.counter}}</td>
+                <td>{{matricula.alumno.apellidos}}</td>
+                <td>{{matricula.alumno.nombres}}</td>                        
+                <td>{{matricula.alumno.dni}}</td>   
+                <td>                    
+                    <a  title="Editar alumno" class="btn btn-xs btn-default" href="{% url 'escolar:editar_alumno' matricula.alumno.id curso.id %}">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </a>
+                    <a  title="Desmatricular" class="btn btn-xs btn-default" href="{% url 'escolar:desmatricular_alumno' matricula.id %}">
+                        <i class="fa fa-level-down"></i>
+                    </a>
+                </td>                        
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <div id="inactivos_no">
+        <h4>Ver Desmatriculados <button id="no_ver_inactivos" class="btn btn-xs btn-default" > <i class="fa fa-eye"></i> </button></h4>
+    </div>
+    <br>
+    
+    <div id="inactivos_si">
+        
+        
+    <h4>Desmatriculados <button class="btn btn-xs btn-default" id="ver_inactivos"> <i class="fa fa-eye-slash"></i> </button></h4>
+    <table  class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Apellido</th>                                               
+                <th>Nombre</th>
+                <th>Dni</th>
+                <th>Acciones</th>   
+            </tr>
+        </thead>
+        <tbody>
+            {% for matricula in matriculados_inactivos %}
+            <tr>
+                <td>                            
+                    <img type="image/png" src="{{matricula.alumno.sex_icon}}" />
+                    {{forloop.counter}}</td>
+                <td>{{matricula.alumno.apellidos}}</td>
+                <td>{{matricula.alumno.nombres}}</td>                        
+                <td>{{matricula.alumno.dni}}</td>   
+                <td>                                       
+                    <a  title="Rematricular" class="btn btn-xs btn-default" href="{% url 'escolar:rematricular_alumno' matricula.id %}">
+                        <i class="fa fa-level-up"></i>
+                    </a>
+                    <a  title="Eliminar Matricula" class="btn btn-xs btn-danger" href="{% url 'escolar:eliminar_matricula_alumno' matricula.id %}">
+                        <i class="fa fa-ban"></i>
+                    </a>
+                </td>                        
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>  
+        </div>
+
+</div>
+{% endblock%}

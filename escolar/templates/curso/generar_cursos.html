@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+
+
+{% block header%}
+
+
+
+{% endblock %}
+
+{% block contenido %}
+<div class="page-header">
+    <h1>Generar Cursos para un Año</h1>
+</div>  
+
+<div id="page-wrapper">    
+    <br/>
+    <span id='span_formulario' >
+        <form action="{% url 'escolar:generar_cursos' %}" id="form" method="post">
+            {% csrf_token %}
+            <input type="hidden" id="tabs_control" name="tabs_control" value="{{tabs_control}}">
+
+            <row>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="from">Día de Matriculaciones:</label>
+                        <select name="dia" class="form-control">
+                            {% for dia in dias_disponibles %}                
+                            <option value='{{dia}}'>{{dia}}</option>                
+                            {% endfor %}    
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="from">Mes de Matriculaciones:</label>
+                        <select name="mes" class="form-control">
+                            {% for mes in meses_disponibles %}                
+                            <option value='{{forloop.counter}}'>{{mes}}</option>                
+                            {% endfor %}    
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="to">Año de Matriculaciones:</label>
+                        <select name="anio" class="form-control">
+                            {% for anio in anios_disponibles %}                
+                            <option value='{{anio}}'>{{anio}}</option>                
+                            {% endfor %}    
+                        </select>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3">
+                        <label for="to">Año de cursado (ciclo):</label>
+                        <select name="ciclo" class="form-control">
+                            {% for anio in anios_disponibles %}                
+                            <option value='{{anio}}'>{{anio}}</option>                
+                            {% endfor %}    
+                        </select>
+                    </div>
+                </div>                
+
+            </row>
+
+
+            <br/>
+            <input class="btn btn-lg btn-primary btn-success pull-right btn-margin" type="submit" value="Generar"/>
+        </form>
+        <br>
+    </span>
+
+</div>
+
+
+{% endblock %}

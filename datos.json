@@ -1,0 +1,622 @@
+[{
+"model": "escolar.alumno","pk":"20140","fields": {"nombres":"LAUTARO","apellidos":"ABUD","dni":"48723151","direccionPrincipal":"RODRIGUEZ PEÑA 343 1A ALBERDI","fechaDeNacimiento":"2008-12-22","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"SANCHEZ LETICIA","actividadTutor":"PROFESORA DE INGLES","telefonoHogar":"4253491","celularPapa":"156517399","celularMama":"156216469","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20141","fields": {"nombres":"JONAS EXEQUIEL","apellidos":"ALMADA CARPIO","dni":"47907984","direccionPrincipal":"BV ARTURO ILLIA 611 10 B NUEVA CORDOBA","fechaDeNacimiento":"2009-03-08","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"CARPIO CRISTINA MARIE","actividadTutor":"EMPLEADA ADMINISTRATIVA","telefonoHogar":"---------","celularPapa":"157077867","celularMama":"157077864","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20142","fields": {"nombres":"JOAQUIN LEONEL","apellidos":"BALMACEDA MELIAN","dni":"49406817","direccionPrincipal":"LUIS AGOTE 3755 LOS GRANADOS","fechaDeNacimiento":"2009-03-25","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"MELIAN MARIA FERNANDA ","actividadTutor":"CONTADORA ","telefonoHogar":"4650636","celularPapa":"157454228","celularMama":"152593007","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20143","fields": {"nombres":"GASPAR ANDRES","apellidos":"CHABAN ","dni":"48598272","direccionPrincipal":"PEATONAL A CASA 72 URITORCO","fechaDeNacimiento":"2008-11-25","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"CIANCIA ROMINA GRISELDA","actividadTutor":"EMPLEADA DE COMERCIO","telefonoHogar":"---------------------","celularPapa":"155499197","celularMama":"156981464","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20144","fields": {"nombres":"BENJAMIN ALEJANDRO","apellidos":"DIAZ CASTRO","dni":"49406989","direccionPrincipal":"OBISPO CASTELLANO 1180 1 SAN VICENTE","fechaDeNacimiento":"2009-04-13","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"CASTRO MARIELA","actividadTutor":"CAJERA DE BACAR","telefonoHogar":"4563132","celularPapa":"156138964","celularMama":"157316606","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20145","fields": {"nombres":"LUCAS","apellidos":"ESPINOSA PERALTA","dni":"49406519","direccionPrincipal":"CHUBUT 286 ALBERDI","fechaDeNacimiento":"2009-03-19","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"PERALTA MELISA","actividadTutor":"EMPLEADA CALL CENTER","telefonoHogar":"4899815","celularPapa":"156519696","celularMama":"152332091","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20146","fields": {"nombres":"GINO DANILO","apellidos":"FERRO","dni":"48533594","direccionPrincipal":"MAETRO VIDAL 509 ALTO ALBERDI","fechaDeNacimiento":"2008-10-03","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"PUCCI CLAUDIA","actividadTutor":"LICENCIADA EN EDUCACION INICIAL","telefonoHogar":"4893802","celularPapa":"155595807","celularMama":"153584531","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20147","fields": {"nombres":"NEHUEN ARMANDO","apellidos":"MARTINEZ","dni":"49499142","direccionPrincipal":"LAS JUNTURAS 2939 LOS PARAISOS","fechaDeNacimiento":"2009-05-04","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"ORONA CINTIA","actividadTutor":"TECNICA DE LABORATORIO","telefonoHogar":"4768254","celularPapa":"152532235","celularMama":"152669555","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20148","fields": {"nombres":"MARTIN","apellidos":"MINETTI","dni":"49406166","direccionPrincipal":"SANTIAGO COSTAMGNA 6735 DON BOSCO","fechaDeNacimiento":"2009-03-05","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"MATINEZ BARBARA","actividadTutor":"EMPLEADA ADMINISTRATIVA ","telefonoHogar":"4847351","celularPapa":"152061636","celularMama":"157556235","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20149","fields": {"nombres":"MATEO BENJAMIN","apellidos":"PREGOT QUEVEDO","dni":"47475470","direccionPrincipal":"francisco de arteagas 1010 villa martinez","fechaDeNacimiento":"2008-08-04","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"QUEVEDO ANABEL YANINA","actividadTutor":"AMA DE CASA","telefonoHogar":"4844853 ABUELA ","celularPapa":"152059046","celularMama":"152388074","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20150","fields": {"nombres":"ITALO FRANCISCO","apellidos":"RETAMOSO TROTTA","dni":"48669460","direccionPrincipal":"ALBERTO WILLIAMS 3780 LOS GRANADOS","fechaDeNacimiento":"2008-11-23","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"TROTTA ANA MARIELA","actividadTutor":"AMA DE CASA","telefonoHogar":"4651003","celularPapa":"156434139","celularMama":"155474700","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20151","fields": {"nombres":"BENJAMIN ARIAN","apellidos":"VERGARA ","dni":"49556333","direccionPrincipal":"OBISPO SALGUERO 349 CENTRO","fechaDeNacimiento":"2009-05-06","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"MOLINA CECILIA VANESA","actividadTutor":"AMA DE CASA","telefonoHogar":"4226968","celularPapa":"156174563","celularMama":"155207239","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20152","fields": {"nombres":"ALMA MILAGRO","apellidos":"ACOSTA","dni":"47907940","direccionPrincipal":"LUIS BURELA 1562 MIRALTA","fechaDeNacimiento":"2009-02-18","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"ABRAHAM PAOLA","actividadTutor":"CAJERA","telefonoHogar":"--------------------------------------","celularPapa":"-------------------------------------","celularMama":"152194112","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20153","fields": {"nombres":"BARBARA SOFIA","apellidos":"ARROYO","dni":"49555941","direccionPrincipal":"CORRO 2  B  CENTRO TORRE II","fechaDeNacimiento":"2009-05-04","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Garcia Silvina","actividadTutor":"Bioquímica","telefonoHogar":"","celularPapa":"","celularMama":"3516528035","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20154","fields": {"nombres":"MIA NUR","apellidos":"AVADA ALANIZ","dni":"48721284","direccionPrincipal":"CASEROS 1141 ALBERDI ","fechaDeNacimiento":"2008-08-19","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"ALANIZ ALINA","actividadTutor":"TECNICA DE DIRECCION DE VENTAS","telefonoHogar":"4236643","celularPapa":"155517060","celularMama":"153104287","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20155","fields": {"nombres":"KIARA","apellidos":"BASSO ZAMBELLI","dni":"48669337","direccionPrincipal":"MENDOZA 727 PROVIDENCIA","fechaDeNacimiento":"2008-10-15","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"ZAMBELLI KARINA ROXANA","actividadTutor":"EMPLEADA ADMINISTRATIVA","telefonoHogar":"4252313","celularPapa":"155160929","celularMama":"156877781","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20156","fields": {"nombres":"DELFINA MIA ","apellidos":"CARNERO","dni":"49497374","direccionPrincipal":"SANTIAGO MONITAN 3905 LA MADRID","fechaDeNacimiento":"2009-05-04","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"REYNA PAOLA ANDREA ","actividadTutor":"OPERADORA","telefonoHogar":"4323203","celularPapa":"152757204","celularMama":"156070318","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20157","fields": {"nombres":"CHIARA GIANELLA","apellidos":"MARTINEZ MAGNINO","dni":"47984775","direccionPrincipal":"SOL DE MAYO 62 ALBERDI","fechaDeNacimiento":"2009-04-21","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"MAGNINO ADRIANA","actividadTutor":"MEDICA","telefonoHogar":"4883695","celularPapa":"15356166","celularMama":"153348260","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20158","fields": {"nombres":"CATALINA LOURDES ","apellidos":"PERALTA ","dni":"48670376","direccionPrincipal":"SOL DE MAYO 647 ALTO ALBERDI","fechaDeNacimiento":"2008-11-17","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":" Olivera Laura","actividadTutor":"Secretaria Administrativa","telefonoHogar":"","celularPapa":"","celularMama":"153398899","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20159","fields": {"nombres":"MICAELA ","apellidos":"QUIRICONI","dni":"48600041","direccionPrincipal":"AV ARMADA ARGENTINA 2717 SANTA ISABEL III","fechaDeNacimiento":"2008-10-03","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"QUIRICONI ARIEL","actividadTutor":"ENCARGADO  DE LOCAL","telefonoHogar":"4940824","celularPapa":"153062214","celularMama":"153062239","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20160","fields": {"nombres":"TIZIANA BELEN","apellidos":"RIOS RIERA ","dni":"49556207","direccionPrincipal":"NAZARET 2978 LAS ROSAS","fechaDeNacimiento":"2009-05-12","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"RIERA VANINA ESTEFANIA ","actividadTutor":"EMPLEADA CALL CENTER","telefonoHogar":"4885940","celularPapa":"","celularMama":"153530230","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20161","fields": {"nombres":"MARTINA BELEN ","apellidos":"ROJAS ","dni":"48532243","direccionPrincipal":"PASO DE LOS ANDES 72 4  C  ALBERDI","fechaDeNacimiento":"2009-02-05","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"ARTAZA VERONICA","actividadTutor":"EMPLEADA DE COMERCIO","telefonoHogar":"--------------------------------------","celularPapa":"153047776","celularMama":"","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20162","fields": {"nombres":"MATILDE LOURDES","apellidos":"ROJO","dni":"48532710","direccionPrincipal":"ESTEBAN ECHEVERRIA 2556 ROSEDAL ","fechaDeNacimiento":"2008-08-24","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"GARBINO CAROLA LOURDES","actividadTutor":"CONTADORA ","telefonoHogar":"4656803","celularPapa":"156729118","celularMama":"156472692","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20163","fields": {"nombres":"SOFIA AGUSTINA ","apellidos":"SANCHEZ RODRIGUEZ ","dni":"49323017","direccionPrincipal":"7 DE SEPTIEMBRE 3982 PANAMERICANO","fechaDeNacimiento":"2009-02-28","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"RODRIGUEZ LUCIA MICAELA ","actividadTutor":"DUEÑA DE LOCAL DE ROPA","telefonoHogar":"4708046","celularPapa":"","celularMama":"157506828","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20164","fields": {"nombres":"SOFIA INES ","apellidos":"VERNOCCHI","dni":"49455077","direccionPrincipal":"URQUIZA 155 8 53  CENTRO","fechaDeNacimiento":"2009-06-09","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"ARDILES ILIANA MARIA EUGENIA ","actividadTutor":"AMA DE CASA","telefonoHogar":"4252512","celularPapa":"152112662","celularMama":"153955919","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20165","fields": {"nombres":"Lucas Ezequiel","apellidos":"Bagnis","dni":"48722774","direccionPrincipal":"27 de Abril 1139. PB 5","fechaDeNacimiento":"2009-01-12","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Nieto Anabella S.","actividadTutor":"Repartidora de una sandwichería","telefonoHogar":"","celularPapa":"157076927","celularMama":"156343312","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20166","fields": {"nombres":"Uriel Agustín ","apellidos":"Cacciani","dni":"48531553","direccionPrincipal":"Arenales Uriburu 3836","fechaDeNacimiento":"2008-09-10","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Cacciani, Carina","actividadTutor":"Logística","telefonoHogar":"4665379","celularPapa":"","celularMama":"152520584","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20167","fields": {"nombres":"Genaro","apellidos":"Capello ","dni":"47908319","direccionPrincipal":"Sucre 1546. PB I","fechaDeNacimiento":"2008-09-08","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Capello Gustavo D.","actividadTutor":"Mantenimiento - Automación MARTE S.A.","telefonoHogar":"4741021","celularPapa":"156557204","celularMama":"156819072","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20168","fields": {"nombres":"Tomás","apellidos":"Martinez Barrera Losada","dni":"48531836","direccionPrincipal":"Ignacio Garzón 3259. PB 13","fechaDeNacimiento":"2008-11-07","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Noelia A. Losada","actividadTutor":"Asesor telefónico  MOVISTAR","telefonoHogar":"4114590","celularPapa":"153004006","celularMama":"153664584","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20169","fields": {"nombres":"Felipe","apellidos":"Moreno Seguí","dni":"49499151","direccionPrincipal":"Montevideo 534. PB “C”","fechaDeNacimiento":"2009-05-08","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Seguí Sabrina Soledad","actividadTutor":"Residente Servicio de Pediatria SANATORIO FRANCES","telefonoHogar":"4217499","celularPapa":"","celularMama":"155218439","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20170","fields": {"nombres":"Guillermo Ariel","apellidos":"Orce","dni":"48720922","direccionPrincipal":"Joaquín Castellanos 3808","fechaDeNacimiento":"2009-02-12","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Orce Carlos","actividadTutor":"Luthier","telefonoHogar":"4701856","celularPapa":"155496415","celularMama":"153657065","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20171","fields": {"nombres":"Francisco Mateo","apellidos":"Paniatti","dni":"49404571","direccionPrincipal":"Cap. Manuel Bustos 4724","fechaDeNacimiento":"2009-03-14","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Paniati Raúl","actividadTutor":"Gestor","telefonoHogar":"4667465","celularPapa":"153287469","celularMama":"153287471","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20172","fields": {"nombres":"Máximo Octavio","apellidos":"Paz","dni":"48721122","direccionPrincipal":"La Rioja 821","fechaDeNacimiento":"2008-12-02","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Paz Carlos Anibal","actividadTutor":"Abogado","telefonoHogar":"4234335","celularPapa":"156013626","celularMama":"156973076","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20173","fields": {"nombres":"Nahuel Emiliano","apellidos":"Perello Lubary ","dni":"49455919","direccionPrincipal":"Artigas 332","fechaDeNacimiento":"2009-03-31","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Lubary Ximena Samanta","actividadTutor":"Trabajo dependiente","telefonoHogar":"","celularPapa":"","celularMama":"0354115687362","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20174","fields": {"nombres":"Tomás","apellidos":"Pereyra Laderach","dni":"47907890","direccionPrincipal":"J. Fernández 5642","fechaDeNacimiento":"2009-02-11","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Pereyra Marcelo","actividadTutor":"Notificador en Tribunales","telefonoHogar":"","celularPapa":"155307408","celularMama":"155924451","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20175","fields": {"nombres":"Pedro","apellidos":"Rampulla Pagnanini","dni":"48722758","direccionPrincipal":"Miguel A. Cárcano 941","fechaDeNacimiento":"2008-12-29","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Pagnanini Paola Silvana","actividadTutor":"Secretaria","telefonoHogar":"4872391","celularPapa":"152212954","celularMama":"156217653","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20176","fields": {"nombres":"Valentín","apellidos":"Tealdi Rolón","dni":"48599212","direccionPrincipal":"27 de Abril 984. Piso 2","fechaDeNacimiento":"2009-07-18","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Rolón Melisa Penelope","actividadTutor":"Encargada de comercio LOLA ROCA","telefonoHogar":"4256852","celularPapa":"155409229","celularMama":"156588995","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20177","fields": {"nombres":"Valentino","apellidos":"Vanini Mangini ","dni":"48599412","direccionPrincipal":"Marcelo T. Alvear 1017. 5º B","fechaDeNacimiento":"2008-08-05","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Magnini Mariana R.","actividadTutor":"Secretaria","telefonoHogar":"4603448","celularPapa":"","celularMama":"156334687","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20178","fields": {"nombres":"Lucia","apellidos":"Chavez Minnig ","dni":"48599896","direccionPrincipal":"Coronel Olmedo 365 dep.“A”","fechaDeNacimiento":"2008-09-25","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Chavez Carlos A. ","actividadTutor":"Coordinador Tarjeta Naranja","telefonoHogar":"4242098","celularPapa":"155550745","celularMama":"155926996","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20179","fields": {"nombres":"Agostina","apellidos":"Delich Romani","dni":"49498006","direccionPrincipal":"Brown 767. Depto. 3","fechaDeNacimiento":"2009-04-08","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Delich Miguel A. ","actividadTutor":"Trabajo dependiente","telefonoHogar":"4894167","celularPapa":"156636244","celularMama":"152444380","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20180","fields": {"nombres":"Victoria Antonella","apellidos":"Di Martino ","dni":"48455540","direccionPrincipal":"Av. Pueyrredón 619. 13 “A”","fechaDeNacimiento":"2009-07-29","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Di Martino Herrera Walter","actividadTutor":"Sistema administrativo en Ministerio de Educacion","telefonoHogar":"4681932","celularPapa":"152212351","celularMama":"155480383","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20181","fields": {"nombres":"Victoria Abril","apellidos":"Jodar","dni":"49555904","direccionPrincipal":"Av. Maipú 267. 1º G","fechaDeNacimiento":"2009-04-29","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Rodriguez Moya Celeste","actividadTutor":"Estudiante de Radiología ","telefonoHogar":"4840624","celularPapa":"156575637","celularMama":"152633590","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20182","fields": {"nombres":"Sofía","apellidos":"Ledesma Bravo  ","dni":"48597706","direccionPrincipal":"Miguel de Sesse 3857","fechaDeNacimiento":"2008-09-10","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Bravo Silvia Lorena","actividadTutor":"Fonoaudiologa","telefonoHogar":"4554359","celularPapa":"","celularMama":"156009113","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20183","fields": {"nombres":"Magalí","apellidos":"Merlo Cardozo ","dni":"47475452","direccionPrincipal":"José María Terrero 376","fechaDeNacimiento":"2009-07-21","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Merlo Carlos Augusto","actividadTutor":"Encargado LIDESCO S.R.L.","telefonoHogar":"4844134","celularPapa":"152279243","celularMama":"155922065","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20184","fields": {"nombres":"Morena Abril","apellidos":"Pelegrina","dni":"47908388","direccionPrincipal":"San Rafael 2145","fechaDeNacimiento":"2008-09-03","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Pelegrina Matias","actividadTutor":"Vendedor de ropa","telefonoHogar":"","celularPapa":"154024250","celularMama":"152701423","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20185","fields": {"nombres":"Leonela Viviana","apellidos":"Rosales Lujan","dni":"49406340","direccionPrincipal":"Bolivar 29. PB “A”","fechaDeNacimiento":"2009-03-05","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Rosales Fernandez Leo Arnaldo","actividadTutor":"Preceptor ","telefonoHogar":"4228752","celularPapa":"155067614","celularMama":"155288258","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20186","fields": {"nombres":"María Agostina","apellidos":"Schenone Ortega","dni":"47907541","direccionPrincipal":"Venta y media 4653. 1º A T2","fechaDeNacimiento":"2008-08-26","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Schenone Maximiliano Enrique","actividadTutor":"Vendedor ITALBO S.R.L.","telefonoHogar":"4847333","celularPapa":"155480650","celularMama":"156718765","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20187","fields": {"nombres":"Zoe","apellidos":"Torres Demasi","dni":"0","direccionPrincipal":"Mendoza 369. PB “A”","fechaDeNacimiento":"2008-09-17","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Demasi Celia Paola","actividadTutor":"Operadora de Call Center","telefonoHogar":"","celularPapa":"156451957","celularMama":"155124286","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20188","fields": {"nombres":"Angelina Jazmín","apellidos":"Vino","dni":"48908457","direccionPrincipal":"Mendoza 369. PB “A”","fechaDeNacimiento":"2008-09-17","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Vino, Mara A. ","actividadTutor":"Estudiante de Trabajo Social","telefonoHogar":"","celularPapa":"","celularMama":"157676907","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20189","fields": {"nombres":"Ludmila","apellidos":"Oliva Heredia ","dni":"47908170","direccionPrincipal":"12 de Octubre 1344. 2º “A”","fechaDeNacimiento":"2009-01-05","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Oliva Lucca Flavio José","actividadTutor":"Trabajo dependiente","telefonoHogar":"4225619","celularPapa":"","celularMama":"157477708","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20190","fields": {"nombres":"Luciano German","apellidos":"Carri","dni":"48123976","direccionPrincipal":"Silvestre Remonda 86, A.Alberdi","fechaDeNacimiento":"2008-02-25","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Carri Gustavo German","actividadTutor":"Contador Publico","telefonoHogar":"4809726","celularPapa":"156881135","celularMama":"155521415","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20191","fields": {"nombres":"Felipe","apellidos":"Delgado Bossio","dni":"48070810","direccionPrincipal":"San Jose de Calasanz 186 -","fechaDeNacimiento":"2007-11-17","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Bossio Maria Julia","actividadTutor":"Diseñadora Grafica","telefonoHogar":"4244044","celularPapa":"153623624","celularMama":"152245635","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20192","fields": {"nombres":"Alejandro Daniel","apellidos":"Ferre Valderrama","dni":"48068670","direccionPrincipal":"Angel Gallardo 1673","fechaDeNacimiento":"2007-09-21","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Valderrama Saenz Diana","actividadTutor":"Empleada","telefonoHogar":"4768141","celularPapa":"155214984","celularMama":"152284433","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20193","fields": {"nombres":"Felipe Andres","apellidos":"Flores Frias","dni":"46710172","direccionPrincipal":"Agustin Garzon 3120","fechaDeNacimiento":"2007-08-08","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Frias Maria Victoria","actividadTutor":"Arquitecta","telefonoHogar":"4568682","celularPapa":"153189933","celularMama":"157360448","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20194","fields": {"nombres":"Valentin","apellidos":"Maidana","dni":"47984069","direccionPrincipal":"Gabriela Mistral 4760","fechaDeNacimiento":"2008-03-03","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Iriarte Carina","actividadTutor":"Comerciante","telefonoHogar":"4651353","celularPapa":"155559440","celularMama":"155559420","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20195","fields": {"nombres":"Santino","apellidos":"Martin ","dni":"48068274","direccionPrincipal":"Publica C 6307","fechaDeNacimiento":"2007-09-04","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Martin Jorge Luis","actividadTutor":"Mantenimiento","telefonoHogar":"","celularPapa":"155307271","celularMama":"155151022","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20196","fields": {"nombres":"Ivo Giuliano","apellidos":"Martinez Magnino","dni":"47710816","direccionPrincipal":"Sol de Mayo 62 Alberdi","fechaDeNacimiento":"2008-04-05","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Magnino Adriana","actividadTutor":"Medica","telefonoHogar":"4883695","celularPapa":"153561662","celularMama":"153348260","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20197","fields": {"nombres":"Tiago Daniel","apellidos":"Ocampo Ferreira","dni":"46710201","direccionPrincipal":"Carlos Pellegrini 853 S.Vice","fechaDeNacimiento":"2007-09-21","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Ocampo F. Ma de los Angee","actividadTutor":"Enfermera","telefonoHogar":"4552423","celularPapa":"157512303","celularMama":"152010551","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20198","fields": {"nombres":"Alejo Gabriel","apellidos":"Riera","dni":"46972214","direccionPrincipal":"Obispo Toro 3012 Escobarr","fechaDeNacimiento":"2007-07-12","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Bracamonte Natalia","actividadTutor":"Empleada","telefonoHogar":"","celularPapa":"153119923","celularMama":"156525409","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20199","fields": {"nombres":"Juan Cruz","apellidos":"Rios","dni":"48456807","direccionPrincipal":"Brasil 842 Guemes","fechaDeNacimiento":"2008-04-14","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Lescano Nancy","actividadTutor":"Contadora","telefonoHogar":"4693605","celularPapa":"153125734","celularMama":"155738166","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20200","fields": {"nombres":"Tomas","apellidos":"Romero","dni":"47352574","direccionPrincipal":"Jose A.Ceballos 405 20de Junio","fechaDeNacimiento":"2008-05-28","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"De Jorge Laura","actividadTutor":"Empleada","telefonoHogar":"4852595","celularPapa":"153347883","celularMama":"156083695","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20201","fields": {"nombres":"Santiago Ezequiel","apellidos":"Salto","dni":"47303078","direccionPrincipal":"Manzana H casa 167","fechaDeNacimiento":"2007-10-26","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Araya Claudia","actividadTutor":"Ama de Casa","telefonoHogar":"4853551","celularPapa":"155902749","celularMama":"155903027","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20202","fields": {"nombres":"Octavio Ignacio","apellidos":"Torres ","dni":"47304645","direccionPrincipal":"27 de Abril 370","fechaDeNacimiento":"2008-02-15","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Torres Dora Beatriz","actividadTutor":"Abogada","telefonoHogar":"4256251","celularPapa":"","celularMama":"156536108  156366262","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20203","fields": {"nombres":"Umma Morena","apellidos":"Allende","dni":"48668507","direccionPrincipal":"Psj Ordones 200 La Huertilla","fechaDeNacimiento":"2008-05-25","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Cuello Eugenia","actividadTutor":"Ama de Casa","telefonoHogar":"","celularPapa":"","celularMama":"157352417","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20204","fields": {"nombres":"Luz Valentina","apellidos":"Avila Mineti","dni":"48070266","direccionPrincipal":"Av Chacabuco 386","fechaDeNacimiento":"2007-10-10","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Minetti M. Belen","actividadTutor":"Empleada","telefonoHogar":"4670516","celularPapa":"","celularMama":"155990240","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20205","fields": {"nombres":"Valentina","apellidos":"Barraquero","dni":"47304507","direccionPrincipal":"Urquiza 145 2A Alberdi","fechaDeNacimiento":"2007-12-26","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Pereyra Daniela","actividadTutor":"Corredora y Martillera","telefonoHogar":"","celularPapa":"152288522","celularMama":"155155530","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20206","fields": {"nombres":"Miranda Maia","apellidos":"Bergese","dni":"47000753","direccionPrincipal":"Alte Brown 397 Alberdi","fechaDeNacimiento":"2007-09-12","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Marcela A. Mino","actividadTutor":"Docente","telefonoHogar":"4800077","celularPapa":"155648179","celularMama":"155949187","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20207","fields": {"nombres":"Martina","apellidos":"Boasso","dni":"48068676","direccionPrincipal":"9 de Julio 1132 Alberdi","fechaDeNacimiento":"2007-10-08","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Arias Claudia V.","actividadTutor":"Abogada","telefonoHogar":"4263645","celularPapa":"4251034","celularMama":"156886790","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20208","fields": {"nombres":"Martina","apellidos":"Cerezo Lopez","dni":"48457682","direccionPrincipal":"Colon 2676 A.Alberdi","fechaDeNacimiento":"2008-06-21","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Lopez Sonia","actividadTutor":"Docente","telefonoHogar":"4877952","celularPapa":"156869757","celularMama":"157596893","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20209","fields": {"nombres":"Mateo Nicolás","apellidos":"BAZÁN BENDEZÚ","dni":"48328977","direccionPrincipal":"Caseros 1191 PB 2. Alberdi. CP: 5003","fechaDeNacimiento":"2008-08-01","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"BAZÁN, Gonzalo","actividadTutor":"Empleado","telefonoHogar":"4248086","celularPapa":"157036696","celularMama":"153057635","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20210","fields": {"nombres":"Facundo","apellidos":"CASTELLANO","dni":"48721289","direccionPrincipal":"Av. Sta. Fe 139 Dto  X . Alberdi. C.P:5003","fechaDeNacimiento":"2008-11-25","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"CASTELLANO, Damián","actividadTutor":"Docente","telefonoHogar":"4230265","celularPapa":"156505090","celularMama":"155472357","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20211","fields": {"nombres":"Jeremías","apellidos":"FENOGLIO","dni":"47908471","direccionPrincipal":"A. Facundo Vergara 580. Duplex 2. Las Dalias. 5000.","fechaDeNacimiento":"2008-10-18","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"FENOGLIO, Daniel","actividadTutor":"Empleado","telefonoHogar":"","celularPapa":"155556700","celularMama":"155902616","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20212","fields": {"nombres":"Joel Mikael Martín","apellidos":"HURTADO LINARES","dni":"4860002","direccionPrincipal":"San Luis 1660. Observatorio. CP:5000 ","fechaDeNacimiento":"2008-08-25","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"LINARES, Verónica","actividadTutor":"Empleada","telefonoHogar":"4939822","celularPapa":"","celularMama":"152753812","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20213","fields": {"nombres":"Juan Cruz","apellidos":"JASAPIS","dni":"48723013","direccionPrincipal":"Benjamín Matienzo 5555. Jorge Newbery. CP:5000","fechaDeNacimiento":"2009-06-13","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"JASAPIS, Iván","actividadTutor":"Funcionario Público","telefonoHogar":"4925430","celularPapa":"153883470","celularMama":"152320207","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20214","fields": {"nombres":"Martín Alí","apellidos":"LEIVA","dni":"48966887","direccionPrincipal":"San José de Calazans 348 5to.  A . Alberdi","fechaDeNacimiento":"2008-08-07","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"LEIVA, Daniel M.","actividadTutor":"Empleado","telefonoHogar":"4250949","celularPapa":"155430400","celularMama":"156071346","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20215","fields": {"nombres":"Víctor León","apellidos":"MÁRQUEZ PAREDES","dni":"47907736","direccionPrincipal":"Monseñor de Andrea 237. Alto Alberdi. 5003","fechaDeNacimiento":"2009-01-07","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"MÁRQUEZ , Néstor","actividadTutor":"Empleado","telefonoHogar":"4802397","celularPapa":"155310480","celularMama":"155206041","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20216","fields": {"nombres":"Leandro Gabriel","apellidos":"MARTÍNEZ LIENDO","dni":"48721542","direccionPrincipal":"Pedro Claveria 1874 PB. Residencial Sn Carlos. CP: 5014","fechaDeNacimiento":"2009-01-25","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"MARTÍNEZ, Ramón","actividadTutor":"Docente","telefonoHogar":"4642760","celularPapa":"155180584","celularMama":"152392678","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20217","fields": {"nombres":"Guillermo Santiago","apellidos":"QUINTERO CAMPOS","dni":"47907583","direccionPrincipal":"José del Prado 3690. René Favaloro. CP: 5003","fechaDeNacimiento":"2009-04-27","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"CAMPOS ALE,  Marina","actividadTutor":"Empleada","telefonoHogar":"4806305","celularPapa":"152179701","celularMama":"154595796","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20218","fields": {"nombres":"Ignacio Manuel","apellidos":"QUINTEROS","dni":"49404299","direccionPrincipal":"Mza 101. Casa 6. Urbanización Gandhi CP: 5003","fechaDeNacimiento":"2009-05-28","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"WILLINGTON, Nadia","actividadTutor":"Fonoaudióloga","telefonoHogar":"4830648","celularPapa":"155720753","celularMama":"156220422","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20219","fields": {"nombres":"Fernando Mateo","apellidos":"ZARATE","dni":"49406639","direccionPrincipal":"Corro 159 2º A . Alberdi. CP:5003","fechaDeNacimiento":"2009-03-30","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"ZARATE, Fernando","actividadTutor":"Empleado","telefonoHogar":"4239546","celularPapa":"153681005","celularMama":"153663123","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20220","fields": {"nombres":"Lara Antonella","apellidos":"BANEGAS CASTRO","dni":"48723419","direccionPrincipal":"Av. Don Bosco 4807 Mza 3 Casa 34","fechaDeNacimiento":"2009-01-19","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"CASTRO, M. Celeste","actividadTutor":"Enfermera","telefonoHogar":"4849578","celularPapa":"","celularMama":"157381179","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20221","fields": {"nombres":"Helena","apellidos":"BÜHELER","dni":"49499499","direccionPrincipal":"Mza 91 Lote4 Bo Los Sueños de Valle Escondido. CP: 5000","fechaDeNacimiento":"2009-05-14","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"BÜELER, Germán","actividadTutor":"Gerente","telefonoHogar":"4310099","celularPapa":"156318393","celularMama":"156515010","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20222","fields": {"nombres":"Joaquina","apellidos":"CHIAPERO","dni":"49555944","direccionPrincipal":"Duarte Quirós 880. Alberdi. CP: 5003","fechaDeNacimiento":"2009-05-06","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"CHIAPERO, Ariel","actividadTutor":"Periodista - Locutor","telefonoHogar":"4254012","celularPapa":"155294358","celularMama":"155105302","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20223","fields": {"nombres":"Agostina","apellidos":"COHAN GIGENA","dni":"48598746","direccionPrincipal":"López de Nelson 6446 Los robles. CP: 5003","fechaDeNacimiento":"2008-07-11","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"GIGENA, Pamela E.","actividadTutor":"Empelada","telefonoHogar":"4843404","celularPapa":"","celularMama":"156338971","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20224","fields": {"nombres":"María Emilia","apellidos":"FAZONE FALCO VON BOROWSKI","dni":"47907971","direccionPrincipal":"Achával Rodriguez 892.  2º Dpto  9 . Observatorio. CP: 5000","fechaDeNacimiento":"2009-03-08","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"FALZONE FALCO, Martin","actividadTutor":"Empleado Judicial","telefonoHogar":"4218416","celularPapa":"","celularMama":"157448723","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20225","fields": {"nombres":"Pilar","apellidos":"FAUSTINELLI","dni":"49586638","direccionPrincipal":"Av. Colón 6200. 2º F . Quebrada de las Rosas. CP: 5000","fechaDeNacimiento":"2009-06-11","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"FAUSTINELLI, Fernando","actividadTutor":"Independiente. Reparador de equipos técnicos","telefonoHogar":"4821730","celularPapa":"15678640","celularMama":"153958946","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20226","fields": {"nombres":"Nicolás","apellidos":"Armesto - Aranda","dni":"48392542","direccionPrincipal":"9 de Julio 2789","fechaDeNacimiento":"2008-03-06","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Armesto Carlos","actividadTutor":"Propietario Emp. Log.","telefonoHogar":"","celularPapa":"155636777","celularMama":"152054093","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20227","fields": {"nombres":"Lautaro","apellidos":"Avalos","dni":"47984935","direccionPrincipal":"Francisco Zelada 2132","fechaDeNacimiento":"2008-01-28","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Avalos Marcos","actividadTutor":"Administrativo","telefonoHogar":"4563066","celularPapa":"152274128","celularMama":"155519227","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20228","fields": {"nombres":"Benjamín","apellidos":"Farias","dni":"47304673","direccionPrincipal":"Ovidio Lagos 310","fechaDeNacimiento":"2008-02-15","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Farias Gustavo","actividadTutor":"Policia","telefonoHogar":"","celularPapa":"152382057","celularMama":"153254706","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20229","fields": {"nombres":"Santino","apellidos":"Gomez","dni":"48392786","direccionPrincipal":"Montevideo 820","fechaDeNacimiento":"2008-04-15","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Gomez Félix","actividadTutor":"Profesional Técnico","telefonoHogar":"4250089","celularPapa":"153544846","celularMama":"153544847","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20230","fields": {"nombres":"Lucas Nahuel","apellidos":"Herrera","dni":"47352546","direccionPrincipal":"Epumer 5845","fechaDeNacimiento":"2008-05-22","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Herrera Lucas","actividadTutor":"Vendedor","telefonoHogar":"4844928","celularPapa":"156105606","celularMama":"156105406","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20231","fields": {"nombres":"Santiago","apellidos":"Iglecia - Duna","dni":"48455324","direccionPrincipal":"Arroyo 5381","fechaDeNacimiento":"2008-06-20","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Iglecia Leandro","actividadTutor":"Desocupado","telefonoHogar":"4869162","celularPapa":"153882087","celularMama":"156179843","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20232","fields": {"nombres":"Salvador","apellidos":"Montenegro","dni":"46973842","direccionPrincipal":"Las Playas 1896","fechaDeNacimiento":"2007-09-27","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Montenegro Martín","actividadTutor":"Desocupado","telefonoHogar":"4806026","celularPapa":"155402802","celularMama":"155479209","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20233","fields": {"nombres":"Santiago","apellidos":"Muscará","dni":"47475099","direccionPrincipal":"Manuel Padilla 4527","fechaDeNacimiento":"2007-07-05","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Muscará Tomás","actividadTutor":"Vendedor","telefonoHogar":"4974456","celularPapa":"156557510","celularMama":"156545240","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20234","fields": {"nombres":"Alvaro Maximiliano","apellidos":"Occhiuzzi - Barrios","dni":"48331440","direccionPrincipal":"Aviador mira 1786","fechaDeNacimiento":"2008-06-27","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Barrios Jesica","actividadTutor":"Vendedora","telefonoHogar":"4650690","celularPapa":"","celularMama":"157011170","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20235","fields": {"nombres":"Felipe Antonio","apellidos":"Paniati","dni":"47820740","direccionPrincipal":"Manuel Bustos 4724","fechaDeNacimiento":"2008-01-05","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Paniati Raúl","actividadTutor":"Gestor","telefonoHogar":"4667465","celularPapa":"153287469","celularMama":"153287471","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20236","fields": {"nombres":"Darío Augusto","apellidos":"Pusiol - Mariotta","dni":"47303665","direccionPrincipal":"Elpidio Gonzalez 2023","fechaDeNacimiento":"2007-03-01","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Pusiol Roberto","actividadTutor":"Administrativo","telefonoHogar":"4699224","celularPapa":"153414034","celularMama":"152131780","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20237","fields": {"nombres":"Tomás Eduardo","apellidos":"Radomsky","dni":"47820626","direccionPrincipal":"Pedro Hurtado 4478","fechaDeNacimiento":"2007-11-21","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Alejandro Radomsky ","actividadTutor":"Repartidor de soda","telefonoHogar":"4655273","celularPapa":"","celularMama":"","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20238","fields": {"nombres":"Ulises Joaquín","apellidos":"Togni - Gerometo","dni":"46973378","direccionPrincipal":"Rivadabia 150","fechaDeNacimiento":"2007-09-06","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Togni Guillermo","actividadTutor":"Empleado Mantenimiento","telefonoHogar":"4256722","celularPapa":"155946765","celularMama":"152349820","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20239","fields": {"nombres":"Sofía","apellidos":"Billoud","dni":"47303995","direccionPrincipal":"Pasaje Clemencué 940","fechaDeNacimiento":"2007-08-09","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Billoud Javier","actividadTutor":"Vendedor","telefonoHogar":"4845287","celularPapa":"153021374","celularMama":"15314150","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20240","fields": {"nombres":"Yazmín","apellidos":"Cajal","dni":"48457479","direccionPrincipal":"Pública 14067 Casa 43","fechaDeNacimiento":"2008-05-27","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Cajal Hugo","actividadTutor":"Perito Verificador (Policia)","telefonoHogar":"","celularPapa":"152137355","celularMama":"153956920","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20241","fields": {"nombres":"Macarena","apellidos":"Cura - Ingerl","dni":"46888480","direccionPrincipal":"Caseros 985","fechaDeNacimiento":"2008-06-03","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Cura Alfredo","actividadTutor":"Asesor Comercial","telefonoHogar":"4250036","celularPapa":"157518246","celularMama":"153512046","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20242","fields": {"nombres":"Lola","apellidos":"Gargani - Giay","dni":"48456953","direccionPrincipal":"Miguel del Corro 63","fechaDeNacimiento":"2008-04-03","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Gargani Claudio","actividadTutor":"Distribuidor (San Luis)","telefonoHogar":"4219381","celularPapa":"","celularMama":"155588812","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20243","fields": {"nombres":"Luciana","apellidos":"Melgarejo","dni":"47710116","direccionPrincipal":"Santa Olaya 2868","fechaDeNacimiento":"2007-07-20","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Melgarejo Leonardo","actividadTutor":"Operario (La Lacteo)","telefonoHogar":"","celularPapa":"156616000","celularMama":"156616387","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20244","fields": {"nombres":"Lucia","apellidos":"Morán - Vázquez","dni":"48070687","direccionPrincipal":"Arrecifes 507","fechaDeNacimiento":"2007-11-14","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Morán Carlos","actividadTutor":"Abogado","telefonoHogar":"","celularPapa":"152721910","celularMama":"158012684","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20245","fields": {"nombres":"Agustina","apellidos":"Moyano","dni":"47303200","direccionPrincipal":"Fructuoso Rivero 2823","fechaDeNacimiento":"2007-11-18","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Moyano Gustavo","actividadTutor":"Panadero","telefonoHogar":"4891620","celularPapa":"156434509","celularMama":"155385764","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20246","fields": {"nombres":"Sofía Agustina","apellidos":"Peralta","dni":"47577980","direccionPrincipal":"Manzana 7 Casa 4","fechaDeNacimiento":"2007-08-31","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Peralta Daniel","actividadTutor":"Empleado","telefonoHogar":"4621093","celularPapa":"155323786","celularMama":"156249199","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20247","fields": {"nombres":"Aldana","apellidos":"Rabale - Barea","dni":"48257579","direccionPrincipal":"Agustín Garzón 2954","fechaDeNacimiento":"2007-08-09","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Rabale Mario","actividadTutor":"Aeronáutico","telefonoHogar":"4552582","celularPapa":"02604 - 15574946","celularMama":"02604 - 15593430","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20248","fields": {"nombres":"María Valentina","apellidos":"Re","dni":"47352418","direccionPrincipal":"Manzana 5 Casa 2","fechaDeNacimiento":"2008-02-20","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Re Orlando","actividadTutor":"Transportista","telefonoHogar":"4852141","celularPapa":"153943267","celularMama":"156354974","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20249","fields": {"nombres":"Catalina","apellidos":"Spena - Ferrada","dni":"47709940","direccionPrincipal":"Nicolás Repetto 712","fechaDeNacimiento":"2007-08-13","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Spena Julián","actividadTutor":"Vendedor","telefonoHogar":"4707244","celularPapa":"152341560","celularMama":"155956636","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20250","fields": {"nombres":"Martina","apellidos":"Egea - Martínez","dni":"48155615","direccionPrincipal":"Velez Sarfield 911","fechaDeNacimiento":"2007-08-27","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Egea Sergio","actividadTutor":"Asesor Cámara Diputados","telefonoHogar":"","celularPapa":"383 - 154676345","celularMama":"383 - 154210279","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20251","fields": {"nombres":"Catalina de Lourdes","apellidos":"Farias Hernandez","dni":"48126021","direccionPrincipal":"Badaran y B.3671 S.Felipe","fechaDeNacimiento":"2008-02-07","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Hernandez Jesica","actividadTutor":"Empleada ","telefonoHogar":"4950612","celularPapa":"153075486","celularMama":"157013901","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20252","fields": {"nombres":"Paula Abril","apellidos":"Lucero Muñoz","dni":"46972009","direccionPrincipal":"Tandil 1535 Dpto 2 V.Revol","fechaDeNacimiento":"2007-09-14","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Munoz Hilda","actividadTutor":"Docente","telefonoHogar":"","celularPapa":"153118030","celularMama":"152003291","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20253","fields": {"nombres":"Lara Catalina","apellidos":"Luna Navas","dni":"48599465","direccionPrincipal":"9 de Julio 1119 Alberdi","fechaDeNacimiento":"2008-06-13","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Navas Natalia","actividadTutor":"Empleada","telefonoHogar":"","celularPapa":"153448669","celularMama":"152698927","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20254","fields": {"nombres":"Ariana Milagros","apellidos":"Montivero Montiel","dni":"48125749","direccionPrincipal":"Ricardo L.C.2803Cerveceroo","fechaDeNacimiento":"2008-05-24","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Montiel Elizabet M.","actividadTutor":"Peluquera","telefonoHogar":"4644862","celularPapa":"156453664","celularMama":"156453620","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20255","fields": {"nombres":"Bianca","apellidos":"Rinaldi ","dni":"47985272","direccionPrincipal":"27 de abril 785","fechaDeNacimiento":"2007-07-17","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Contreras Lorena","actividadTutor":"Corredora y Martillera","telefonoHogar":"4243944","celularPapa":"153930463","celularMama":"153930464","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20256","fields": {"nombres":"Lara Martina","apellidos":"Roldan Gomez","dni":"48814306","direccionPrincipal":"Av.Colon 1153 Alberdi","fechaDeNacimiento":"2008-04-28","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Gomez Lorena E.","actividadTutor":"Abogada Policia","telefonoHogar":"4255289","celularPapa":"03525 15480298","celularMama":"03525 15456673","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20257","fields": {"nombres":"Denise Ayelen","apellidos":"Tapia","dni":"47662280","direccionPrincipal":"9 de Julio 1380 1D Alberdi","fechaDeNacimiento":"2008-01-10","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Carrizo Paola V.","actividadTutor":"Gestora","telefonoHogar":"","celularPapa":"155574548","celularMama":"152101776","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20258","fields": {"nombres":"Antonella","apellidos":"Tejeda ","dni":"47304744","direccionPrincipal":"Traful 878 Pque Atlantica","fechaDeNacimiento":"2008-02-14","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Tejeda Debora Valeria","actividadTutor":"Empleada","telefonoHogar":"","celularPapa":"","celularMama":"155916259","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20259","fields": {"nombres":"Constanza","apellidos":"Torres Ragot","dni":"48124044","direccionPrincipal":"Yavi 4232 Las Palmas","fechaDeNacimiento":"2008-01-11","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Albar Diaz Natalia","actividadTutor":"Empleada","telefonoHogar":"","celularPapa":"156847856","celularMama":"156847791","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20260","fields": {"nombres":"Ludmila","apellidos":"LAZARTE","dni":"48124386","direccionPrincipal":"Armando Sosa S/N 3ero.   1089  Sep.","fechaDeNacimiento":"2008-02-10","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"GARCÍA, Adriana Ysabel","actividadTutor":"Empleada","telefonoHogar":"4864461","celularPapa":"","celularMama":"153186886","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20261","fields": {"nombres":"Sofía","apellidos":"LEAL","dni":"48721156","direccionPrincipal":"Martín garcía 345 2º A . San Martín","fechaDeNacimiento":"2008-12-04","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"ZAMBRANO, Estela","actividadTutor":"Empleada","telefonoHogar":"","celularPapa":"153069989","celularMama":"153069986","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20262","fields": {"nombres":"Abril","apellidos":"MURAT SENKI","dni":"49557715","direccionPrincipal":"27 de Abril 980 2º  K . Alberdi","fechaDeNacimiento":"2009-06-16","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"SENKI, Tania","actividadTutor":"Empleada","telefonoHogar":"","celularPapa":"","celularMama":"152335170","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20263","fields": {"nombres":"Morena","apellidos":"SOSA RODRÍGUEZ","dni":"48532142","direccionPrincipal":"Urquiza 155 8º 51. Alberdi.","fechaDeNacimiento":"2009-01-08","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"RODRÍGUEZ, M. Belén","actividadTutor":"Ama de casa","telefonoHogar":"4238841","celularPapa":"153730106","celularMama":"153730098","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20264","fields": {"nombres":"Emma","apellidos":"STORNINI PANZARASA ","dni":"49557012","direccionPrincipal":"Caseros 1172 1º. Alberdi","fechaDeNacimiento":"2009-06-03","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"PANZARASA, Silvina","actividadTutor":"Empleada","telefonoHogar":"","celularPapa":"152201030","celularMama":"156681004","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20265","fields": {"nombres":"Milena","apellidos":"VERA ALMADA","dni":"49496784","direccionPrincipal":"José Fco Acosta 1775. Villa Argentina.","fechaDeNacimiento":"2009-06-11","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"ALMADA, Gisela","actividadTutor":"Docente","telefonoHogar":"4551238","celularPapa":"152390836","celularMama":"155157993","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20266","fields": {"nombres":"Agostina","apellidos":"Carrizo ","dni":"48532769","direccionPrincipal":"Mariano Mansilla 1222","fechaDeNacimiento":"2008-09-14","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Carrizo Gastón Francisco ","actividadTutor":"Protetista Dental ","telefonoHogar":"4224246","celularPapa":"","celularMama":"156334687","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20267","fields": {"nombres":"Simón Bruno del Valle","apellidos":"Banegas","dni":"48070898","direccionPrincipal":"Pje Florida 1380 PB D Providencia","fechaDeNacimiento":"2007-12-21","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Cravero Andrea","actividadTutor":"Farmaceútica","telefonoHogar":"4729615","celularPapa":"","celularMama":"152064119","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20268","fields": {"nombres":"Nicolás Ezequiel","apellidos":"Díaz López","dni":"46884453","direccionPrincipal":"Luz V. Mendez 350 Los Robles","fechaDeNacimiento":"2007-06-07","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"López, Natalia","actividadTutor":"Enfermera","telefonoHogar":"4850962","celularPapa":"","celularMama":"155921102","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20269","fields": {"nombres":"Mariano Alejandro","apellidos":"Escudero ","dni":"48884453","direccionPrincipal":"Fuencarral 630 Bella Vista","fechaDeNacimiento":"2008-05-02","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"López Olga","actividadTutor":"Ama de casa","telefonoHogar":"4693893","celularPapa":"","celularMama":"157406106","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20270","fields": {"nombres":"Lautaro Nahuel","apellidos":"Gomez","dni":"47820612","direccionPrincipal":"Floro Ugarte 3018 Primera Junta","fechaDeNacimiento":"2007-12-05","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Beas Ana","actividadTutor":"Empleada","telefonoHogar":"","celularPapa":"","celularMama":"152046801","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20271","fields": {"nombres":"Bruno Giuliano","apellidos":"Guzmán","dni":"47906815","direccionPrincipal":"Montes de Oca 3481 Brig. San Martín","fechaDeNacimiento":"2007-12-29","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Flores Sabrina","actividadTutor":"Empleada","telefonoHogar":"4574259","celularPapa":"","celularMama":"152178438","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20272","fields": {"nombres":"Luciano Martin","apellidos":"Lazarte ","dni":"47710510","direccionPrincipal":"Maria Curie 1624 Los Granados ","fechaDeNacimiento":"2007-11-12","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Avedaño Romina ","actividadTutor":"Empleada","telefonoHogar":"4650138","celularPapa":"","celularMama":"155050422","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20273","fields": {"nombres":"Jose Pablo","apellidos":"Lezcano ","dni":"48068249","direccionPrincipal":"Batalla de Cepeda 401 PB","fechaDeNacimiento":"2007-09-05","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Ledesma Natalia","actividadTutor":"Administrativa","telefonoHogar":"4885691","celularPapa":"","celularMama":"157019672","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20274","fields": {"nombres":"Tomas Agustin","apellidos":"Martinez Falconi","dni":"48124154","direccionPrincipal":"Los Aromos 563, Cuesta colorada","fechaDeNacimiento":"2008-01-24","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Falconi Carolina","actividadTutor":"Empleada","telefonoHogar":"","celularPapa":"","celularMama":"156868739","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20275","fields": {"nombres":"Lorenzo","apellidos":"Palena ","dni":"48457656","direccionPrincipal":"Corro 63, 1ro  7  Alberdi","fechaDeNacimiento":"2008-06-18","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Franco Maria ","actividadTutor":"Empleada","telefonoHogar":"4216900","celularPapa":"","celularMama":"153369023","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20276","fields": {"nombres":"Renzo Salvador","apellidos":"Pedraza ","dni":"47578059","direccionPrincipal":"Achabal Rodriguez 1320, Observatorio","fechaDeNacimiento":"2007-11-05","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Gutierrez Maria","actividadTutor":"Administrativa","telefonoHogar":"4687801","celularPapa":"","celularMama":"152621410","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20277","fields": {"nombres":"Lautaro Joaquin","apellidos":"Soria ","dni":"48068492","direccionPrincipal":"Fructuoso Rivera 1121 Observatorio","fechaDeNacimiento":"2007-09-20","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Navarro Mariela","actividadTutor":"Secretaria","telefonoHogar":"4866525","celularPapa":"","celularMama":"156581256","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20278","fields": {"nombres":"Franco Nahuel","apellidos":"Tapia","dni":"47662281","direccionPrincipal":"9 de Julio 1380, 1 D Alberdi","fechaDeNacimiento":"2008-01-10","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Carrizo Paola","actividadTutor":"Gestora","telefonoHogar":"","celularPapa":"","celularMama":"157452177","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20279","fields": {"nombres":"Ariana Carolina","apellidos":"Bargas","dni":"48068770","direccionPrincipal":"Duarte Quiroz 1676 5 A Alberdi","fechaDeNacimiento":"2007-09-25","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Mariscal Paula","actividadTutor":"Docente","telefonoHogar":"","celularPapa":"","celularMama":"156528855","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20280","fields": {"nombres":"Valentina","apellidos":"Bosque","dni":"46973241","direccionPrincipal":"Tarragona 1468, Crisol Sur","fechaDeNacimiento":"2007-07-25","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Besonne Fabiana","actividadTutor":"Farmaceutica","telefonoHogar":"4577090","celularPapa":"153322290","celularMama":"","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20281","fields": {"nombres":"Ana Alejandra","apellidos":"Casusa","dni":"47982827","direccionPrincipal":"Rio de las Letanias 1265 , Los Olmos Sur","fechaDeNacimiento":"2008-04-01","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Paez Olga","actividadTutor":"Comerciante","telefonoHogar":"4930914","celularPapa":"","celularMama":"154025518","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20282","fields": {"nombres":"Pia Agostina","apellidos":"Corzo","dni":"48457252","direccionPrincipal":"Av. Colon 848 6B Alberdi","fechaDeNacimiento":"2008-05-12","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Lucena Araceli","actividadTutor":"Empleada","telefonoHogar":"4220991","celularPapa":"","celularMama":"153097201","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20283","fields": {"nombres":"Constanza","apellidos":"Cudos Guzman","dni":"48329634","direccionPrincipal":"Av. COlon 731 3B Alberdi","fechaDeNacimiento":"2008-03-18","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Guzman Emilia","actividadTutor":"Medica","telefonoHogar":"4259046","celularPapa":"","celularMama":"156814487","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20284","fields": {"nombres":"Micaela","apellidos":"Garbiglia Aiassa","dni":"47913136","direccionPrincipal":"Avellaneda 38 , 8C Alberdi ","fechaDeNacimiento":"2008-02-28","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Aiassa Virginia","actividadTutor":"Docente Universitaria","telefonoHogar":"","celularPapa":"","celularMama":"153476936","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20285","fields": {"nombres":"Ana Victoria","apellidos":"Hernandez-Caridad","dni":"47908967","direccionPrincipal":"Co-Scalante 460 Casa 212 Las flores II","fechaDeNacimiento":"2008-03-10","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Caridad Maria Teresa","actividadTutor":"Ama de casa","telefonoHogar":"4620329","celularPapa":"0354715635272","celularMama":"","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20286","fields": {"nombres":"Lucia Soledad","apellidos":"Landriel","dni":"47820585","direccionPrincipal":"Juan De Barrientos 298 Las Violetas","fechaDeNacimiento":"2007-11-30","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Godoy Cecilia","actividadTutor":"Cocinera","telefonoHogar":"4850159","celularPapa":"","celularMama":"153064807","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20287","fields": {"nombres":"Camila de Lourdes","apellidos":"Melian Farias","dni":"48126215","direccionPrincipal":"Juan de Dios 5629 Ferreyra ","fechaDeNacimiento":"2008-05-16","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Farias Romina","actividadTutor":"Empleada","telefonoHogar":"4507681","celularPapa":"","celularMama":"153290160","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20288","fields": {"nombres":"Maia Ivana","apellidos":"Muñoz Vargas","dni":"47909221","direccionPrincipal":"Fructuoso Rivera 1127 P.B. Bº Observatorio","fechaDeNacimiento":"2007-11-28","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Vargas, Paola","actividadTutor":"ama de casa","telefonoHogar":"4685262","celularPapa":"","celularMama":"153519384","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20289","fields": {"nombres":"Ana Martina","apellidos":"Rocca","dni":"48123661","direccionPrincipal":"Mza 100 Casa 6, Urbanizacion Gandhi","fechaDeNacimiento":"2007-12-31","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Ardiles Laura","actividadTutor":"Tecnica Universitaria","telefonoHogar":"4830606","celularPapa":"","celularMama":"152438104","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20290","fields": {"nombres":"Amelia ","apellidos":"Rojo Jerez","dni":"48068982","direccionPrincipal":"Soldado Ruiz 2132 Bº San Martín","fechaDeNacimiento":"2007-11-04","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Jerez Ma Laura","actividadTutor":"jefe de servicio","telefonoHogar":"4725743","celularPapa":"152412142","celularMama":"","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20291","fields": {"nombres":"Antonella","apellidos":"Sanchez ","dni":"48069128","direccionPrincipal":"Ambrosio Funes 2394 dpto 10 Colon","fechaDeNacimiento":"2008-06-02","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Piña Natalia","actividadTutor":"Inspectora de Transito","telefonoHogar":"","celularPapa":"","celularMama":"152259009","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20292","fields": {"nombres":"Josefina","apellidos":"Villagra Wetzel","dni":"48123933","direccionPrincipal":"Gral B.Bustos 949 Cofico","fechaDeNacimiento":"2008-02-06","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Wetzel Thelma","actividadTutor":"Ama de casa","telefonoHogar":"4727298","celularPapa":"","celularMama":"152021556","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20293","fields": {"nombres":"Maria Constanza","apellidos":"Vocos Videla","dni":"48457066","direccionPrincipal":"Dean Funes 1132 T B  PB  A  Alberdi","fechaDeNacimiento":"2008-04-26","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Videla Mariana","actividadTutor":"Empleada Judicial","telefonoHogar":"4270092","celularPapa":"","celularMama":"152444939","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20294","fields": {"nombres":"Carolina","apellidos":"Watson","dni":"48068028","direccionPrincipal":"27 de abril 2491 Alto alberdi","fechaDeNacimiento":"2007-08-13","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Hernandez Mariana","actividadTutor":"Administrativa","telefonoHogar":"4809824","celularPapa":"","celularMama":"157019817","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20295","fields": {"nombres":"Valentin","apellidos":"Altamirano","dni":"47820824","direccionPrincipal":"santa cruz 1138 cupani","fechaDeNacimiento":"2008-01-21","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Muñoz Marina","actividadTutor":"empleada","telefonoHogar":"4684121","celularPapa":"15385900","celularMama":"156651271","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20296","fields": {"nombres":"Lautaro Germán","apellidos":"Bonini-Zarate","dni":"48124088","direccionPrincipal":"Santa Rosa 1812 - 2 - A","fechaDeNacimiento":"2008-01-24","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Zarate Daniela","actividadTutor":"Medico","telefonoHogar":"4870758","celularPapa":"155332830","celularMama":"156410181","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20297","fields": {"nombres":"Rodolfo Valentino","apellidos":"Calderón - Chazarreta","dni":"48124367","direccionPrincipal":"Luis de Azpeitia 1595","fechaDeNacimiento":"2008-01-17","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Chazarreta norma","actividadTutor":"Comerciante","telefonoHogar":"4885251","celularPapa":"156366101","celularMama":"153214172","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20298","fields": {"nombres":"Antonio","apellidos":"Estrada - Monge","dni":"48070928","direccionPrincipal":"Mendoza 131 -PR - B","fechaDeNacimiento":"2007-04-26","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Jofre Sergio Estrada","actividadTutor":"Abogado","telefonoHogar":"4239815","celularPapa":"156975492","celularMama":"152734836","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20299","fields": {"nombres":"Ignacio Tomás","apellidos":"Fernandez - Rios","dni":"47820919","direccionPrincipal":"Sargento Gomez 4752","fechaDeNacimiento":"2008-02-08","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Fernandez Anabella","actividadTutor":"Ama de Casa","telefonoHogar":"4847585","celularPapa":"152123367-tia","celularMama":"156410330-abuela","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20300","fields": {"nombres":"Bautista","apellidos":"Gamboa Benavidez","dni":"48324607","direccionPrincipal":"Carcano 1005 - T6 - 4 - c","fechaDeNacimiento":"2007-07-09","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Benavidez Fernanda","actividadTutor":"Ama de Casa","telefonoHogar":"4078751","celularPapa":"156369417","celularMama":"156558055","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20301","fields": {"nombres":"Bautista","apellidos":"Guanes Villar","dni":"48191720","direccionPrincipal":"Duarte Quiros 1621 - 1 - E","fechaDeNacimiento":"2007-07-24","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Villar Guillermo","actividadTutor":"Estudiante","telefonoHogar":"4871382","celularPapa":"152196954-tia","celularMama":"152196943","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20302","fields": {"nombres":"Facundo Jose","apellidos":"Guzman","dni":"48457493","direccionPrincipal":"Mendoza 342 ","fechaDeNacimiento":"2008-06-12","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Acevedo Silvana","actividadTutor":"Contador","telefonoHogar":"4221612","celularPapa":"156775215","celularMama":"154086279","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20303","fields": {"nombres":"Matías Ezequiel","apellidos":"Herrera","dni":"47352545","direccionPrincipal":"Epumer 5745","fechaDeNacimiento":"2008-05-22","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Insaurralde karina","actividadTutor":"Estudiante psicologia","telefonoHogar":"4844928","celularPapa":"156105606","celularMama":"156105406","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20304","fields": {"nombres":"Ignacio","apellidos":"Melgarejo","dni":"47710117","direccionPrincipal":"Santa Clara 2868","fechaDeNacimiento":"2007-07-20","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Guzman Andrea","actividadTutor":"Secretaria","telefonoHogar":"156616387","celularPapa":"156616000","celularMama":"156616387","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20305","fields": {"nombres":"Agustín","apellidos":"Olivera","dni":"48068125","direccionPrincipal":"Bv San Juan 775 - PB","fechaDeNacimiento":"2007-08-04","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Olivera Roberto","actividadTutor":"Desocupado","telefonoHogar":"4223859","celularPapa":"153747000","celularMama":"156795985","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20306","fields": {"nombres":"Joaquín","apellidos":"Pigliacampo","dni":"47000809","direccionPrincipal":"Dean Funes 1377 - PB","fechaDeNacimiento":"2007-09-22","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Pigliacampo juan","actividadTutor":"Licenciada en psicologia","telefonoHogar":"03543-427391","celularPapa":"156225771","celularMama":"156152428","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20307","fields": {"nombres":"Facundo Ismael","apellidos":"Tercero","dni":"47710964","direccionPrincipal":"Italia 2672","fechaDeNacimiento":"2008-04-29","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Luna Cecilia Mercedez ","actividadTutor":"Ingeniero en Sistema","telefonoHogar":"4898052","celularPapa":"153971171","celularMama":"153222747","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20308","fields": {"nombres":"Santino","apellidos":"Torcivia","dni":"47304529","direccionPrincipal":"Belisario Caraffa 5698","fechaDeNacimiento":"2008-01-04","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Villarreal Victoria","actividadTutor":"Tecnica en comercio","telefonoHogar":"03543-427391","celularPapa":"152384668","celularMama":"155168511","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20309","fields": {"nombres":"Guadalupe","apellidos":"Arias - Carballal","dni":"48123664","direccionPrincipal":"Juan B. Gaona 382","fechaDeNacimiento":"2007-12-20","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Carballal Ana","actividadTutor":"Comerciante","telefonoHogar":"4866456","celularPapa":"152157664","celularMama":"153734687","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20310","fields": {"nombres":"Luisina","apellidos":"Becerra","dni":"48328586","direccionPrincipal":"Belgrano 387 - 9 - A","fechaDeNacimiento":"2008-03-16","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Bustos Claudia","actividadTutor":"Comerciante","telefonoHogar":"4212622","celularPapa":"156577765","celularMama":"153216224","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20311","fields": {"nombres":"Ema","apellidos":"Bordenave","dni":"48329523","direccionPrincipal":"Iglesia Vieja 8932","fechaDeNacimiento":"2008-03-14","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Vogler Constanza","actividadTutor":"Licenciada en comunicacion Social","telefonoHogar":"","celularPapa":"152358960","celularMama":"153279124","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20312","fields": {"nombres":"Candela","apellidos":"Demarco","dni":"47001730","direccionPrincipal":"27 de abril 582 - 5 - D ","fechaDeNacimiento":"2007-11-05","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Alvado Silvia","actividadTutor":"Empleada","telefonoHogar":"","celularPapa":"153202435","celularMama":"156008134","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20313","fields": {"nombres":"Catalina Milagros","apellidos":"Dorsch","dni":"48123774","direccionPrincipal":"Av. Colon 1250 - 10 - C","fechaDeNacimiento":"2007-12-18","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Giolitto Mariela","actividadTutor":"Tecnica en Seguridad","telefonoHogar":"4237256","celularPapa":"158069925","celularMama":"158069931","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20314","fields": {"nombres":"Valentina","apellidos":"Gesi","dni":"47709007","direccionPrincipal":"La Falda 6020","fechaDeNacimiento":"2007-12-19","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Ledesma Marcela Clara","actividadTutor":"Empleada","telefonoHogar":"4934864","celularPapa":"153310976","celularMama":"156895666","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20315","fields": {"nombres":"Justina","apellidos":"Martinez - Gasse","dni":"48457329","direccionPrincipal":"Bv. San Juan 316 - 10 - A","fechaDeNacimiento":"2008-05-06","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Martinez Miguel Amel","actividadTutor":"Estudiante de Abogacia","telefonoHogar":"","celularPapa":"152002163-abuela","celularMama":"157520902","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20316","fields": {"nombres":"Ornella Uma","apellidos":"Olivera - Bernio","dni":"48124295","direccionPrincipal":"Bv. San Juan 870 - PB - B","fechaDeNacimiento":"2008-02-19","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Bernio Patricia","actividadTutor":"Instrumentista Quirurgica","telefonoHogar":"4264978","celularPapa":"","celularMama":"156778659","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20317","fields": {"nombres":"Valentina","apellidos":"Palmieri - Tejeda","dni":"47577962","direccionPrincipal":"Dante 1738 - PA","fechaDeNacimiento":"2007-09-22","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Tejeda Elizabeth","actividadTutor":"Contador Publico","telefonoHogar":"4802953","celularPapa":"","celularMama":"153415454","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20318","fields": {"nombres":"Carolina","apellidos":"Reynaga - Montañana","dni":"47304545","direccionPrincipal":"Del Comercio 754","fechaDeNacimiento":"2008-01-08","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Montañana Roxana","actividadTutor":"Medico","telefonoHogar":"","celularPapa":"152052962","celularMama":"152052961","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20319","fields": {"nombres":"Virginia","apellidos":"Romero - Favaro","dni":"48070821","direccionPrincipal":"San Juan 951 - 6 - A","fechaDeNacimiento":"2007-11-21","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Favaro Andrea","actividadTutor":"Analista de Sistema","telefonoHogar":"4250458","celularPapa":"156432232","celularMama":"153756832","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20320","fields": {"nombres":"Yamil Augusto","apellidos":"Abugauch","dni":"48533694","direccionPrincipal":"Achaval Rodriguez 2887 pa Alto alberdi cp: 5003","fechaDeNacimiento":"2008-10-08","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Valore Victoria","actividadTutor":"Estudiante","telefonoHogar":"","celularPapa":"153138505","celularMama":"153413848","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20321","fields": {"nombres":"Joaquin Maximiliano","apellidos":"Cabanillas Gimenez","dni":"49406937","direccionPrincipal":"Argandoña 3584 B: Sanvicente Cp: 5006","fechaDeNacimiento":"2009-04-06","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Gimenez Norma Beatriz","actividadTutor":"Profesora de Nivel Inicial","telefonoHogar":"","celularPapa":"157687222","celularMama":"156630567","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20322","fields": {"nombres":"Dylan Alan","apellidos":"Castillo","dni":"49404452","direccionPrincipal":"Fco. Gorruchaga 738 B° La Madrid Cp: 5010","fechaDeNacimiento":"2009-02-19","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Paci María Andrea","actividadTutor":"Ama de casa","telefonoHogar":"4808853","celularPapa":"153972942","celularMama":"152174436","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20323","fields": {"nombres":"Felipe Antonio","apellidos":"Gonzalez Lorenzo","dni":"49557137","direccionPrincipal":"Misiones 108 Qta. de santa Ana Cp: 5000","fechaDeNacimiento":"2008-06-18","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Lorenzo María Eugenia","actividadTutor":"Arquitecta","telefonoHogar":"4290454","celularPapa":"155299997","celularMama":"153031487","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20324","fields": {"nombres":"Matías","apellidos":"Hick","dni":"47908581","direccionPrincipal":"Colón 884 2° A B° alberdi Cp: 5000","fechaDeNacimiento":"2008-11-07","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Virginia Bohne ","actividadTutor":"Medica","telefonoHogar":"4114518","celularPapa":"156163967","celularMama":"156641321","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20325","fields": {"nombres":"Mateo Tomás","apellidos":"Moyano","dni":"48966874","direccionPrincipal":"La Rioja 960 PB B° Centro Cp: 5000","fechaDeNacimiento":"2008-07-08","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Figueroa María Alejandra","actividadTutor":"Administrativa en la Secretaria Gral. de la Gobernacion","telefonoHogar":"4230103","celularPapa":"156348036","celularMama":"153285619","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20326","fields": {"nombres":"Leonardo Esteban","apellidos":"Pardo","dni":"48599989","direccionPrincipal":"Mza. E Lote 15 B° Smata Cp: 5016","fechaDeNacimiento":"2008-09-29","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Reyna María Verónica","actividadTutor":"Abogada","telefonoHogar":"4622318","celularPapa":"152276104","celularMama":"156426963","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20327","fields": {"nombres":"Luca","apellidos":"Passera  Rovelli","dni":"49406949","direccionPrincipal":"Pueyrredón 157 1° D B| Nva. Córdoba Cp: 5000","fechaDeNacimiento":"2009-04-21","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Rovelli Constanza Victoria","actividadTutor":"Administrativa en colegio Nievas","telefonoHogar":"","celularPapa":"156642094","celularMama":"157562145","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20328","fields": {"nombres":"Romeo","apellidos":"Pino Meneses","dni":"49556460","direccionPrincipal":"Pje. Sto. Tomás 332 PB  B  B° Centro Cp: 5000","fechaDeNacimiento":"2009-06-05","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Meneses Sofia Valeria","actividadTutor":"Administrativa","telefonoHogar":"4223151","celularPapa":"152840500","celularMama":"153687600","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20329","fields": {"nombres":"Leonel Agustín","apellidos":"Romero","dni":"48532340","direccionPrincipal":"Emilio Achaval 1907 B° Bella Vista Cp:5000","fechaDeNacimiento":"2009-01-20","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Romero Pablo Germán","actividadTutor":"Desocupado","telefonoHogar":"","celularPapa":"157659446","celularMama":"","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20330","fields": {"nombres":"Feliciano","apellidos":"Tello Altamirano","dni":"49406774","direccionPrincipal":"Mza. 102 Casa 5 Altos de Don Bosco Natania 22","fechaDeNacimiento":"2009-04-06","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Tello Sebastian Raúl","actividadTutor":"Profesor superior en Piano","telefonoHogar":"","celularPapa":"155938081","celularMama":"156317594","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20331","fields": {"nombres":"Joaquín","apellidos":"Tinto Bonivardo","dni":"48534308","direccionPrincipal":"Pje. La Rioja 355 B° San Salvador Cp: 5000","fechaDeNacimiento":"2008-12-26","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Bonivardo Varónica","actividadTutor":"Estudiante","telefonoHogar":"4650958","celularPapa":"156867386","celularMama":"153455920","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20332","fields": {"nombres":"Agostina","apellidos":"Chapuis","dni":"49406124","direccionPrincipal":"Ingeniero Lopez 451 B B° Obrero Cp:5002","fechaDeNacimiento":"2009-02-25","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Massa Carla Alejandrina","actividadTutor":"Contadora Pública","telefonoHogar":"4870880","celularPapa":"157578346","celularMama":"155953286","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20333","fields": {"nombres":"Micaela Giovanna","apellidos":"Di Loro","dni":"49556543","direccionPrincipal":" Artigas 116 7° J B° Alberdi Cp: 5000","fechaDeNacimiento":"2009-05-04","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Brandolin Valeria","actividadTutor":"Profesora en Letras Modernas","telefonoHogar":"","celularPapa":"152090705","celularMama":"155731712","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20334","fields": {"nombres":"Sofía","apellidos":"Gonzalez Benitez","dni":"48723071","direccionPrincipal":"Simon Bolivar 665 PB 2 B° Guemes Cp: 5000","fechaDeNacimiento":"2009-01-02","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Benitez Alejandra","actividadTutor":"Asistente Administrativa","telefonoHogar":"4256939","celularPapa":"156826645","celularMama":"156826639","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20335","fields": {"nombres":"Constanza","apellidos":"Rodriguez Riberi","dni":"49496818","direccionPrincipal":" Mza. 77 Lote 19 B° Nvo. Jardin Cp: 5000","fechaDeNacimiento":"2009-06-16","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Riberi Ma. Ines","actividadTutor":"Bioquimica","telefonoHogar":"4648673","celularPapa":"153949888","celularMama":"157309347","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20336","fields": {"nombres":"Martina Antonella","apellidos":"Ledesma Mayorga","dni":"48455296","direccionPrincipal":"Paraguay 1122 PA B° Observatorio Cp: 5000","fechaDeNacimiento":"2008-09-04","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Ma. Eugenia Mayorga","actividadTutor":"Administrativa en Tarjeta Naranja","telefonoHogar":"4602414","celularPapa":"153970728","celularMama":"152524937","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20337","fields": {"nombres":"Agostina Rocío","apellidos":"Lozano","dni":"48722670","direccionPrincipal":"Coronel Olmedo 487 PB Dto. 10  B° Alberdi","fechaDeNacimiento":"2008-12-24","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Alvarez Maria Soledad","actividadTutor":"Maestranza en Museo Barrilete","telefonoHogar":"4284168","celularPapa":"","celularMama":"","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20338","fields": {"nombres":"Uma Maira","apellidos":"Merlo","dni":"49405828","direccionPrincipal":"Fco. Gurruchaga 650 B° La Madrid Cp: 5010","fechaDeNacimiento":"2009-02-20","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Tonini Eliana","actividadTutor":"Estudiante","telefonoHogar":"","celularPapa":"153252790","celularMama":"153714458","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20339","fields": {"nombres":"Bernabela","apellidos":"Peralta","dni":"49405547","direccionPrincipal":"Dr. Arturo Capdevila 1760 B° San Nicolás Cp: 5012","fechaDeNacimiento":"2009-03-29","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Peralta Daniela","actividadTutor":"Empleada de Comercio","telefonoHogar":"4783897","celularPapa":"157617750","celularMama":"155909649","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20340","fields": {"nombres":"Ana Valentina","apellidos":"Rodriguez Bigo","dni":"48533590","direccionPrincipal":"Diego de Onorato 81  A B° Uritorco Cp: 5003","fechaDeNacimiento":"2008-10-09","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Bigo Ma. Eugenia","actividadTutor":"Empleada en Tribunal de Falta","telefonoHogar":"","celularPapa":"155742363","celularMama":"156831174","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20341","fields": {"nombres":"Azul Martina","apellidos":"Ruiz Frizzarin","dni":"48532242","direccionPrincipal":"Castro Barros  Dto  15 D Torre 2 B° Providencia ","fechaDeNacimiento":"2009-02-04","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Frizzarin Carla","actividadTutor":"Arquitecta","telefonoHogar":"4714638","celularPapa":"152371320","celularMama":"152298751","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20342","fields": {"nombres":"Renata","apellidos":"Sahade Picone","dni":"49404017","direccionPrincipal":"Lavalleja 29 4° D Alberdi Cp:5000","fechaDeNacimiento":"2009-03-03","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Picone Roxana","actividadTutor":"Asesora de Seguro","telefonoHogar":"4232447","celularPapa":"156193475","celularMama":"153781854","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20343","fields": {"nombres":"Constanza","apellidos":"Villarreal Campos","dni":"47984618","direccionPrincipal":"San Martin 1585 5° A ","fechaDeNacimiento":"2009-01-28","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Campos Stela Maris","actividadTutor":"Administrativa en Vanesa Duran","telefonoHogar":"4718883","celularPapa":"153322159","celularMama":"156760781","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20344","fields": {"nombres":"Alfonsina","apellidos":"Visintini Planeta","dni":"48670155","direccionPrincipal":"Ñu. porá  2594  B|° Parque Capital Cp: 5011","fechaDeNacimiento":"2009-01-19","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"Planeta Paola Natalia","actividadTutor":"Empleada de Tarjeta Naranja","telefonoHogar":"4650541","celularPapa":"156518555","celularMama":"153443687","sexo":"Z"}
+},
+{
+"model": "escolar.alumno","pk":"20345","fields": {"nombres":"Matias","apellidos":"Taborda","dni":"47907869","direccionPrincipal":"9 DE JULIO 3178 ALTO ALBERDI CP 5003","fechaDeNacimiento":"2009-02-10","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"CAMINOS MARIA SOLEDAD","actividadTutor":"Contadora Publica","telefonoHogar":"","celularPapa":"155291078","celularMama":"156858912","sexo":"A"}
+},
+{
+"model": "escolar.alumno","pk":"20346","fields": {"nombres":"María Eugenia","apellidos":"Lezcano","dni":"49404736","direccionPrincipal":"BATALLA DE CEPEDA 401 PASO DE LOS ANDES CP 5000","fechaDeNacimiento":"2009-05-07","lugarDeNacimiento":"Córdoba","provincia":"Córdoba","pais":"Argentina","nombreTutor":"LEDESMA NATALIA CAROLINA","actividadTutor":"Administrativa en la Facultad de Abogacia","telefonoHogar":"4885641","celularPapa":"152252158","celularMama":"157019672","sexo":"Z"}
+}
+]

@@ -1,0 +1,33 @@
+{% extends 'curso/home_curso.html' %}
+{% load tg_curso %}
+{% block wrapper %}
+
+<div id='campos'>
+    {% menu_curso 1 curso user.id %}
+
+    <h2>Campos de Aprendizaje</h2>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Campo</th>
+                <th>Descripción</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for campo in curso.getCampos %}
+            <tr>
+                <td><a href="{% url 'escolar:mostrar_campo' campo.id %}">{{forloop.counter}}</a></td>
+                <td><a href="{% url 'escolar:mostrar_campo' campo.id %}">{{campo.titulo}}</a></td>
+                <td>{{campo.descripcion}}</td>
+                <td>{{campo.tipoDocente}}</td>                        
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}

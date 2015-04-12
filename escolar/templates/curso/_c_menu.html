@@ -1,0 +1,21 @@
+
+    <div class="hidden-xs">
+        <a href="{% url 'escolar:mostrar_alumnos_curso' curso.id %}" class="btn btn-sm {% if disabled == 0 %} btn-default disabled {% else %} btn-info {% endif %}">Alumnos</a>
+        <a href="{% url 'escolar:mostrar_campos_curso' curso.id %}" class="btn btn-sm {% if disabled == 1 %} btn-default disabled {% else %} btn-info {% endif %}">Campos de Aprendizaje</a>
+        <a href="{% url 'escolar:matricular_curso' curso.id %}" class="btn btn-sm {% if disabled == 2 %} btn-default disabled {% else %} btn-info {% endif %}">Matricular Alumnos</a>
+        {% if gestor %}
+        <a href="{% url 'escolar:mostrar_docentes_curso' curso.id %}" class="btn btn-sm {% if disabled == 3 %} btn-default disabled {% else %} btn-info {% endif %}">Matricular Docente</a>
+        {% endif %}
+    </div>
+
+    <li class="dropdown visible-xs">
+        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Seleccionar: <span class="caret"></span></a>
+        <ul class="dropdown-menu btn btn-sm" role="menu">
+            <li><a href="{% url 'escolar:mostrar_alumnos_curso' curso.id %}" class="{% if disabled == 0 %}disabled {% endif %}">Alumnos</a></li>
+            <li><a href="{% url 'escolar:mostrar_campos_curso' curso.id %}" class="{% if disabled == 1 %}disabled {% endif %}">Campos de Aprendizaje</a></li>
+            <li><a href="{% url 'escolar:matricular_curso' curso.id %}" class="{% if disabled == 2 %}disabled {% endif %}">Matricular Alumnos</a></li>
+             {% if gestor %}
+            <li><a href="{% url 'escolar:mostrar_docentes_curso' curso.id %}" class="{% if disabled == 2 %}disabled {% endif %}">Matricular Docente</a></li>
+            {% endif %}
+        </ul>
+    </li>

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load tg_docente %}
+
+{% block header%}
+
+{% endblock %}
+
+{% block contenido %}
+<div class="page-header">
+    <h1>Sistema de Nivel Inicial Amparo de María.</h1>    
+</div>  
+
+<h3>Año seleccionado: <span class="year_selector" id="selector"><span id="anio_informes">{{ciclo_actual}} </span></span>
+</h3>
+
+
+    
+    <div id="page-wrapper">  
+        {% block  wrapper %}
+        {% endblock %}       
+    </div>
+
+
+
+
+{% endblock %}
+
+{% block scripts%}
+
+<script>
+    $(function() {
+
+        $( "#anio_informes" ).click(function() {
+            var htmlString = $( '#span_formulario' ).html();
+            $( '#selector' ).html( htmlString );
+        });
+
+
+    });   
+
+</script>
+{% endblock %}

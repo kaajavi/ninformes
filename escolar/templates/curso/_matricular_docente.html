@@ -1,0 +1,41 @@
+{% extends 'curso/home_curso.html' %}
+{% block wrapper %}
+
+<div id='docentes'>
+    
+
+    <h2>Matricular docente</h2>
+    <form action="{% url 'escolar:matricular_docente' curso.id %}" method="post">
+        {% csrf_token %}     
+    
+    <label for="tipo_matricula">* Docente:</label> 
+        <select class="form-control" id="docente_id" name="docente_id" placeholder="Requerido">
+            <option value="0" >Seleccionar docente:</option>
+            {% for docente in docentes %}
+            <option value="{{docente.id}}" >{{docente.nombreCompleto}}</option>                        
+            {% endfor %}
+        </select> 
+        
+    <label for="tipo_matricula">* Tipo de Matricula:</label> 
+        <select class="form-control" id="tipo_matricula" name="tipo_matricula" placeholder="Requerido">
+            {% for val in tipo_matricula %}
+            <option value="{{val.0}}" >{{val.1}}</option>                        
+            {% endfor %}
+        </select> 
+        
+    <label for="situacion">* Situación:</label> 
+        <select class="form-control" id="situacion" name="situacion" placeholder="Requerido">
+            {% for val in situacion %}
+            <option value="{{val.0}}" >{{val.1}}</option>                        
+            {% endfor %}
+        </select> 
+        <br>
+        <input class="btn btn-lg btn-primary btn-success pull-right btn-margin" name="si_matricular" type="submit" value="Matricular"/>
+        
+        <a class="btn btn-lg btn-primary btn-info pull-right btn-margin" href="{% url 'escolar:mostrar_docentes_curso' curso.id %}" > Volver </a>
+    </form>
+    
+
+</div>
+
+{% endblock %}

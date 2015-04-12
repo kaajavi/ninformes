@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+
+
+{% block header%}
+<link href="{{STATIC_URL}}css/selector_doble.css" media="screen" rel="stylesheet" type="text/css"/>
+
+
+{% endblock %}
+
+{% block contenido %}
+<div class="page-header">
+    <h1>{{curso.toString}}</h1>    
+</div>  
+
+<div id="page-wrapper">    
+    <br>
+    {% block wrapper %}
+    {% endblock %}
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block scripts%}
+
+<script src="{{STATIC_URL}}js/jquery.multi-select.js"></script>
+<script src="{{STATIC_URL}}js/tinysort.js"></script>
+
+
+
+
+<script>
+    $(function() {   
+        //PARA VER Y OCULTAR LA LISTA DE DESMATRICULADOS
+        $('#inactivos_si').hide();
+        $('body').on('click', '#no_ver_inactivos', function(e){
+            $('#inactivos_no').hide();
+            $('#inactivos_si').show();
+        });
+        $('body').on('click', '#ver_inactivos', function(e){
+            $('#inactivos_no').show();
+            $('#inactivos_si').hide();
+        });
+        
+        
+        //PARA LA LISTA DE MATRICULACIONES
+        $('body').on('click', '.transferible', function(e){
+            var myil = '#'+this.id;
+            console.log("Inscribir: " + myil);
+            if ($(myil).hasClass('matriculado')){
+                $(myil).removeClass('matriculado');
+                $(myil).removeClass('matricular');
+                $("#inscriptos").append($(myil));                    
+            }else{
+                $(myil).addClass('matriculado');
+                $(myil).addClass('matricular');
+                $("#matriculados").append($(myil));
+            }
+            tinysort('ul#matriculados>li');
+            tinysort('ul#inscriptos>li');                
+            console.log($(myil));
+            var cant = 0;
+            $(".matricular").each(function() {                
+                cant += 1;
+            });            
+            if (cant>0){
+                $("#sendMatricular").removeProp('disabled');
+            }else{
+                $("#sendMatricular").prop('disabled', true);
+            }
+        });
+
+        $('body').on('click', '#sendMatricular', function(e){
+            var mvar = "[";
+            var cant = 0;
+            $(".matricular").each(function() {
+                console.log($(this).attr('id'));
+                mvar += $(this).attr('id') + ",";
+                cant += 1;
+            });            
+            mvar = mvar.slice(0,-1) + "]";
+            
+            $('#input_matricular').attr('value',mvar);
+            $( "#form_matricular" ).submit();
+        });
+
+
+        $( "#from" ).datepicker({
+            defaultDate: "+1w",
+            changeMon$th: true,
+            numberOfMonths: 3,
+            onClose: function( selectedDate ) {
+                $( "#to" ).datepicker( "option", "minDate", selectedDate );
+            }
+        });
+        $( "#to" ).datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 3,
+            onClose: function( selectedDate ) {
+                $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+            }
+        });
+
+        $("#button_filters").click(function(){
+            $("#filters").toggle('slow');
+        });
+        $("#filters").hide();
+
+        $('body').on('keyup', '#search_alumno', function(objEvent){
+
+
+            var items = "";
+            $('ul#matriculados li').each(function (i,li) {
+                console.log(li.id)
+                items=items+li.id+"-";
+
+            });
+            console.log(items)
+
+            texto = $("#search_alumno").text();
+            // Limpio el estado de los pedidos
+            $( "#ajax-status" ).empty();
+            // Variable con los datos a mandar
+
+            letra = "" + objEvent.which
+            var search= false;                        
+            if (letra>31
+                &&
+                letra<127||(letra==8) ){
+                var search= true;                        
+
+            }
+            // Pedido ajax
+            if(search){
+                var data={
+                    texto_buscado:$(this).val(),
+                    idx_curso:{{curso.id}},
+                    seleccionados:items,
+                        csrfmiddlewaretoken:'{{csrf_token}}',
+            };
+                $.ajax(
+                    {
+                        url: '{% url 'escolar:filtrar_alumnos' %}',
+                        type: "post",
+                        data:data,
+                        dataType: "html",
+                        error: function(data){
+                        alert("Hubo un error en la consulta\n" + data.toString());
+                    },
+                    success: function( strData ){
+                    $("#contenedor_alumnos_escuela").html( strData );                            
+                }
+            }							
+            );
+        }
+
+                     }
+                    );
+
+
+    });
+
+</script>
+{% endblock %}

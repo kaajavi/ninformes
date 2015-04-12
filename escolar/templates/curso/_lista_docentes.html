@@ -1,0 +1,41 @@
+{% extends 'curso/home_curso.html' %}
+{% load tg_curso %}
+{% block wrapper %}
+
+<div id='docentes'>
+    {% menu_curso 3 curso user.id %}
+
+    <h2>Docentes</h2>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Docente</th>
+                <th>Tipo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for matricula in docentesMatriculados %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{matricula.docente.nombreCompleto}}</td>
+                <td>{{matricula.tipoDocente_str}} ({{matricula.situacion_str}})</td>                
+                <td>                
+                <a  title="Desmatricular" class="btn btn-xs btn-default" href="{% url 'escolar:desmatricular_docente' matricula.id %}">
+                        <i class="fa fa-level-down"></i>
+                </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <a class="btn btn-lg btn-primary btn-primary pull-right btn-margin" href="{% url 'escolar:matricular_docente' curso.id %}">
+            <i class="fa fa-plus"></i> Matricular Docente
+        </a>  
+    
+</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base_errores.html' %}
+{% load staticfiles %}
+
+
+{% block contenido %}
+<div class="page-header">
+<h1>Lo siento, no encontramos la página solicitada</h1>
+</div>
+<img type="image/png" src="{% static 'images/error-img.png' %}"/>
+<a class="navbar-brand visible-xs" href="{%url 'escolar:home' %}">Volver al inicio</a>
+
+{% endblock %}

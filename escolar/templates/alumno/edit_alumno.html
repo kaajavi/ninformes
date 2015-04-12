@@ -1,0 +1,76 @@
+<!doctype html>
+
+{% extends 'base.html' %}
+
+{% block header%}
+
+{% endblock %}
+
+{% block contenido %}
+<div class="page-header">    
+    <h1>Editar Alumno</h1>
+    <h2>{{alumno}}</h2>
+</div>  
+<div class="jumbotron">
+    <!-- TODO: arreglar esto -->
+    <form action="{% url 'escolar:editar_alumno' alumno.id curso.id %}"  method="post">
+        {% csrf_token %}        
+        
+            <label for="id_apellidos" >* Apellidos:</label> 
+            <input class ='form-control {% if errores.apellidos %} alert-danger {% endif %} ' id="id_apellidos" maxlength="256" name="apellidos" placeholder="Requerido" type="text" value='{{alumno.apellidos}}' /> 
+        
+        <label for="id_nombres">* Nombres:</label> 
+        <input class ='form-control {% if errores.nombres %} alert-danger {% endif %} ' id="id_nombres" maxlength="256" name="nombres" placeholder="Requerido" type="text" value='{{alumno.nombres}}' /> 
+
+        <label for="id_dni">* D.N.I. </label> {% if errores.dni %} Debe ser único!{% endif %}
+        <input class ='form-control {% if errores.dni %} alert-danger {% endif %} ' id="id_dni" name="dni" placeholder="Requerido" type="number" value='{{alumno.dni}}' /> 
+
+        <label for="id_sexo">* Sexo:</label> 
+        <select class="form-control" id="id_sexo" name="sexo" placeholder="Requerido">
+            <option value="" selected="selected">---------</option>
+            <option value="A" {% if alumno.sexo == "A" %} selected {% endif %}>Varón</option>
+            <option value="Z" {% if alumno.sexo == "Z" %} selected {% endif %}>Mujer</option>
+        </select> 
+
+        <label for="id_direccionPrincipal">* Dirección Postal:</label> 
+        <input class="form-control" id="id_direccionPrincipal" maxlength="256" name="direccionPrincipal" placeholder="Requerido" type="text" value='{{alumno.direccionPrincipal}}' /> 
+
+        <label for="id_direccionSecundaria">Dirección Postal secundaria:</label> 
+        <input class="form-control" id="id_direccionSecundaria" maxlength="256" name="direccionSecundaria" type="text" value='{{alumno.direccionSecundaria}}'/> 
+        <label for="id_fechaDeNacimiento">* Fecha de Nacimiento:</label> 
+        <input class="form-control" id="id_fechaDeNacimiento" name="fechaDeNacimiento" placeholder="Requerido" type="text" value='{{alumno.fechaDeNacimiento}}'/> 
+        <label for="id_lugarDeNacimiento">* Ciudad de Nacimiento:</label> 
+        <input class="form-control" id="id_lugarDeNacimiento" maxlength="256" name="lugarDeNacimiento" placeholder="Requerido" type="text" value='{{alumno.lugarDeNacimiento}}'/> 
+        <label for="id_provincia">* Provincia de Nacimiento:</label> 
+        <input class="form-control" id="id_provincia" maxlength="256" name="provincia" placeholder="Requerido" type="text" value='{{alumno.provincia}}'/> 
+        <label for="id_pais">* País de Nacimiento:</label> 
+        <input class="form-control" id="id_pais" maxlength="256" name="pais" placeholder="Requerido" type="text" value='{{alumno.pais}}'/> 
+        <label for="id_nombreTutor">* Nombre de Tutor Legal (completo):</label> 
+        <input class="form-control" id="id_nombreTutor" maxlength="256" name="nombreTutor" placeholder="Requerido" type="text" value='{{alumno.nombreTutor}}'/> 
+        <label for="id_actividadTutor">* Actividad de Tutor Legal:</label> 
+        <input class="form-control" id="id_actividadTutor" maxlength="256" name="actividadTutor" placeholder="Requerido" type="text" value='{{alumno.actividadTutor}}'/> 
+        <label for="id_telefonoHogar">* Teléfono:</label> 
+        <input class="form-control" id="id_telefonoHogar" maxlength="256" name="telefonoHogar" placeholder="Requerido" type="text" value='{{alumno.telefonoHogar}}'/> 
+        <label for="id_celularPapa">* Celular Papa:</label> 
+        <input class="form-control" id="id_celularPapa" maxlength="256" name="celularPapa" placeholder="Requerido" type="text" value='{{alumno.celularPapa}}'/> 
+        <label for="id_celularMama">* Celular Mama:</label> 
+        <input class="form-control" id="id_celularMama" maxlength="256" name="celularMama" placeholder="Requerido" type="text" value='{{alumno.celularMama}}'/> 
+        <br>
+        <input type="submit" class="btn btn-lg btn-primary btn-info pull-right btn-margin" name="no_volver" value="Guardar" />
+        <a class="btn btn-lg btn-primary btn-danger pull-right btn-margin" href="{% url 'escolar:mostrar_alumnos_curso' curso.id %}" > Volver </a>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts%}
+
+
+<script type="text/javascript">           
+    $(function() {
+        $( "#id_fechaDeNacimiento" ).datepicker({
+            dateFormat: "dd/mm/yy",
+        });
+    });        
+
+</script>
+{% endblock %}

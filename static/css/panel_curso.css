@@ -1,0 +1,204 @@
+
+/*VERDES*/
+
+.panel-green {
+    border-color: rgb(92, 184, 92);
+}
+
+.panel-green .panel-heading {
+    border-color: rgb(92, 184, 92);
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.panel-green a {
+    color: rgb(92, 184, 92);
+}
+
+.panel-green a:hover {
+    color: rgb(61, 139, 61);
+}
+
+
+.panel-green-live {
+    border-color: rgba(92, 184, 92,0.75);
+}
+
+.panel-green-live .panel-heading {
+    border-color: rgba(92, 184, 92,0.75);
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.panel-green-live a {
+    color: rgb(92, 184, 92);
+}
+
+.panel-green-live a:hover {
+    color: rgb(61, 139, 61);
+}
+
+/*ROJOS*/
+
+.panel-red {
+    border-color: rgb(217, 83, 79);
+}
+
+.panel-red .panel-heading {
+    border-color: rgb(217, 83, 79);
+    color: #fff;
+    background-color: rgb(217, 83, 79);
+}
+
+.panel-red a {
+    color: rgb(217, 83, 79);
+}
+
+.panel-red a:hover {
+    color: rgb(181, 43, 39);
+}
+
+
+
+.panel-red-live {
+    border-color: rgba(217, 83, 79, 0.75);
+}
+
+.panel-red-live .panel-heading {
+    border-color: rgba(217, 83, 79, 0.75);
+    color: #fff;
+    background-color: rgba(217, 83, 79, 0.75);
+}
+
+.panel-red-live a {
+    color: rgb(217, 83, 79);
+}
+
+.panel-red-live a:hover {
+    color: rgb(181, 43, 39);
+}
+
+
+/* AMARILLOS */
+.panel-yellow {
+    border-color: rgb(240, 173, 78);
+}
+
+.panel-yellow .panel-heading {
+    border-color: rgb(240, 173, 78);
+    color: #fff;
+    background-color: rgb(240, 173, 78);
+}
+
+.panel-yellow a {
+    color: rgb(240, 173, 78);
+}
+
+.panel-yellow a:hover {
+    color: rgb(223, 138, 19);
+}
+
+.panel-yellow-live {
+    border-color: rgba(240, 173, 78);
+}
+
+.panel-yellow-live .panel-heading {
+    border-color: rgba(240, 173, 78, 0.75);
+    color: #fff;
+    background-color: rgba(240, 173, 78, 0.75);
+}
+
+.panel-yellow-live a {
+    color: rgb(240, 173, 78);
+}
+
+.panel-yellow-live a:hover {
+    color: rgb(223, 138, 19);
+}
+
+
+/*AZULES */
+
+.panel-blue {
+    border-color: rgb(66, 139, 202);
+}
+
+
+.panel-blue .panel-heading {
+    border-color: rgb(66, 139, 202);
+    color: #fff;
+    background-color: rgb(66, 139, 202);
+}
+
+.panel-blue a {
+    color: rgb(66, 139, 202);
+}
+
+.panel-blue a:hover {
+    color: rgb(52, 105, 171);
+}
+
+.panel-blue-live {
+    border-color: rgba(66, 139, 202, 0.75);
+}
+
+
+.panel-blue-live .panel-heading {
+    border-color: rgba(66, 139, 202, 0.75);
+    color: #fff;
+    background-color: rgba(66, 139, 202, 0.75);
+}
+
+.panel-blue-live a {
+    color: rgba(66, 139, 202, 0.75);
+}
+
+.panel-blue-live a:hover {
+    color: rgba(52, 105, 171, 0.75);
+}
+
+
+
+/* DEFAULT - GRIS */
+
+
+.panel-gray {
+    border-color: rgb(128, 128, 128);
+}
+
+.panel-gray .panel-heading {
+    border-color: rgb(128, 128, 128);
+    color: #fff;
+    background-color: rgb(128, 128, 128);
+}
+
+.panel-gray a {
+    color: rgb(128, 128, 128);
+}
+
+.panel-gray a:hover {
+    color: rgb(77, 77, 77);
+}
+
+
+
+
+.panel-gray-live {
+    border-color: rgba(128, 128, 128, 0.75);
+}
+
+.panel-gray-live .panel-heading {
+    border-color: rgba(128, 128, 128, 0.75);
+    color: #fff;
+    background-color: rgba(128, 128, 128, 0.75);
+}
+
+.panel-gray-live a {
+    color: rgb(128, 128, 128);
+}
+
+.panel-gray-live a:hover {
+    color: rgb(77, 77, 77);
+}
+
+
