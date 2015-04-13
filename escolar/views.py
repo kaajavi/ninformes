@@ -555,7 +555,7 @@ def matricular_alumnos(request):
 
 
 
-@loguin_required(loguin_url="/loguearse")
+@login_required(login_url="/loguearse")
 def arreglar_nombres(request):
     alumnos = Alumno.objects.all()
     for alumno in Alumno.objects.all():    
