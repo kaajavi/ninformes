@@ -48,7 +48,7 @@ class Docente(User):
             saludo = saludo + "profe "
         if self.sexo == 'M':
             saludo = saludo + u"seño "        
-        saludo = saludo        
+        saludo = saludo + self.first_name        
         return saludo
     
     def getCursos(self, ciclo):
