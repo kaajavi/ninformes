@@ -553,3 +553,15 @@ def matricular_alumnos(request):
             
     return redirect('/')
 
+
+
+@loguin_required(loguin_url="/loguearse")
+def arreglar_nombres(request):
+    alumnos = Alumno.objects.all()
+    for alumno in Alumno.objects.all():    
+        if not alumno.nombres.isTitle():
+            alumno.nombres = alumno.nombres.title()
+        if not alumno.apellidos.isTitle():
+            alumno.apellidos = alumno.apellidos.title()
+        alumno.save()
+        
