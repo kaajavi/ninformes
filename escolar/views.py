@@ -11,9 +11,9 @@ from django.contrib.auth.decorators import login_required
 
 from escolar.models import Docente, Curso, Alumno, MatriculaAlumnado, Campo, MatriculaDocentes, SITUACION_DOCENTE, TIPO_MATRICULA_DOCENTE
 from escolar.forms import AlumnoAddForm, DivErrorList, AlumnoEditForm
+
 ##Errores
 from django.http import Http404
-
 
 ##BASE DE DATOS
 from django.db.models import Q
@@ -191,7 +191,7 @@ def mostrar_alumnos_curso(request, id_curso):
     tabs_control='0'
     try:
         curso = Curso.objects.get(pk=id_curso)  
-    except Poll.DoesNotExist:
+    except Curso.DoesNotExist:
         raise Http404("El curso no existe")
   
     matriculados = MatriculaAlumnado.objects.filter(curso=curso).exclude(activo=False)
@@ -552,3 +552,4 @@ def matricular_alumnos(request):
             return redirect('escolar:matricular_curso', id_curso=id_curso)
             
     return redirect('/')
+
