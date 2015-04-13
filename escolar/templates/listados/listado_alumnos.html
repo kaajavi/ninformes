@@ -9,47 +9,97 @@
                 size: a4 portrait;
                 @frame image_frame {           /* Static Frame */
                     -pdf-frame-content: image_content;
-                    left: 50pt; width: 150pt; top: 10pt; height: 50pt;
+                    left: 50pt; width: 50pt; top: 10pt; height: 50pt;
                     text-align: center;
                     border: 0pt solid white;
                 }
                 @frame header_frame {           /* Static Frame */
                     -pdf-frame-content: header_content;
-                    left: 250pt; width: 512pt; top: 20pt; height: 20pt;
+                    left: 250pt; width: 312pt; top: 20pt; height: 20pt;
                     text-align: center;
                     border: 0pt solid white;
                 }
-                
+                @frame header_frame {           /* Static Frame */
+                    -pdf-frame-content: header_title;
+                    left: 150pt; width: 412pt; top: 40pt; height: 20pt;
+                    text-align: center;
+                    border: 0pt solid white;
+                }
+                @frame header_frame {           /* Static Frame */
+                    -pdf-frame-content: header_div;
+                    left: 50pt; width: 512pt; top: 60pt; height: 5pt;
+                    text-align: center;
+                    border: 0pt solid white;
+                }
+
+                @frame header_table {           /* Static Frame */
+                    -pdf-frame-content: header_table;
+                    left: 50pt; width: 512pt; top: 65pt; height: 15pt;
+                    text-align: center;
+                    border: 0pt solid white;
+                }
+
                 @frame content_frame {          /* Content Frame */
-                    left: 50pt; width: 512pt; top: 50pt; height: 632pt;
+                    left: 50pt; width: 512pt; top: 80pt; height: 720pt;
                     border: 0pt solid white;
                 }
                 @frame footer_frame {           /* Another static Frame */
                     -pdf-frame-content: footer_content;
-                    left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+                    left: 50pt; width: 512pt; top: 800pt; height: 40pt;
                     border: 0pt solid white;
+                    
                 }
             }
-            .diez{
-                width: 10%;
-                text-align: center;
-                vertical-align: middle;
 
+            .table th {         
+                vertical-align:middle; 
+                text-align:center;
+                border: 1pt solid black;
+                height: 60pt;
+                padding-top: 2px;
+            }
+            .table td {         
+                vertical-align:middle; 
+                text-align:left;
+                border: 1pt solid #CCCCCC;
+                padding-top: 2px;
+                padding-left: 3px;
+            }
+            .td_left {                         
+                text-align:left;                
+            }
+            .td_center {         
+                text-align:center;                
             }
 
-            .header_content{                
-                text-align: left;
-                vertical-align: middle;
+            .bg-grey{
+                background:#EEEFFF;
+            }
 
+            .td_10 {    
+                width:10%;                                 
+                vertical-align:middle; 
+               /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/   
             }
-            .image{
-                float: left;
-                width: 30%;
+            .td_20 {    
+                width:20%;                                 
+                vertical-align:middle; 
+               /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/   
             }
-            .titulo{
-                float: left;
-                margin: auto;
-                width: 60%;
+            .td_30 {    
+                width:30%;                                 
+                vertical-align:middle; 
+               /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/   
+            }
+            .td_40 {    
+                width:40%;                                 
+                vertical-align:middle; 
+               /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/   
+            }
+            .td_50 {    
+                width:50%;                                 
+                vertical-align:middle; 
+               /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/   
             }
 
         </style>
@@ -59,67 +109,82 @@
         <!-- Content for Static Frame 'header_frame' -->
         <div id="image_content">
             <img alt="Embedded Image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACVCAYAAACU0CLeAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
-WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wIUDg4IEMEfRAAAABl0RVh0Q29tbWVudABDcmVhdGVk
-IHdpdGggR0lNUFeBDhcAAATHSURBVHja7Z3bcuQgDESxy///y+zD7my5XGMbGEAtcboqL8k4MdKh
-JfAlKSGEEEIIIYQQQq/aKj+fCdkSeQaEgCrK2U6cUEopHbgD5eBXEFIGBU0CGjoCSgMCBAQICBAQ
-ICBAQICAAAEBAgIEBAgIEBAgIEBAgIAAAQECAgQECAgQECAgQECAgAABAQICBAQIIbVt/s758BbI
-z/OW22b/7OW3c/ic+9P53f3sc6zFuHY1AN5m0+czig/gXs+9xhnOn7VwlN2DC3guB6Vglxw3MkY7
-ENidfwkk30pOyB7hPLCnullaZ637hNJEnfuBp2Pe4hPCEUoGmbN2P3A9t1KYz+MqGd/oGOwKgVQI
-xKxScHfs0/hmjN0MBNWZ3uoEpa5Qe9ysGB3eEqC2b1ADvrJc7yzOhMP7yiY0CECwGAiWW6+ryI0j
-PO3b4waUBhRx1VAy+9524pBzRyi59Ly6fVManK3JAcHADVBAR/hsO7ckn/IQpFmsTf7IpnFFqKSv
-NcwuCy0AjLophWbRaCavXlp21YTOvEeB/sLRZWircrQKJIda8H8N/Ox7BlqvgVhdO3FVGmoS0qs8
-rL5f4e5JJ7SAI/QCAJAWXz4iQKA/iNIj9Hhy6fqIGAnGEZBHEEbN3t5NY2SHCeUIIxMVvcxQGgoc
-ZYVeY1cI9shA/3qZeJWGM5wj9Excz9+lvskl836EFfoN5fHuVgBc1/znr1E23zMhs+5MmgXPoegA
-396kUvLauvMx35J//n7pwzS1/UNrokscaGTfcqhB8HbcL0EYPRtbX6d3HtMdxKOXsYcyBMrr+Ls7
-mWpvsrG498K8NJTYba8AzH5G8u61Ny3vTLKYCIc1AHe9wMzlYC0wtbO4dkzXY2a44XAQRga5Jgk1
-L7HqNYuv59ECUKiXaVnV99Yue8T59rwxNsw+gkJPghYDAQECAgQECEgTBF5+BQg/7ScAoR8QttIg
-3+0aRobQSv/Guo0GYUsp5dbZaZEUawiNlUuh2K2SUvpPr3peuaRMPM/wXynLrbt3re8Q6FEinn73
-7As+A8tCsSMcjfDkRoiGJrrm782GULkspB+S2c0VkL0bTO8RULzlY/PqAemVhZ6OsNGR+9s7oDSg
-bs0iTWOQJhFHQF0dAVcI4AY4AurqCOm0lNxwBX9uMNIRWE6KLxev6vVcw9aDStTFjU1Lw13zSIkY
-6wbdJh7NIhrmCLiCMzeY5Qg0jqIN4pRVQ+Lq5OgGceudsFknTIkQLAkWzSIlQrAkzHKEbwTjDO0Q
-DNunYfmIpjkCriDuBjNBAAZhCKxLA82jYXNo6Qh3ZOMMzxBMuZBnMSeBQQwCKxCAQQwCSxCAQQgC
-axCWh0EFAgUQloVBCQIVEJaDQQ0CJRCWgUERAjUQbmH4S0QIACQhUAThf+IjucPDbqHMXd/Km7wh
-SsVDKZCKv/pu/7eAuSgVN6Ugq8bdy2UfV+6g2hBGAMFFI6neEEYBQbqR9NILRAFBzh08u0AEEB7d
-YQYQLwC4i+2R4mn7l6ghQDwA4D9ozvVmwV2AKATA7WsBolCdC5NUDUQFAK7jGe320VyRtNJ/ERwa
-gKgg1CYoN8YlR4tf9BvKc8ex5oXiFh6KPPE4HCGASyw3+1e3uExcEELoqj/Kj8N7o+t3uQAAAABJ
-RU5ErkJggg==" />
-            
+                                           WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wIUDg4IEMEfRAAAABl0RVh0Q29tbWVudABDcmVhdGVk
+                                           IHdpdGggR0lNUFeBDhcAAATHSURBVHja7Z3bcuQgDESxy///y+zD7my5XGMbGEAtcboqL8k4MdKh
+                                           JfAlKSGEEEIIIYQQQq/aKj+fCdkSeQaEgCrK2U6cUEopHbgD5eBXEFIGBU0CGjoCSgMCBAQICBAQ
+                                           ICBAQICAAAEBAgIEBAgIEBAgIEBAgIAAAQECAgQECAgQECAgQECAgAABAQICBAQIIbVt/s758BbI
+                                           z/OW22b/7OW3c/ic+9P53f3sc6zFuHY1AN5m0+czig/gXs+9xhnOn7VwlN2DC3guB6Vglxw3MkY7
+                                           ENidfwkk30pOyB7hPLCnullaZ637hNJEnfuBp2Pe4hPCEUoGmbN2P3A9t1KYz+MqGd/oGOwKgVQI
+                                           xKxScHfs0/hmjN0MBNWZ3uoEpa5Qe9ysGB3eEqC2b1ADvrJc7yzOhMP7yiY0CECwGAiWW6+ryI0j
+                                           PO3b4waUBhRx1VAy+9524pBzRyi59Ly6fVManK3JAcHADVBAR/hsO7ckn/IQpFmsTf7IpnFFqKSv
+                                           NcwuCy0AjLophWbRaCavXlp21YTOvEeB/sLRZWircrQKJIda8H8N/Ox7BlqvgVhdO3FVGmoS0qs8
+                                           rL5f4e5JJ7SAI/QCAJAWXz4iQKA/iNIj9Hhy6fqIGAnGEZBHEEbN3t5NY2SHCeUIIxMVvcxQGgoc
+                                           ZYVeY1cI9shA/3qZeJWGM5wj9Excz9+lvskl836EFfoN5fHuVgBc1/znr1E23zMhs+5MmgXPoegA
+                                           396kUvLauvMx35J//n7pwzS1/UNrokscaGTfcqhB8HbcL0EYPRtbX6d3HtMdxKOXsYcyBMrr+Ls7
+                                           mWpvsrG498K8NJTYba8AzH5G8u61Ny3vTLKYCIc1AHe9wMzlYC0wtbO4dkzXY2a44XAQRga5Jgk1
+                                           L7HqNYuv59ECUKiXaVnV99Yue8T59rwxNsw+gkJPghYDAQECAgQECEgTBF5+BQg/7ScAoR8QttIg
+                                           3+0aRobQSv/Guo0GYUsp5dbZaZEUawiNlUuh2K2SUvpPr3peuaRMPM/wXynLrbt3re8Q6FEinn73
+                                           7As+A8tCsSMcjfDkRoiGJrrm782GULkspB+S2c0VkL0bTO8RULzlY/PqAemVhZ6OsNGR+9s7oDSg
+                                           bs0iTWOQJhFHQF0dAVcI4AY4AurqCOm0lNxwBX9uMNIRWE6KLxev6vVcw9aDStTFjU1Lw13zSIkY
+                                           6wbdJh7NIhrmCLiCMzeY5Qg0jqIN4pRVQ+Lq5OgGceudsFknTIkQLAkWzSIlQrAkzHKEbwTjDO0Q
+                                           DNunYfmIpjkCriDuBjNBAAZhCKxLA82jYXNo6Qh3ZOMMzxBMuZBnMSeBQQwCKxCAQQwCSxCAQQgC
+                                           axCWh0EFAgUQloVBCQIVEJaDQQ0CJRCWgUERAjUQbmH4S0QIACQhUAThf+IjucPDbqHMXd/Km7wh
+                                           SsVDKZCKv/pu/7eAuSgVN6Ugq8bdy2UfV+6g2hBGAMFFI6neEEYBQbqR9NILRAFBzh08u0AEEB7d
+                                           YQYQLwC4i+2R4mn7l6ghQDwA4D9ozvVmwV2AKATA7WsBolCdC5NUDUQFAK7jGe320VyRtNJ/ERwa
+                                           gKgg1CYoN8YlR4tf9BvKc8ex5oXiFh6KPPE4HCGASyw3+1e3uExcEELoqj/Kj8N7o+t3uQAAAABJ
+                                           RU5ErkJggg==" width="48px" height="48px"/>
+
         </div>
-    
-         <div id="header_content">                        
-             <h1>Colegio Amparo de María</h1>
+
+        <div id="header_content">                        
+            <h1>Colegio Amparo de María</h1>            
+        </div>
+        <div id="header_title">                        
+            <h2>Lista de alumnos {{curso}}</h2>
+        </div>
+        <div id="header_div"><hr></div>
+        <div id= "header_table">        
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th class ="td_10 td_center" >Orden</th>
+                        <th class ="td_40">Apellido</th>                                               
+                        <th class ="td_40">Nombre</th>
+                        <th class ="">Dni</th>
+                        <th class ="">Telefono</th>
+
+                    </tr>
+                </thead>
+            </table>
+            <hr>
         </div>
 
         <!-- Content for Static Frame 'footer_frame' -->
-        <div id="footer_content">            
+        <div id="footer_content">           
+            <hr/>
             Página <pdf:pagenumber> de <pdf:pagecount>
             </div>
 
             <!-- HTML Content -->
-            Lista de alumnos {{curso}}
-            <hr>
-            <table class="table table-striped">
-                
-                <thead>
+
+
+            <table class="table">
+
+
+                <tbody>                    
+                    
+                    {% for matricula in matriculados %}
                     <tr>
-                        <th class ="diez" >Orden</th>
-                        <th class ="treinta">Apellido</th>                                               
-                        <th class ="treinta">Nombre</th>
-                        <th class ="treinta">Dni</th>
+                        <td class ="td_10 td_center">{{forloop.counter}}</td>
+                        <td class ="td_40">{{matricula.alumno.apellidos}}</td>
+                        <td class ="td_40">{{matricula.alumno.nombres}}</td>                        
+                        <td class ="">{{matricula.alumno.dni}}</td>   
+                        <td class ="">{{matricula.alumno.telefonoHogar}}</td>   
 
                     </tr>
-                </thead>
-                <tbody>                    
-                        {% for matricula in matriculados %}
-                        <tr>
-                            <td>                                                    
-                                {{forloop.counter}}</td>
-                            <td>{{matricula.alumno.apellidos}}</td>
-                            <td>{{matricula.alumno.nombres}}</td>                        
-                            <td>{{matricula.alumno.dni}}</td>   
-
-                        </tr>
-                        {% endfor %}                    
+                    {% endfor %}                    
+                    
                 </tbody>
             </table>
             </body>
