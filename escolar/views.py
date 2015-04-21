@@ -412,9 +412,9 @@ def generar_cursos(request):
                         curso.fechaDeMatricula=fecha
                         
                         if sala=='A' or sala=='B':
-                            curso.turno = "T"
-                        else:
                             curso.turno = "M"
+                        else:
+                            curso.turno = "T"
                         curso.save()
                         logger.warning('GENERAR CURSO: Curso ' + str(anio) + " - " + sala +" GUARDADO" )
                     else:

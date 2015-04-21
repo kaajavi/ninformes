@@ -17,8 +17,8 @@ SITUACION_DOCENTE=[
             ('S', u'Suplente')            
         ]
 TURNOS=[
-        ('Mañana', u'Mañana'),
-        ('Tarde', u'Tarde'),
+        ('M', u'Mañana'),
+        ('T', u'Tarde'),
         ]
 
 class Docente(User):
@@ -150,7 +150,7 @@ class Curso(models.Model):
         return docentes                      
     
     def getAlumnos(self):
-        lista_matriculados = MatriculaAlumnado.objects.filter(curso=self).values_list('alumno', flat=True)
+        lista_matriculados = MatriculaAlumnado.objects.filter(curso=self, activo=True).values_list('alumno', flat=True)
         alumnos = Alumno.objects.filter(Q(id__in = lista_matriculados))
         return alumnos
     
@@ -159,6 +159,12 @@ class Curso(models.Model):
     
     def print_curso(self):
         return u"Sala de " + self.anio + u" años - División: " + self.sala + u" - Turno: "+self.turno+u" - (Año " +self.ciclo+u")" 
+    
+    def turno_str(self):    
+        for value in TURNOS:
+            if (value[0]==self.turno):
+                return value[1]
+        return ""
     
     def docentes_del_curso(self):
         matriculas = MatriculaDocentes.objects.filter(curso= self)
@@ -183,10 +189,10 @@ class Curso(models.Model):
         return campos
     
     def __str__(self):
-        return u'Sala de ' + self.anio + u' años - División: ' + self.sala + u' - Turno: '+self.turno+u' - (Año ' +self.ciclo+ u')'   
+        return u'Sala de ' + self.anio + u' años - División: ' + self.sala + u' - Turno: '+self.turno_str()+u' - (Año ' +self.ciclo+ u')'   
 
     def toString(self):
-        return u'Sala de ' + self.anio + u' años - División: ' + self.sala + u' - Turno: '+self.turno+u' - (Año ' +self.ciclo+ u')'   
+        return u'Sala de ' + self.anio + u' años - División: ' + self.sala + u' - Turno: '+self.turno_str()+u' - (Año ' +self.ciclo+ u')'   
     
     print_curso.short_description = 'Curso'
     print_curso.allow_tags = True
