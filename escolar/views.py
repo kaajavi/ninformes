@@ -299,7 +299,6 @@ def add_alumno(request, id_curso):
         curso = Curso.objects.get(pk=id_curso)
     return render_to_response('alumno/add_alumno.html', {'form': form, 'id_curso':id_curso ,'curso':curso},context)
 
-
 @login_required(login_url="/loguearse")
 def edit_alumno(request, id_alumno, id_curso):
     context = RequestContext(request)  
@@ -307,42 +306,23 @@ def edit_alumno(request, id_alumno, id_curso):
         alumno = Alumno.objects.get(pk=id_alumno)        
     except Alumno.DoesNotExist:
         raise Http404("El alumno no existe")
-    
+
     try:
         curso =  Curso.objects.get(pk=id_curso)        
     except Curso.DoesNotExist:
         curso = None
-    
-    errores = {}
-    
-    if request.method == 'POST':
-        # get data from POST request to contactform
-        aux = Alumno.objects.filter(dni=request.POST['dni']).exclude(id=id_alumno)
-        if (len(aux)==0):            
-            alumno.dni = request.POST['dni']
-        else:
-            errores['dni'] = "Existe otro alumno con este dni"
-        
-        
-        if (len(request.POST['apellidos'])!=0):            
-            alumno.apellidos = request.POST['apellidos']
-        else:
-            errores['apellidos'] = "Debe tener un apellido"                
-          
-        if (len(request.POST['nombres'])!=0):            
-            alumno.nombres = request.POST['nombres']
-        else:
-            errores['nombres'] = "Debe tener un nombre"                
-            
-        if (len(errores)==0):
-            alumno.save()
-            messages.add_message(request, messages.SUCCESS, 'Se modificó el alumno ' + alumno.presentacion_completa())
-        else:
-            messages.add_message(request, messages.WARNING, 'Hubo errores en la edición del alumno ' + alumno.presentacion_completa())
 
+    errores = {}
+
+    if request.method == 'POST':
+        form = AlumnoEditForm(request.POST,
+                instance=alumno)
+        if form.is_valid():   
+            logger.warning(form)
+            form.save()
     else:
-        form=AlumnoEditForm(alumno,error_class=DivErrorList)    
-    return render_to_response('alumno/edit_alumno.html', {'alumno': alumno, 'curso': curso, 'errores':errores},context)
+        form=AlumnoEditForm(error_class=DivErrorList, instance=alumno)    
+    return render_to_response('alumno/edit_alumno.html', {'form':form, 'alumno': alumno, 'curso': curso},context)
 
 @login_required(login_url="/loguearse")
 def desmatricular_alumno(request, id_matricula_alumno):
