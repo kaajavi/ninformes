@@ -35,6 +35,18 @@
 
 <script>
     $(function() {   
+        //Modales
+
+        $(function() {
+            $( "#dialog" ).dialog({
+                autoOpen: false,
+                title: 'Ayuda!',
+                width: 700,
+            });
+            $( "#openmodal" ).click(function() {
+                $( "#dialog" ).dialog( "open" );
+            });
+        });
         //PARA VER Y OCULTAR LA LISTA DE DESMATRICULADOS
         $('#inactivos_si').hide();
         $('body').on('click', '#no_ver_inactivos', function(e){
@@ -45,8 +57,8 @@
             $('#inactivos_no').show();
             $('#inactivos_si').hide();
         });
-        
-        
+
+
         //PARA LA LISTA DE MATRICULACIONES
         $('body').on('click', '.transferible', function(e){
             var myil = '#'+this.id;
@@ -83,7 +95,7 @@
                 cant += 1;
             });            
             mvar = mvar.slice(0,-1) + "]";
-            
+
             $('#input_matricular').attr('value',mvar);
             $( "#form_matricular" ).submit();
         });
