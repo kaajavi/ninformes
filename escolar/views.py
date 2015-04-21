@@ -318,7 +318,7 @@ def edit_alumno(request, id_alumno, id_curso):
         form = AlumnoEditForm(request.POST,
                 instance=alumno)
         if form.is_valid():   
-            logger.warning(form)
+            messages.add_message(request, messages.SUCCESS, 'Se guardaron los cambios de: ' + alumno.presentacion_completa())
             form.save()
     else:
         form=AlumnoEditForm(error_class=DivErrorList, instance=alumno)    
