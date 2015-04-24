@@ -222,6 +222,8 @@ class MatriculaAlumnado(models.Model):
     class Meta:
         verbose_name = 'Matricula Alumno'
         verbose_name_plural = 'Matriculación Alumnado'
+        ordering = ['alumno']
+        
     curso = models.ForeignKey('Curso')    
     alumno = models.ForeignKey('Alumno')
     activo = models.BooleanField('Activo', default=True)
