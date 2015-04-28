@@ -52,7 +52,7 @@ def home(request):
         ciclo = request.POST['ciclo']        
         logger.warning('CICLO: ' + ciclo)
     if ciclo==None:
-        ciclo = date.today().year #TODO: poner el año actual.
+        ciclo = date.today().year 
         
     try:
         profe =  Docente.objects.get(pk=request.user)        
@@ -88,7 +88,7 @@ def docentes(request):
         ciclo = request.POST['ciclo']        
         logger.warning('CICLO: ' + ciclo)
     if ciclo==None:
-        ciclo = date.today().year #TODO: poner el año actual.
+        ciclo = date.today().year 
         
     try:
         profe =  Docente.objects.get(pk=request.user)        
@@ -121,7 +121,7 @@ def listados(request):
         
         logger.warning('CICLO: ' + ciclo)
     if ciclo==None:
-        ciclo = date.today().year #TODO: poner el año actual.
+        ciclo = date.today().year
         
     try:
         profe =  Docente.objects.get(pk=request.user)        
@@ -136,8 +136,8 @@ def listados(request):
     
     return render_to_response('homes/_h_listados.html', 
                               {'dire':dire,
-                               'ciclo_actual':str(ciclo),                                                             
-                               'anios_disponibles':map(str,range(2014,2021)),}, 
+                               'ciclo_actual':ciclo,
+                              'anios_disponibles':map(str,range(2014,2021)),}, 
                               context)
     
 
@@ -545,3 +545,5 @@ def arreglar_nombres(request):
             alumno.apellidos = alumno.apellidos.title()
         alumno.save()
         
+        
+

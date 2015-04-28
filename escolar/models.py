@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.staticfiles.templatetags.staticfiles import static #Archivos estaticos
 from django.core.urlresolvers import reverse
 from django.db.models import Q
+from datetime import date
 
 #DEFINICIONES
 TIPO_MATRICULA_DOCENTE=[
@@ -115,6 +116,12 @@ class Alumno(models.Model):
             url = static('images/girl.png')
         return url
     
+    def edad(self):         
+        today = date.today()
+        birth = self.fechaDeNacimiento
+        years = ((today.year - birth.year - 1) + (1 if (today.month, today.day) >= (birth.month, birth.day) else 0))
+        return years
+    
     def __str__(self):
         return self.presentacion_completa()
 
@@ -123,7 +130,7 @@ class Curso(models.Model):
     class Meta:        
         verbose_name = 'Curso'
         verbose_name_plural = 'Cursos'
-        ordering = ['anio','sala']
+        ordering = ['-anio','sala']
     ciclo = models.CharField('Ciclo Lectivo',
         choices=((str(x), x) for x in range(2014,2021)),
         max_length=4)
@@ -188,7 +195,10 @@ class Curso(models.Model):
         campos = Campo.objects.filter(curso=self)
         return campos
     
-    def __str__(self):
+    def curso_abreviado(self):
+        return str(self.anio) + u'_' + str(self.sala)
+    
+    def __unicode__(self):
         return u'Sala de ' + self.anio + u' años - División: ' + self.sala + u' - Turno: '+self.turno_str()+u' - (Año ' +self.ciclo+ u')'   
 
     def toString(self):

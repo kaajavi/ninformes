@@ -29,6 +29,7 @@ urlpatterns = patterns('',
                        url(r'^campo/(?P<id_campo>\d+)/$', 'escolar.views.mostrar_campo', name='mostrar_campo'),       
                        ##LISTADOS
                        url(r'^listados/curso/(?P<id_curso>\d+)/$', 'escolar.listados.generar_listado_alumnos_pdf', name='generar_listado_alumnos_pdf'),
+                       url(r'^listados/gdipe/(?P<anio>\d+)/$', 'escolar.listados.generar_listado_gdipe', name='generar_listado_gdipe'),
                       )
 ##LISTADOS - EN OTRO ARCHIVO
 #urlpatterns += patterns(

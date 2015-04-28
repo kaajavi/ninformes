@@ -1,0 +1,290 @@
+{% load tg_listado %}
+<html>
+    <header> 
+        <meta charset="utf-8">
+        <!-- Custom CSS -->
+
+
+        <style>
+            @page {
+                size: letter landscape;
+
+                @frame image_frame {           /* Static Frame */
+                    -pdf-frame-content: image_content;
+                    left: 50pt; width: 50pt; top: 20pt; height: 50pt;
+                    text-align: center;
+                    border: 0pt solid white;
+                }
+                @frame header_frame1 {           /* Static Frame */
+                    -pdf-frame-content: header_content;
+                    left: 220pt; width: 500pt; top: 25pt; height: 15pt;
+                    text-align: center;
+                    border: 0pt solid white;
+                }
+                @frame header_frame2 {           /* Static Frame */
+                    -pdf-frame-content: header_title;
+                    left: 150pt; width: 570pt; top: 45pt; height: 15pt;
+                    text-align: center;
+                    border: 0pt solid white;
+                }
+
+                @frame header_frame3 {           /* Static Frame */
+                    -pdf-frame-content: header_div;
+                    left: 30pt; width: 740pt; top: 60pt; height: 5pt;
+                    text-align: center;
+                    border: 0pt solid white;
+                }
+
+                @frame header_frame4 {           /* Static Frame */
+                    -pdf-frame-content: rigth_header;
+                    left: 720pt; width: 50pt; top: 25pt; height: 40pt;
+                    text-align: center;
+                    border: 0pt solid white;
+                }
+
+                @frame header_table {           /* Static Frame */
+                    -pdf-frame-content: header_table;
+                    left: 30pt; width: 740pt; top: 65pt; height: 20pt;
+                    text-align: center;
+                    border: opt solid white;
+                }
+
+                @frame content_frame {          /* Content Frame */
+                    left: 30pt; width: 740pt; top: 85pt; height: 480pt;
+                    border: 0pt solid white;
+                }
+                @frame footer_frame {           /* Another static Frame */
+                    -pdf-frame-content: footer_content;
+                    left: 30pt; width: 740pt; top: 560pt; height: 40pt;
+                    border: 0pt solid white;
+
+                }
+            }
+
+            .table th {         
+                vertical-align:middle; 
+                text-align:center;
+                border: 1pt solid black;
+                height: 60pt;
+                padding-top: 2px;
+            }
+            .table td {         
+                vertical-align:middle; 
+                text-align:left;
+                border: 1pt solid #CCCCCC;
+                padding-top: 2px;
+                padding-left: 3px;
+            }
+            .td_left {                         
+                text-align:left;                
+            }
+            .td_center {         
+                text-align:center;                
+            }
+
+            .bg-grey{
+                background:#EEEFFF;
+            }
+            .td_3 {    
+                width:2%;                                 
+                vertical-align:middle; 
+                /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/   
+            }
+            .td_3 {    
+                width:3%;                                 
+                vertical-align:middle; 
+                /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/   
+            }
+
+            .td_5 {    
+                width:5%;                                 
+                vertical-align:middle; 
+                /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/   
+            }
+
+            .td_10 {    
+                width:10%;                                 
+                vertical-align:middle; 
+                /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/   
+            }
+            .td_20 {    
+                width:20%;                                 
+                vertical-align:middle; 
+                /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/   
+            }
+            .td_25 {    
+                width:25%;                                 
+                vertical-align:middle; 
+                /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/   
+            }
+            .td_30 {    
+                width:30%;                                 
+                vertical-align:middle; 
+                /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/   
+            }
+            .td_40 {    
+                width:40%;                                 
+                vertical-align:middle; 
+                /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/   
+            }
+            .td_50 {    
+                width:50%;                                 
+                vertical-align:middle; 
+                /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/   
+            }
+            .tab{
+                float: left;
+                margin-left: 30px;   
+                padding-left: 30px;
+            }
+            .clear{
+                clear: both;
+            }
+            .font{
+                font-size:7px;
+            }                        
+
+            .font_th{
+                font-size:6px;
+            }
+
+            .font_rigth_header{
+                font-size:9px;
+            }
+
+        </style>
+    </header>
+
+    <body>
+        <!-- Content for Static Frame 'header_frame' -->
+        <div id="image_content">
+            <img alt="Embedded Image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACVCAYAAACU0CLeAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
+                                           WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wIUDg4IEMEfRAAAABl0RVh0Q29tbWVudABDcmVhdGVk
+                                           IHdpdGggR0lNUFeBDhcAAATHSURBVHja7Z3bcuQgDESxy///y+zD7my5XGMbGEAtcboqL8k4MdKh
+                                           JfAlKSGEEEIIIYQQQq/aKj+fCdkSeQaEgCrK2U6cUEopHbgD5eBXEFIGBU0CGjoCSgMCBAQICBAQ
+                                           ICBAQICAAAEBAgIEBAgIEBAgIEBAgIAAAQECAgQECAgQECAgQECAgAABAQICBAQIIbVt/s758BbI
+                                           z/OW22b/7OW3c/ic+9P53f3sc6zFuHY1AN5m0+czig/gXs+9xhnOn7VwlN2DC3guB6Vglxw3MkY7
+                                           ENidfwkk30pOyB7hPLCnullaZ637hNJEnfuBp2Pe4hPCEUoGmbN2P3A9t1KYz+MqGd/oGOwKgVQI
+                                           xKxScHfs0/hmjN0MBNWZ3uoEpa5Qe9ysGB3eEqC2b1ADvrJc7yzOhMP7yiY0CECwGAiWW6+ryI0j
+                                           PO3b4waUBhRx1VAy+9524pBzRyi59Ly6fVManK3JAcHADVBAR/hsO7ckn/IQpFmsTf7IpnFFqKSv
+                                           NcwuCy0AjLophWbRaCavXlp21YTOvEeB/sLRZWircrQKJIda8H8N/Ox7BlqvgVhdO3FVGmoS0qs8
+                                           rL5f4e5JJ7SAI/QCAJAWXz4iQKA/iNIj9Hhy6fqIGAnGEZBHEEbN3t5NY2SHCeUIIxMVvcxQGgoc
+                                           ZYVeY1cI9shA/3qZeJWGM5wj9Excz9+lvskl836EFfoN5fHuVgBc1/znr1E23zMhs+5MmgXPoegA
+                                           396kUvLauvMx35J//n7pwzS1/UNrokscaGTfcqhB8HbcL0EYPRtbX6d3HtMdxKOXsYcyBMrr+Ls7
+                                           mWpvsrG498K8NJTYba8AzH5G8u61Ny3vTLKYCIc1AHe9wMzlYC0wtbO4dkzXY2a44XAQRga5Jgk1
+                                           L7HqNYuv59ECUKiXaVnV99Yue8T59rwxNsw+gkJPghYDAQECAgQECEgTBF5+BQg/7ScAoR8QttIg
+                                           3+0aRobQSv/Guo0GYUsp5dbZaZEUawiNlUuh2K2SUvpPr3peuaRMPM/wXynLrbt3re8Q6FEinn73
+                                           7As+A8tCsSMcjfDkRoiGJrrm782GULkspB+S2c0VkL0bTO8RULzlY/PqAemVhZ6OsNGR+9s7oDSg
+                                           bs0iTWOQJhFHQF0dAVcI4AY4AurqCOm0lNxwBX9uMNIRWE6KLxev6vVcw9aDStTFjU1Lw13zSIkY
+                                           6wbdJh7NIhrmCLiCMzeY5Qg0jqIN4pRVQ+Lq5OgGceudsFknTIkQLAkWzSIlQrAkzHKEbwTjDO0Q
+                                           DNunYfmIpjkCriDuBjNBAAZhCKxLA82jYXNo6Qh3ZOMMzxBMuZBnMSeBQQwCKxCAQQwCSxCAQQgC
+                                           axCWh0EFAgUQloVBCQIVEJaDQQ0CJRCWgUERAjUQbmH4S0QIACQhUAThf+IjucPDbqHMXd/Km7wh
+                                           SsVDKZCKv/pu/7eAuSgVN6Ugq8bdy2UfV+6g2hBGAMFFI6neEEYBQbqR9NILRAFBzh08u0AEEB7d
+                                           YQYQLwC4i+2R4mn7l6ghQDwA4D9ozvVmwV2AKATA7WsBolCdC5NUDUQFAK7jGe320VyRtNJ/ERwa
+                                           gKgg1CYoN8YlR4tf9BvKc8ex5oXiFh6KPPE4HCGASyw3+1e3uExcEELoqj/Kj8N7o+t3uQAAAABJ
+                                           RU5ErkJggg==" width="64px" height="64px"/>
+
+        </div>
+
+        <div id="rigth_header">
+            <div class="font_rigth_header">
+                Caseros 730<br>
+                Tel: 422-2386<br>
+                CP: 5000
+            </div>
+
+        </div>
+        
+        <div id="header_content">                        
+            <h3>NOMBRE DEL ESTABLECIMIENTO EDUCATIVO: COLEGIO "AMPARO DE MARÍA"</h3>
+        </div>
+        <div id="header_title">                        
+            <h4><span class="tab">DESTINO: MIXTO</span>
+                {% for nada in '0123456789' %}
+                &nbsp;
+                {% endfor %}
+                <span class="tab">DEPARTAMENTO: CAPITAL</span>
+                {% for nada in '0123456789' %}
+                &nbsp;
+                {% endfor %}
+                <span class="tab">LOCALIDAD:CORDOBA</span>
+                {% for nada in '0123456789' %}
+                &nbsp;
+                {% endfor %}
+                <span class="tab">AÑO:{{anio}}</span>
+            </h4>
+        </div>
+        
+
+        <div id="header_div"><hr></div>
+        <div id= "header_table">                    
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th class ="td_3 td_center font_th">N°</th>
+                        <th class ="td_5 td_center font_th">Fecha de Inscripción </th>
+                        <th class ="td_10 td_center font_th">Apellidos</th>
+                        <th class ="td_10 td_center font_th">Nombre</th>
+                        <th class ="td_25 td_center font_th">Domicilio</th>
+                        <th class ="td_5 td_center font_th">Fecha de Nacimiento</th>
+                        <th class ="td_3 td_center font_th">Edad</th>                        
+                        <th class ="td_10 td_center font_th">Lugar de Nacimiento</th>                        
+                        <th class ="td_5 td_center font_th">Documento de Identidad</th>
+                        <th class ="td_3 td_center font_th">Sección</th><!-- 5-A -->                        
+                        <th class ="td_5 td_center font_th">N° Telefono</th>
+                        <th class ="td_10 td_center font_th">Apellido y Nombre de los Padres, Tutores o Encargados</th>
+                        <th class ="td_10 td_center font_th">Profesión u Oficio</th>
+                        <th class ="td_3 td_center font_th">Obs.</th>
+
+
+                    </tr>
+                </thead>
+            </table>
+            <hr>
+        </div>
+
+        <!-- Content for Static Frame 'footer_frame' -->
+        <div id="footer_content">           
+            <hr/>
+            Página <pdf:pagenumber> de <pdf:pagecount>
+            </div>
+
+            <!-- HTML Content -->
+
+
+            <table class="table">               
+
+                <tbody>                    
+                    {% for curso in cursos %}
+
+                    {% for alumno in curso.getAlumnos %}                    
+                    <tr>
+                        <td class ="td_3 td_center font">
+                            {% increment_counter forloop.counter0 forloop.parentloop.counter0 cursos.count %}
+                        </td>                            
+                        <td class ="td_5 font">{{curso.fechaDeMatricula|date:'d/m/Y'}}</td>
+                        <td class ="td_10 font">{{alumno.apellidos.title}}</td>
+                        <td class ="td_10 font">{{alumno.nombres.title}}</td>
+                        <td class ="td_25 font">{{alumno.direccionPrincipal.title}}</td>
+                        <td class ="td_5 font">{{alumno.fechaDeNacimiento|date:'d/m/Y'}}</td>
+                        <td class ="td_3 font">{{alumno.edad}}</td>
+                        <td class ="td_10 font">{{alumno.lugarDeNacimiento.title}}</td>
+                        <td class ="td_5 font">{{alumno.dni}}</td>
+                        <td class ="td_3 font">{{curso.anio}}-{{curso.sala}}</td>
+                        <td class ="td_5 font">{{alumno.telefonoHogar}}</td>
+                        <td class ="td_10 font">{{alumno.nombreTutor.title}}</td>
+                        <td class ="td_10 font">{{alumno.actividadTutor.title}}</td>
+                        <td class ="td_3 font"></td>
+
+
+
+
+                    </tr>
+                    {% endfor %}                    
+                    {% endfor %}                    
+
+                </tbody>
+            </table>
+            </body>
+            </html>

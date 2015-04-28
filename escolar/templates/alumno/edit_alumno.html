@@ -11,8 +11,7 @@
     <h1>Editar Alumno</h1>
     <h2>{{alumno}}</h2>
 </div>  
-<div class="jumbotron">
-    <!-- TODO: arreglar esto -->
+<div class="jumbotron">    
     <form action="{% url 'escolar:editar_alumno' alumno.id curso.id %}"  method="post">
         {% csrf_token %}            
         {{ form.as_p }}
