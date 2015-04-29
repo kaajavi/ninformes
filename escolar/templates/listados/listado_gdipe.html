@@ -260,7 +260,7 @@
 
                     {% for alumno in curso.getAlumnos %}                    
                     <tr>
-                        <td class ="td_3 td_center font">
+                        <td class ="td_3 font">
                             {% increment_counter forloop.counter0 forloop.parentloop.counter0 cursos.count %}
                         </td>                            
                         <td class ="td_5 font">{{curso.fechaDeMatricula|date:'d/m/Y'}}</td>
