@@ -1,4 +1,4 @@
-{% load tg_listado %}
+
 <html>
     <header> 
         <meta charset="utf-8">
@@ -256,33 +256,32 @@
             <table class="table">               
 
                 <tbody>                    
-                    {% for curso in cursos %}
+                    {% for matricula in matriculas %}
 
-                    {% for alumno in curso.getAlumnos %}                    
+                                
                     <tr>
                         <td class ="td_3 font">
-                            {% increment_counter forloop.counter0 forloop.parentloop.counter0 cursos.count %}
+                            {{ forloop.counter }}
                         </td>                            
-                        <td class ="td_5 font">{{curso.fechaDeMatricula|date:'d/m/Y'}}</td>
-                        <td class ="td_10 font">{{alumno.apellidos.title}}</td>
-                        <td class ="td_10 font">{{alumno.nombres.title}}</td>
-                        <td class ="td_25 font">{{alumno.direccionPrincipal.title}}</td>
-                        <td class ="td_5 font">{{alumno.fechaDeNacimiento|date:'d/m/Y'}}</td>
-                        <td class ="td_3 font">{{alumno.edad}}</td>
-                        <td class ="td_10 font">{{alumno.lugarDeNacimiento.title}}</td>
-                        <td class ="td_5 font">{{alumno.dni}}</td>
-                        <td class ="td_3 font">{{curso.anio}}-{{curso.sala}}</td>
-                        <td class ="td_5 font">{{alumno.telefonoHogar}}</td>
-                        <td class ="td_10 font">{{alumno.nombreTutor.title}}</td>
-                        <td class ="td_10 font">{{alumno.actividadTutor.title}}</td>
+                        <td class ="td_5 font">{{matricula.curso.fechaDeMatricula|date:'d/m/Y'}}</td>
+                        <td class ="td_10 font">{{matricula.alumno.apellidos.title}}</td>
+                        <td class ="td_10 font">{{matricula.alumno.nombres.title}}</td>
+                        <td class ="td_25 font">{{matricula.alumno.direccionPrincipal.title}}</td>
+                        <td class ="td_5 font">{{matricula.alumno.fechaDeNacimiento|date:'d/m/Y'}}</td>
+                        <td class ="td_3 font">{{matricula.alumno.edad}}</td>
+                        <td class ="td_10 font">{{matricula.alumno.lugarDeNacimiento.title}}</td>
+                        <td class ="td_5 font">{{matricula.alumno.dni}}</td>
+                        <td class ="td_3 font">{{matricula.curso.anio}}-{{matricula.curso.sala}}</td>
+                        <td class ="td_5 font">{{matricula.alumno.telefonoHogar}}</td>
+                        <td class ="td_10 font">{{matricula.alumno.nombreTutor.title}}</td>
+                        <td class ="td_10 font">{{matricula.alumno.actividadTutor.title}}</td>
                         <td class ="td_3 font"></td>
 
 
 
 
                     </tr>
-                    {% endfor %}                    
-                    {% endfor %}                    
+                    {% endfor %}                                                        
 
                 </tbody>
             </table>

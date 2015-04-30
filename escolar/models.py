@@ -5,7 +5,7 @@ from django.contrib.staticfiles.templatetags.staticfiles import static #Archivos
 from django.core.urlresolvers import reverse
 from django.db.models import Q
 from datetime import date
-
+from django.db.models.signals import post_save
 #DEFINICIONES
 TIPO_MATRICULA_DOCENTE=[
             ('A', u'Áulico'), 
@@ -232,14 +232,14 @@ class MatriculaAlumnado(models.Model):
     class Meta:
         verbose_name = 'Matricula Alumno'
         verbose_name_plural = 'Matriculación Alumnado'
-        ordering = ['alumno']
+        ordering = ['curso', 'alumno']
         
     curso = models.ForeignKey('Curso')    
-    alumno = models.ForeignKey('Alumno')
+    alumno = models.ForeignKey('Alumno')    
     activo = models.BooleanField('Activo', default=True)
 
     def __str__(self):
-        return self.alumno + "  - " + self.curso
+        return str(self.alumno) + "  - " + str(self.curso)
 
 class MatriculaDocentes(models.Model):
 
@@ -270,5 +270,17 @@ class MatriculaDocentes(models.Model):
     
     def __str__(self):
         return str(self.docente) + "  - " + str(self.curso)
+
     
-    
+
+def recreate_matricula(sender, instance, created, **kwargs):    
+    cursos = Curso.objects.filter(ciclo=instance.curso.ciclo)
+    count  = 0
+      
+    for curso in cursos:
+        lista_matriculados = MatriculaAlumnado.objects.filter(curso=curso, activo=True)
+        for matricula in lista_matriculados:
+            count = count + 1
+            matricula.alumno.orden = count
+            matricula.save()
+

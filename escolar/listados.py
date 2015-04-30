@@ -13,7 +13,8 @@ import logging
 # Get an instance of a logger
 logger = logging.getLogger('django')
 
-#import base64
+##BASE DE DATOS
+from django.db.models import Q
 
 FILE_LIST = settings.BASE_DIR+'/test.pdf'
 # Convert HTML URIs to absolute system paths so xhtml2pdf can access those resources
@@ -44,7 +45,8 @@ def generar_listado_gdipe(request, anio):
     logger.info("Levanto http")    
     response['Content-Disposition'] = 'attachment; filename="listado_gdipe.pdf"'
     cursos = Curso.objects.filter(ciclo=anio)
-    logger.info("Recibo cursos")
+    lista_matriculas = MatriculaAlumnado.objects.filter(Q(curso__in = cursos))
+    logger.info("Recibo cursos" + str(lista_matriculas))
     #Image
     #url = settings.BASE_DIR+ '/static/images/logo_amparo.png'
     #with open(url, "rb") as image_file:
@@ -52,7 +54,8 @@ def generar_listado_gdipe(request, anio):
     # Prepare context
     data = {
             'anio':anio,
-           'cursos':cursos,            
+           'cursos':cursos,
+            'matriculas':lista_matriculas,
            }    
 
     # Render html content through html template with context
