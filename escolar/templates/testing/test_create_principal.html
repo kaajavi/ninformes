@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block header%}
+<style>
+    .deleteParent{  
+        position:absolute;
+        z-index: 10;
+        margin-left: 85%;
+    }
+
+
+
+    div.colorPicker-picker {
+
+    }
+
+    div.colorPicker-palette {
+        /*  width: 110px;*/
+        position: absolute;
+        border: 1px solid #598FEF;
+        background-color: #EFEFEF;
+        padding: 2px;
+        z-index: 9999;
+    }
+    div.colorPicker_hexWrap {width: 100%; float:left }
+    div.colorPicker_hexWrap label {font-size: 95%; color: #2F2F2F; margin: 5px 2px; width: 25%}
+    div.colorPicker_hexWrap input {margin: 5px 2px; padding: 0; font-size: 95%; border: 1px solid #000; width: 65%; }
+
+    div.colorPicker-swatch {
+        height: 18px;
+        width: 22px;
+        border: 1px solid #000;
+        margin: 2px;
+        float: left;
+        cursor: pointer;
+        line-height: 12px;
+    }
+
+</style>
+{% endblock %}
+
+{% block contenido %}
+<div class="page-header">
+    <h1>Sistema de Nivel Inicial Amparo de María.</h1>    
+</div>  
+
+<div class="row">
+
+    <div class="col-md-5 well">
+        <h4>Agregar un nuevo item.</h4>
+        <textarea id ="txtArea"class="form-control"></textarea>
+
+        <input class="form-control" id="color" type="text" name="color" />
+
+        <br>
+
+        <button class="btn btn-success pull-right btn-margin" value="">Agregar</button>
+        <button id="btn_clean" class="btn btn-danger pull-right btn-margin" value="">Limpiar</button>
+    </div>
+
+
+    <div class="col-md-7 well">
+
+        <div class="well" style="border-radius: 25px; background-color: #6666FF">
+            <span class="btn btn-default btn-xs"><i class="fa fa-times"></i></span>
+            
+            <span>Se desenvuelve en los diferentes espacios, momentos y tiempos propios de la vida escolar de manera autónoma.</span>
+
+        </div>
+        <div class="well" style="border-radius: 25px; background-color: green">
+            <span class="btn btn-default btn-xs"><i class="fa fa-times"></i></span>
+            
+            <span>Hay que recordarle reiteradamente las normas de convivencia acordadas por el grupo: colaboración, respeto, tolerancia y ayuda mutua, para que las cumpla en su totalidad. </span>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{STATIC_URL}}js/color-picker.min.js"></script>
+
+<script>
+   
+    $('#color').colorPicker({showHexField: false,
+                             pickerDefault: "E0E0E0",
+                             colors: ["FF3333", "80FF00", "6666FF", "FF3399", "FFFF33","E0E0E0"]});
+    $('#btn_clean').click(function(){
+        $('#txtArea').val("");
+        $('.colorPicker-picker').css("background-color", "#E0E0E0");    
+        $('#color').val("#E0E0E0");    
+    });
+</script>
+{% endblock %}

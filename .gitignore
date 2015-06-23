@@ -62,5 +62,5 @@ settings_prod.py
 settings.py
 migrations/
 uploads/
-testing/
-test_dev.py
+#testing/
+#test_dev.py
