@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header%}
+{% endblock %}
+
+{% block contenido %}
+<form action="" method="post" id="agregarCampo">
+     {% csrf_token %} 
+    
+    {{form.as_p}}
+     
+    
+    
+     <span onclick="$('#agregarCampo').submit();" class="btn btn-lg btn-primary btn-success pull-right btn-margin" >
+            <i class="fa fa-plus"></i> Guardar
+        </span>  
+      <a href="{% url 'escolar:mostrar_campos_curso' curso.id %}" class="btn btn-lg btn-primary btn-danger pull-right btn-margin">
+        <i class="fa fa-ban"></i> Cancelar
+        </a>
+
+
+</form>
+{% endblock %}
+
+{% block scripts %}
+{{form.media}}
+{% endblock %}

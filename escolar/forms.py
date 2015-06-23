@@ -61,3 +61,18 @@ class AlumnoEditForm(forms.ModelForm):
             if (field.required):
                 field.widget.attrs['placeholder'] = 'Requerido'
                 field.label = '* ' + field.label    
+    
+class CampoAddForm(forms.ModelForm):
+    error_css_class = 'alert alert-danger'
+    #required_css_class = 'alert alert-danger'
+    class Meta:
+        model = Campo       
+        exclude = ('descripcion','default_anio','default_sala', 'orden')         
+
+    def __init__(self, *args, **kwargs):
+        super(CampoAddForm, self).__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
+            if (field.required):
+                field.widget.attrs['placeholder'] = 'Requerido'
+                field.label = '* ' + field.label    

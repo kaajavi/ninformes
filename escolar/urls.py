@@ -26,10 +26,18 @@ urlpatterns = patterns('',
                        url(r'^alumno/editar/(?P<id_alumno>\d+)/(?P<id_curso>\d+)/$', 'escolar.views.edit_alumno', name="editar_alumno"), 
                        url(r'^alumno/agregar/(?P<id_curso>\d+)/$', 'escolar.views.add_alumno', name='agregar_alumno'),
                        ##CAMPOS
-                       url(r'^campo/(?P<id_campo>\d+)/$', 'escolar.views.mostrar_campo', name='mostrar_campo'),       
+                       url(r'^curso/miscampos/campo/(?P<id_campo>\d+)/$', 'escolar.views.mostrar_campo', name='mostrar_campo'),     
+                       url(r'^curso/miscampos/add/(?P<id_curso>\d+)/$', 'escolar.views.add_campo', name='agregar_campo'),
+                       url(r'^curso/miscampos/campo/agregar_item/(?P<id_campo>\d+)/(?P<semestre>\d+)/$', 'escolar.views.add_item_campo', name='agregar_item_campo'),
+                       url(r'^curso/miscampos/edit_orden/$', 'escolar.views.edit_orden_campo', name='edit_orden_campo'),
+                       
                        ##LISTADOS
                        url(r'^listados/curso/(?P<id_curso>\d+)/$', 'escolar.listados.generar_listado_alumnos_pdf', name='generar_listado_alumnos_pdf'),
                        url(r'^listados/gdipe/(?P<anio>\d+)/$', 'escolar.listados.generar_listado_gdipe', name='generar_listado_gdipe'),
+                       ##TESTING
+                       url(r'^testing/crear_principal/$', 'escolar.test_dev.view_create_principal', name='view_create_principal'),
+                       url(r'^testing/test_cfkeditor/$', 'escolar.test_dev.test_cfkeditor', name='test_cfkeditor'),
+                       
                       )
 ##LISTADOS - EN OTRO ARCHIVO
 #urlpatterns += patterns(

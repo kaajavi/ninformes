@@ -1,0 +1,14 @@
+{% for item in items %}
+
+<div class="well" style="border-radius: 25px; background-color: {{item.color}}">
+    <form action="" id="formu_del_{{item.id}}" method="post">
+        {% csrf_token %}
+        <input type="hidden" value="{{item.id}}" name="item_id"/>
+        <span onclick="$('#formu_del_{{item.id}}').submit()" class="btn btn-default btn-xs">
+            <i class="fa fa-times"></i>
+        </span>            
+        <span>{{ item.item }}</span>
+    </form>
+</div>
+
+{% endfor %}

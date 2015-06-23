@@ -1,0 +1,24 @@
+<table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Campo</th>                
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for campo in campos %}
+                <tr>
+                    <td>
+
+                        <span class='orderNumber' id="orderNumber-{{campo.id}}-{{campo.orden}}">
+                            <i class='btn'> {{campo.orden}}</i>
+                        </span>
+
+                    </td>
+                    <td><a href="{% url 'escolar:mostrar_campo' campo.id %}">{{campo.titulo}}</a></td>                
+                    <td>{{campo.getTipoCampo}}</td>                        
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>

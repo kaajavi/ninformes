@@ -6,28 +6,58 @@
     {% menu_curso 1 curso user.id %}
 
     <h2>Campos de Aprendizaje</h2>
-    
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Campo</th>
-                <th>Descripción</th>
-                <th>Tipo</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for campo in curso.getCampos %}
-            <tr>
-                <td><a href="{% url 'escolar:mostrar_campo' campo.id %}">{{forloop.counter}}</a></td>
-                <td><a href="{% url 'escolar:mostrar_campo' campo.id %}">{{campo.titulo}}</a></td>
-                <td>{{campo.descripcion}}</td>
-                <td>{{campo.tipoDocente}}</td>                        
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div id="lista_campos">
+        {% include "campo/_tabla_campos.html" %}
+    </div>
+    <a href="{% url 'escolar:agregar_campo' curso.id %}" class="btn btn-lg btn-primary btn-primary pull-right btn-margin">
+        Agregar Campo
+    </a>
 
 </div>
 
+{% endblock %}
+
+{% block scripts%}
+<script>
+    var id_editando;
+    var html_sending;
+    $('body').on('click', '.orderNumber', function(e){
+        //$(".orderNumber").click(function(){
+        if (!$(this).hasClass('editando')){
+            id_editando = $(this).attr('id').split('-')[1];                
+
+            html_sending = "<input type='number' id=value_order_editado value='" + 
+                $(this).attr('id').split('-')[2] + 
+                "' style='width: 50px;'/>";
+            html_sending += "<span id='sendingData' class='btn'><i class='fa fa-check-circle fa-2x'></i></span> ";
+
+            $(this).html(html_sending);
+            $(this).addClass('editando');
+        }
+
+    });
+    //$("#sendingData").click(function(){
+    $('body').on('click', '#sendingData', function(e){
+        var data={
+            id_campo:id_editando,                    
+            nvo_orden:$('#value_order_editado').val(),
+            csrfmiddlewaretoken:'{{csrf_token}}',}
+
+        $.ajax(
+            {
+                url: "{% url 'escolar:edit_orden_campo' %}",
+                type: "post",
+                data:data,
+                dataType: "html",
+                error: function(data){
+                    alert("Hubo un error en la consulta\n" + data.toString());
+                },
+                success: function( strData ){
+                    $("#lista_campos").html( strData );
+                }
+            }							
+        );
+    });
+
+</script>
 {% endblock %}

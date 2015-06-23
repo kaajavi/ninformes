@@ -1,22 +1,59 @@
+
 {% extends 'base.html' %}
 
 {% block contenido %}
 
+
 <div class="page-header">
-    <h1>{{campo}}</h1>    
-    <h2>{{campo.curso}}</h2>    
-    <hr>
-    <a class="label label-primary"> Editar Campo</a>    
-    <a class="label label-warning"> Borrador 1° Etapa</a>
-    <a class="label label-warning"> Borrador 2° Etapa</a>
+    <h1 style="cursor: pointer;" 
+        onclick="$(location).attr('href','{% url 'escolar:mostrar_campos_curso'  campo.curso.id %}');">  
+        {{campo.curso}}</h1>    
+</div>  
+
+<div id="page-wrapper">    
+<br>
+    <div id='campos'>
+        <div class="row">
+            <div class="col-md-10">
+                <div class="hidden-xs">
+                    <a href="{% url 'escolar:agregar_item_campo' campo.id 1 %}" class="btn btn-sm btn-info ">Principal Etapa 1</a>
+                    <a href="{% url 'escolar:agregar_item_campo' campo.id 2 %}" class="btn btn-sm btn-info ">Principal Etapa 2</a>
+
+                </div>
+
+                <li class="dropdown visible-xs">
+                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Seleccionar: <span class="caret"></span></a>
+                    <ul class="dropdown-menu btn btn-sm" role="menu">
+                        <li><a href="{% url 'escolar:agregar_item_campo' campo.id 1 %}" class="btn btn-sm btn-info ">Principal Etapa 1</a></li>
+                        <li><a href="{% url 'escolar:agregar_item_campo' campo.id 2 %}" class="btn btn-sm btn-info ">Principal Etapa 1</a></li>
+
+
+                    </ul>
+                </li>
+            </div>
+            <div class="col-md-2" style="border 1px">
+
+
+            </div>
+
+        </div>
+
+        <h3>Aprendizajes:</h3>
+        {{campo.aprendizajes}}
+        <hr>
+
+
+    </div>
 </div>
 
-<div id="page-wrapper">  
-    <h3>Descripción:</h3>
-    {{campo.descripcion}}
-    <hr>
-    <h3>Items a evaluar:</h3>
-    {{campo.items_a_evaluar}}
-</div>
 
 {% endblock %}
+{% block scripts%}
+
+{% endblock %}
+
+
+
+
+
+

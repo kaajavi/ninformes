@@ -214,18 +214,32 @@ class Campo(models.Model):
     class Meta:
         verbose_name = 'Campo'
         verbose_name_plural = 'Campos'
+        ordering = ['orden']
     curso = models.ForeignKey('Curso')    
     tipoDocente = models.CharField("Tipo de docente",
         choices = TIPO_MATRICULA_DOCENTE,
         max_length=10)
+    orden = models.IntegerField("Orden", default=0)
     titulo = models.CharField("Título del campo", max_length=256)
-    descripcion = models.TextField("Descripción del Campo", max_length=256)
-    items_a_evaluar = models.TextField("Items a evaluar", blank= True)
-    borrador_pe = models.TextField("Borrador Primera Etapa", blank= True)
-    borrador_se = models.TextField("Borrador Segunda Etapa", blank= True)
+    descripcion = models.TextField("Descripción del Campo", max_length=256, blank=True, null=True)
+    aprendizajes = models.TextField("Aprendizajes", blank=True, null=True)        
+    especial = models.BooleanField('Extra Curricular', default=False)
+    def getTipoCampo(self):        
+        for value in TIPO_MATRICULA_DOCENTE:
+            if (value[0]==self.tipoDocente):
+                return value[1]
+        return ""
     
     def __str__(self):
         return self.titulo
+
+
+class ItemCampo(models.Model):
+    campo = models.ForeignKey('Campo')
+    item = models.TextField("Item")
+    semestre = models.IntegerField('Semestre', default=3)
+    color = models.CharField("Color", max_length=8)    
+    
     
 class MatriculaAlumnado(models.Model):
 
@@ -241,6 +255,24 @@ class MatriculaAlumnado(models.Model):
     def __str__(self):
         return str(self.alumno) + "  - " + str(self.curso)
 
+
+class Informe(models.Model):
+    matricula = models.OneToOneField('MatriculaAlumnado', primary_key=True)
+    obs_p_etapa = models.TextField("observaciones primera etapa", blank= True)
+    obs_s_etapa = models.TextField("observaciones segunda etapa", blank= True)    
+
+    def __str__(self):
+        return matricula
+    
+
+class DescripcionCampo(models.Model):
+    campo = models.ForeignKey('Campo')    
+    informe = models.ForeignKey('Informe')    
+    descripcion = models.TextField("Descripción", blank= True)
+        
+    def __str__(self):
+        return str(campo) + "  -  " +str(informe.matricula.alumno)
+    
 class MatriculaDocentes(models.Model):
 
     class Meta:
@@ -273,14 +305,5 @@ class MatriculaDocentes(models.Model):
 
     
 
-def recreate_matricula(sender, instance, created, **kwargs):    
-    cursos = Curso.objects.filter(ciclo=instance.curso.ciclo)
-    count  = 0
-      
-    for curso in cursos:
-        lista_matriculados = MatriculaAlumnado.objects.filter(curso=curso, activo=True)
-        for matricula in lista_matriculados:
-            count = count + 1
-            matricula.alumno.orden = count
-            matricula.save()
+
 

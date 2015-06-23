@@ -8,9 +8,11 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import AnonymousUser
 from django.contrib.auth.decorators import login_required
+from django.forms import widgets
 
-from escolar.models import Docente, Curso, Alumno, MatriculaAlumnado, Campo, MatriculaDocentes, SITUACION_DOCENTE, TIPO_MATRICULA_DOCENTE
-from escolar.forms import AlumnoAddForm, DivErrorList, AlumnoEditForm
+from escolar.models import Docente, Curso, Alumno, MatriculaAlumnado, Campo, MatriculaDocentes, SITUACION_DOCENTE, TIPO_MATRICULA_DOCENTE, ItemCampo
+from escolar.forms import AlumnoAddForm, DivErrorList, AlumnoEditForm, CampoAddForm
+from escolar.default_data.campos_default import CAMPOS_SALA_4, CAMPOS_SALA_5
 
 ##Errores
 from django.http import Http404
@@ -202,16 +204,7 @@ def mostrar_alumnos_curso(request, id_curso):
                                'matriculados_inactivos':matriculados_inactivos,}
                               , context)
 
-#Mostrar alumnos de un curso
-@login_required(login_url="/loguearse")
-def mostrar_campos_curso(request, id_curso):
-    context = RequestContext(request)        
-    curso = Curso.objects.get(pk=id_curso)    
-    lista_matriculados = MatriculaAlumnado.objects.filter(curso=curso).values_list('alumno', flat=True)
-    return render_to_response('curso/_lista_campos.html', 
-                              {'curso':curso,                               
-                              }
-                              , context)
+
 
 #Mostrar alumnos de un curso
 @login_required(login_url="/loguearse")
@@ -377,13 +370,6 @@ def rematricular_alumno(request, id_matricula_alumno):
             return redirect('escolar:mostrar_alumnos_curso', id_curso=matriculaAlumno.curso.id)
     return render_to_response('curso/rematricular_alumno.html', {'matriculaAlumno': matriculaAlumno},context)
 
-        
-        
-@login_required(login_url="/loguearse")
-def mostrar_campo(request, id_campo):
-    context = RequestContext(request)    
-    campo = Campo.objects.get(pk=id_campo)
-    return render_to_response('campo/home_campo.html', {'campo':campo}, context)
 
 @login_required(login_url="/loguearse")
 def generar_cursos(request):
@@ -418,7 +404,29 @@ def generar_cursos(request):
                         curso.save()
                         logger.warning('GENERAR CURSO: Curso ' + str(anio) + " - " + sala +" GUARDADO" )
                     else:
+                        curso = existente[0]
                         logger.warning('GENERAR CURSO: Curso ' + str(anio) + " - " + sala +" YA EXISTE" )
+                    #TODO
+                    if anio == 4:
+                        campos = CAMPOS_SALA_4
+                    elif anio == 5:
+                        campos = CAMPOS_SALA_5
+                    for orden in campos:
+                        is_exist = Campo.objects.filter(Q(curso = curso) & Q(titulo = campos[orden][1]))
+                        logger.warning('Generando Campo: Curso ' + str(curso) +" - Campo: " + str(orden) )
+                        if len(is_exist)==0:    
+                            logger.warning('Creando: Curso ' + str(curso) +" - Campo: " + str(orden) )
+                            campo = Campo()
+                            campo.curso = curso
+                            campo.tipoDocente = campos[orden][0]
+                            campo.orden = orden
+                            campo.titulo = campos[orden][1]
+                            campo.aprendizajes = campos[orden][2]
+                            if len(campos[orden])==4:
+                                campo.especial = campos[orden][3]
+                            campo.save()
+                        
+                        
             return redirect('/')
 
         else:
@@ -428,6 +436,9 @@ def generar_cursos(request):
                                       'anios_disponibles':map(str,range(date.today().year,2021)),},
                                       context)
     return redirect('/')
+
+
+    
 
 @login_required(login_url="/loguearse")
 def mostrar_docentes_curso(request, id_curso):
@@ -535,15 +546,126 @@ def matricular_alumnos(request):
 
 
 
+##CAMPO - MANEJO DEL CAMPOS
 @login_required(login_url="/loguearse")
-def arreglar_nombres(request):
-    alumnos = Alumno.objects.all()
-    for alumno in Alumno.objects.all():    
-        if not alumno.nombres.isTitle():
-            alumno.nombres = alumno.nombres.title()
-        if not alumno.apellidos.isTitle():
-            alumno.apellidos = alumno.apellidos.title()
-        alumno.save()
+def mostrar_campo(request, id_campo):
+    context = RequestContext(request)
+    try:        
+        campo = Campo.objects.get(pk=id_campo)
+    except Campo.DoesNotExist:
+        raise Http404("El curso no existe")
+    
+    return render_to_response('campo/home_campo.html', {'campo':campo}, context)
+   
+@login_required(login_url="/loguearse")
+def add_campo(request, id_curso):
+    context = RequestContext(request)  
+    try:
+        curso = Curso.objects.get(pk=id_curso)        
+    except Curso.DoesNotExist:
+        raise Http404("El curso no existe")    
+    
+    if request.method == 'POST':
+        form = CampoAddForm(request.POST)
         
-        
+        if form.is_valid():            
+            form.save()
+            return redirect('escolar:mostrar_campo', id_campo = form.instance.id)
+    else:
+        form = CampoAddForm(instance=None)   
+    form.fields['curso'].choices=((curso.id, curso),)
+    for n in form.fields['curso'].choices:
+        logger.warning(n)
+    
+    #form.fields['curso'].value = curso
+    logger.warning(form.fields['curso'])
+    return render(request, 'campo/add_campo.html', {'curso':curso,'form':form})
 
+
+@login_required(login_url="/loguearse")
+def add_item_campo(request, id_campo, semestre):
+    context = RequestContext(request)  
+    try:
+        campo = Campo.objects.get(pk=id_campo)        
+    except Campo.DoesNotExist:
+        raise Http404("El campo no existe")        
+    if request.method == 'POST':
+        try:
+            item = ItemCampo.objects.get(pk=int(request.POST['item_id']))
+            item.delete()
+        except:
+            item = ItemCampo()
+            item.campo=campo
+            item.item = request.POST['item']
+            item.color = request.POST['color']
+            item.semestre = semestre
+            item.save()
+                
+    items = ItemCampo.objects.filter(Q(campo=campo) & Q(semestre=semestre))
+    return render(request, 'campo/principal/agregar_item.html', {'campo':campo,'semestre':semestre,'items':items})
+
+@login_required(login_url="/loguearse")
+def mostrar_campos_curso(request, id_curso):
+    context = RequestContext(request)        
+    profe = None
+    matricula_profe = None
+    campos = None
+    try:
+        curso = Curso.objects.get(pk=id_curso)  
+    except Curso.DoesNotExist:
+        raise Http404("El curso no existe")
+    
+    try:
+        profe =  Docente.objects.get(pk=request.user)   
+        matricula_profe = MatriculaDocentes.objects.filter(Q(curso=curso) & Q(docente=profe))[0]  
+        if (matricula_profe != None):
+            campos = Campo.objects.filter(Q(curso=curso) & Q(tipoDocente=matricula_profe.tipoDocente))
+        elif (profe.tipoDocente == 'G' or profe.tipoDocente == 'D'):
+            campos = Campo.objects.filter(Q(curso=curso))
+    except:
+        logger.warning('Usuario: no es docente')        
+    
+    if (request.user.is_superuser):
+        campos = Campo.objects.filter(Q(curso=curso))                
+    
+    return render_to_response('curso/_lista_campos.html', 
+                              {'curso':curso,
+                               'campos':campos,
+                              }
+                              , context)
+
+
+@login_required(login_url="/loguearse")
+def edit_orden_campo(request):                
+    context = RequestContext(request)        
+    campo = None
+    if request.method == 'POST':
+        campo = Campo.objects.get(pk=request.POST['id_campo'])
+        campo.orden = request.POST['nvo_orden']
+        campo.save()
+    else:
+        return None
+    profe = None
+    matricula_profe = None
+    campos = None
+    
+    curso = campo.curso
+    
+    try:
+        profe =  Docente.objects.get(pk=request.user)   
+        matricula_profe = MatriculaDocentes.objects.filter(Q(curso=curso) & Q(docente=profe))[0]  
+        if (matricula_profe != None):
+            campos = Campo.objects.filter(Q(curso=curso) & Q(tipoDocente=matricula_profe.tipoDocente))
+        elif (profe.tipoDocente == 'G' or profe.tipoDocente == 'D'):
+            campos = Campo.objects.filter(Q(curso=curso))
+    except:
+        logger.warning('Usuario: no es docente')        
+    
+    if (request.user.is_superuser):
+        campos = Campo.objects.filter(Q(curso=curso))                
+    
+    return render_to_response('campo/_tabla_campos.html', 
+                              {'curso':curso,
+                               'campos':campos,
+                              }
+                              , context)
