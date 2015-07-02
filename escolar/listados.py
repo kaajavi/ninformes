@@ -3,10 +3,10 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.template import Context
 from django.template.loader import get_template
-from escolar.models import Docente, Curso, Alumno, MatriculaAlumnado, Campo, MatriculaDocentes
+from escolar.models import Docente, Curso, Alumno, MatriculaAlumnado, Campo, MatriculaDocentes, SITUACION_DOCENTE, TIPO_MATRICULA_DOCENTE, ItemCampo, DescripcionCampo
 from xhtml2pdf import pisa  #INSTALAR ESTA LIBRERIA
 from django.templatetags.static import static
-
+from escolar.default_data.images_base64 import LOGO_PROVINCIAL, LOGO_AMPARO
 ##PARA MANDAR LOGS
 # import the logging library
 import logging
@@ -124,6 +124,94 @@ def generar_listado_alumnos_pdf(request, id_curso):
 
     # Render html content through html template with context
     template = get_template('listados/listado_alumnos.html')
+    html  = template.render(Context(data))
+
+    # Write PDF to file
+    file = open(FILE_LIST, "w+b")
+    pisaStatus = pisa.CreatePDF(html, dest=file,
+            link_callback = link_callback)
+
+    # Return PDF document through a Django HTTP response
+    file.seek(0)
+    pdf = file.read()
+    file.close()
+    
+    response.write(pdf)
+    # Don't forget to close the file handle
+    #BORRO EL ARCHIVO
+    if os.path.exists(FILE_LIST):
+        try:
+            os.remove(FILE_LIST)
+        except OSError, e:
+            pass
+    
+    return response
+
+
+def generar_informe_matricula(request, matricula_id, etapa):
+    response = HttpResponse(content_type='application/pdf')
+    
+    try:
+        matricula = MatriculaAlumnado.objects.get(pk=matricula_id)
+    except MatriculaAlumnado.DoesNotExist:
+        raise Http404("El curso no existe")
+        
+    response['Content-Disposition'] = 'attachment; filename="informe%s.pdf"' % (matricula.alumno)
+    matriculados = MatriculaAlumnado.objects.filter(curso=curso).exclude(activo=False)
+    
+    # Prepare context
+    data = {'curso':curso,
+           'matriculados':matriculados,
+           }    
+
+    # Render html content through html template with context
+    template = get_template('informe/_informe.html')
+    html  = template.render(Context(data))
+
+    # Write PDF to file
+    file = open(FILE_LIST, "w+b")
+    pisaStatus = pisa.CreatePDF(html, dest=file,
+            link_callback = link_callback)
+
+    # Return PDF document through a Django HTTP response
+    file.seek(0)
+    pdf = file.read()
+    file.close()
+    
+    response.write(pdf)
+    # Don't forget to close the file handle
+    #BORRO EL ARCHIVO
+    if os.path.exists(FILE_LIST):
+        try:
+            os.remove(FILE_LIST)
+        except OSError, e:
+            pass
+    
+    return response
+
+
+
+def informe_matricula(request, id_matricula_alumno, etapa):
+    response = HttpResponse(content_type='application/pdf')
+            
+    response['Content-Disposition'] = 'attachment; filename="informe_test.pdf"'    
+    
+    # Prepare context
+    
+    matricula = MatriculaAlumnado.objects.get(pk=id_matricula_alumno)
+    descrCampo = DescripcionCampo.objects.filter(matricula_alumno=matricula, semestre=etapa, campo__especial=False)
+    descrCampoInstitucionales = DescripcionCampo.objects.filter(matricula_alumno=matricula, semestre=etapa, campo__especial=True)
+    
+    
+    data = {'etapa':int(etapa),
+            'matricula':matricula,
+            'descrCampo':descrCampo,
+            'descrCampoInstitucionales':descrCampoInstitucionales,
+            'logo_provincial':LOGO_PROVINCIAL
+           }    
+
+    # Render html content through html template with context
+    template = get_template('informe/informe.html')
     html  = template.render(Context(data))
 
     # Write PDF to file

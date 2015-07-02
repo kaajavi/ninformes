@@ -34,6 +34,12 @@
                     <a  title="Desmatricular" class="btn btn-xs btn-default" href="{% url 'escolar:desmatricular_alumno' matricula.id %}">
                         <i class="fa fa-level-down"></i>
                     </a>
+                    <a  title="Editar Informe 1° Etapa" class="btn btn-xs btn-default" href="{% url 'escolar:edit_informe' matricula.id 1 %}">
+                        1 Etapa
+                    </a>
+                    <a  title="Editar Informe 2° Etapa" class="btn btn-xs btn-default" href="{% url 'escolar:edit_informe' matricula.id 2 %}">
+                        2 Etapa                        
+                    </a>
                 </td>                        
             </tr>
             {% endfor %}

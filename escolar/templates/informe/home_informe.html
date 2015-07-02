@@ -1,0 +1,107 @@
+
+{% extends 'base.html' %}
+
+{% block header %}
+<link href="{{STATIC_URL}}css/bootstrap-wysihtml5.css" rel="stylesheet">
+{% endblock %}
+
+{% block contenido %}
+<ul class="messages" id="messages">
+    <div class="alert alert-success" role="alert">
+        <strong>Se guardo correctamente</strong>
+    </div>                
+</ul>
+
+<div class="page-header">
+    <h1 style="cursor: pointer;" 
+        onclick="$(location).attr('href','{% url 'escolar:mostrar_alumnos_curso' curso.id %}');">  
+        {{matricula.alumno}}</h1>      
+</div>  
+
+<div id="page-wrapper">    
+    <br>
+    <div id='campos'>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hidden-xs">
+                    {% if docente == 'A' %}
+                    <a href="{% url 'escolar:edit_informe' matricula.id etapa %}" class="btn btn-sm btn-{% if obs %}primary{% else %}info{% endif %} ">OBSERVACIONES</a>
+                    {% endif %}
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle"
+                                data-toggle="dropdown">
+                            Seleccione un campo <span class="caret"></span>
+                        </button>
+
+                        <ul class="dropdown-menu" role="menu">
+                            {% for campo in campos %}                    
+
+                            <li><a href="{% url 'escolar:edit_descripcion_campo' matricula.id campo.id etapa %}" class="btn btn-sm btn-{% if descripcion.campo.id = campo.id %}info{% else %}default{% endif %} ">{{campo.titulo}}</a>    </li>              
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% if docente == 'A' %}
+                    <a href="{% url 'escolar:informe_matricula' matricula.id etapa %}" class="btn btn-sm btn-default pull-right btn-margin"><i class="fa fa-print"></i> Imprimir</a>
+                    <a href="{% url 'escolar:view_informe_matricula' matricula.id etapa %}" class="btn btn-sm btn-default pull-right btn-margin"><i class="fa fa-file-code-o"></i> Ver Todo</a>
+                    {% endif %}
+                </div>
+
+
+            </div>            
+        </div>        
+
+        <div>                       
+
+            {% block edicion_campos %}
+            {% if docente == 'A' %}
+            <h3>OBSERVACIONES - Etapa: {{etapa}}<button id="sendMatricular" class="btn btn-primary btn-success pull-right btn-margin" type="button" onclick="save_obs();">
+                <i class="fa fa-save"></i> Guardar
+                </button></h3>
+            <hr>            
+            <textarea class="textarea " id="observacion" style="resize:none;    width: 100%; height:440px; overflow-y: scroll;">{% if etapa == '1' %}{{matricula.obs_p_etapa}}{% else %}{{matricula.obs_s_etapa}}{% endif %}</textarea>       
+            {% endif %}
+            {% endblock %}
+        </div>
+
+
+    </div>
+</div>
+
+
+{% endblock %}
+{% block scripts%}
+<script type="application/javascript">
+    $("#messages").hide();
+    function save_obs(texto){
+        var data={
+            id_matricula:'{{matricula.id}}', 
+            descripcion:$('#observacion').val(),
+            etapa:{{etapa}},
+            csrfmiddlewaretoken:'{{csrf_token}}',}
+
+            $.ajax(
+                {
+                    url: "{% url 'escolar:update_observaciones' %}",
+                    type: "post",
+                    data:data,
+                    dataType: "html",
+                    error: function(data){
+                        $("#messages").hide();
+                        alert("Hubo un error en la consulta\n" + data.toString());
+                    },
+                    success: function( strData ){
+                        $("#messages").show();
+                        $("#lista_campos").html( strData );
+                    }
+                }							
+            );
+    }
+
+</script>
+{% endblock %}
+
+
+
+
+
+

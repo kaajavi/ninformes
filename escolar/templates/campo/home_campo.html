@@ -11,7 +11,7 @@
 </div>  
 
 <div id="page-wrapper">    
-<br>
+    <br>
     <div id='campos'>
         <div class="row">
             <div class="col-md-10">
@@ -38,8 +38,14 @@
 
         </div>
 
-        <h3>Aprendizajes:</h3>
-        {{campo.aprendizajes}}
+        <h3>Aprendizaje
+            <button id="switch" class="btn btn-primary pull-right btn-margin" type="button" onclick="change();"><i class="fa fa-save"></i> <span id="switch_text">Editar</span></button>            
+            <button id="save" visible="false" class="btn btn-success pull-right btn-margin" type="button" onclick="save_aprendizaje();"><i class="fa fa-save"></i> Guardar</button>
+        </h3>
+        <div id="edit_off">{{campo.aprendizajes_to_html | safe}}</div>
+        <div id="edit_on">
+            <textarea style="height: 400px" id="aprendizaje_editado" class="form-control">{{campo.aprendizajes}}</textarea>
+        </div>
         <hr>
 
 
@@ -49,7 +55,51 @@
 
 {% endblock %}
 {% block scripts%}
+<script>
 
+
+
+    function change(){
+        $('#save').toggle();
+        if ($('#save').is(":visible")){
+            $('#switch_text').html('Cancelar');
+            $('#edit_on').show();
+            $('#edit_off').hide();
+
+        }else{
+            $('#switch_text').html('Editar');
+            $('#edit_off').show();
+            $('#edit_on').hide();
+        }
+    }
+
+    change();
+
+    function save_aprendizaje(){
+        console.log($('#aprendizaje_editado').val())
+        var data={
+            id_campo:{{campo.id}},                    
+            aprendizajes:$('#aprendizaje_editado').val(),
+            csrfmiddlewaretoken:'{{csrf_token}}',}
+
+        $.ajax(
+            {
+                url: "{% url 'escolar:update_aprendizaje' %}",
+                type: "post",
+                data:data,
+                dataType: "html",
+                error: function(data){
+                    alert("Hubo un error en la consulta\n" + data.responseText);
+                },
+                success: function( strData ){
+                    $("#edit_off").val(strData);
+                    change();
+                }
+            }							
+        );
+    }
+
+</script>
 {% endblock %}
 
 

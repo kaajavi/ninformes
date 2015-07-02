@@ -1,0 +1,126 @@
+<html>
+    <header> 
+        <meta charset="utf-8">
+        <!-- Custom CSS -->
+        <style>
+            @page {
+                size: a4 portrait;
+                left: 2cm; 
+                top: 2cm;
+                button: 2cm; 
+                right:2cm;
+                font-size: 12px;
+
+            }
+            .centrado{
+                text-align: center;   
+            }
+            .title{
+                font-size: 14px;
+            }
+            .bold{
+                font-weight: bold;
+            }
+            .txt_content{
+                font-size: 12px;
+            }
+            pre{
+                font-family:Arial;
+                font-style:italic;
+            }
+        </style>
+    </header>
+
+    <body>
+        <!-- Content for Static Frame 'header_frame' -->
+        {% block header %}
+        
+        {% endblock %}
+        <div id="firstPage">
+            {% if etapa == 1%}
+            <div class="centrado">
+                <span><img alt="Embedded Image" src="data:image/png;base64,{{logo_provincial}}" height="128px"/></span><br><br><br>
+                <span class="title bold">GOBIERNO DE LA PROVINCIA DE CORDOBA</span><br><br>
+                <span class="title">MINISTERIO DE EDUCACIÓN</span><br><br>
+                <span class="title">SECRETARÍA DE ESTADO DE EDUCACIÓN</span><br><br>
+                <br><br><br><br>
+                <span class="title">DIRECCIÓN GENERAL DE INSTITUTOS PRIVADOS DE ENSEÑANZA</span><br><br>
+                <br><br><br><br><br><br><br>
+                <span class="title bold">EDUCACIÓN INICIAL - JARDÍN DE INFANTES</span><br>
+                <span class="title bold">INSTITUTO AMPARO DE MARÍA</span><br><br><br><br>
+            </div>
+
+            <span class="txt_content">Domicilio: Caseros 730 B° Alberdi</span><br>
+            <span class="txt_content">Localidad:  Córdoba</span><br>
+            <span class="txt_content">Departamento: Capital</span><br>
+            <br><br><br><br>
+
+            <div class="centrado">
+                <span class="title bold">INFORME DE PROGRESO ESCOLAR AÑO 2014</span><br><br>
+                <span class="title">SALA DE {{matricula.curso.anio}} AÑOS</span><br>
+            </div>
+            <span class="txt_content"><b>Alumno/a:</b>  {{matricula.alumno}}</span><br>
+            <span class="txt_content"><b>Tipo y Número de Documento:</b> DNI: {{matricula.alumno.dni}}</span><br>
+            <span class="txt_content"><b>Lugar y Fecha de Nacimiento:</b> {{matricula.alumno.lugaryfecha}}</span><br>
+            <span class="txt_content"><b>Nacionalidad:</b> {{matricula.alumno.pais}}</span><br>
+            <span class="txt_content"><b>Provincia:</b> {{matricula.alumno.provincia}}</span><br>
+            <span class="txt_content"><b>Domicilio:</b>  {{matricula.alumno.direccionPrincipal}}</span><br>
+            <span class="txt_content"><b>Sala:</b> {{matricula.curso.sala}}</span><br>
+            <span class="txt_content"><b>Turno:</b> {{matricula.curso.turno_str}}</span><br>            
+            <span class="txt_content"><b>Matrícula Nro.:</b> {{matricula.calcMatricula}}</span><br>
+            <pdf:nextpage />
+            {% endif %}
+        </div>
+        {% for desc in descrCampo %}
+        <div class='data_page'>
+            <div class='centrado'>
+                <span class="title bold">{{desc.campo.titulo}}</span>
+                <hr/><span class="title bold">APRENDIZAJES</span><hr/>
+            </div>
+            {{desc.campo.aprendizajes | linebreaksbr}}            
+            <div class='centrado'>
+                <hr/><span class="title bold">
+                {% if etapa == 1%}PRIMERA ETAPA{% else %}SEGUNDA ETAPA {% endif %}
+                </span><hr/>
+            </div>
+            <div class="txt_content">
+                {{ desc.descripcion | linebreaksbr }}
+            </div>
+        </div>
+        <pdf:nextpage />
+        {% endfor %}
+
+        <div class='data_old'>
+            <div class='centrado'>                
+                <span class="title bold">OBSERVACIONES {% if etapa == 1%}PRIMERA ETAPA{% else %}SEGUNDA ETAPA {% endif %}</span><hr/>
+            </div>
+            <div class="txt_content">
+                {% if etapa == 1%}{{ matricula.obs_p_etapa | linebreaksbr }}
+                {% else %}{{ matricula.obs_s_etapa | linebreaksbr }}{% endif %}                
+            </div>
+
+            <br>
+            <br>
+            <span class="title bold">EN EL MARCO DEL PROYECTO INSTITUCIONAL:</span>
+            {% for desc in descrCampoInstitucionales %}
+
+            <div class='centrado'>                
+                <hr><span class="title bold">{{desc.campo.titulo}} - APRENDIZAJES</span><hr/>
+            </div>
+            {{desc.campo.aprendizajes | linebreaksbr}}            
+            <div class='centrado'>
+                <hr/><span class="title bold">
+                {% if etapa == 1%}PRIMERA ETAPA{% else %}SEGUNDA ETAPA {% endif %}
+                </span><hr/>
+            </div>
+            <div class="txt_content">
+                {{ desc.descripcion | linebreaksbr }}
+            </div>
+
+
+            {% endfor %}
+            <pdf:nextpage />
+
+
+            </body>
+        </html>

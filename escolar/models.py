@@ -109,6 +109,9 @@ class Alumno(models.Model):
     def presentacion_completa(self):
         return self.apellidos + u", " + self.nombres + u" ("+ str(self.dni) + u")"
     
+    def lugaryfecha(self):
+        return self.lugarDeNacimiento + ", " + self.fechaDeNacimiento.strftime('%d de %B de %Y')
+    
     def sex_icon(self):
         if (self.sexo=='A'):
             url = static('images/boy.png')
@@ -123,7 +126,7 @@ class Alumno(models.Model):
         return years
     
     def __str__(self):
-        return self.presentacion_completa()
+        return self.apellidos + u", " + self.nombres
 
 class Curso(models.Model):
 
@@ -232,9 +235,22 @@ class Campo(models.Model):
     
     def __str__(self):
         return self.titulo
+    
+    def aprendizajes_to_html(self):
+        ap_array = self.aprendizajes.split('\n')
+        ret = "<ul>"
+        for arr in ap_array:
+            if (len(arr)>5):
+                ret = ret + "<li>" + arr + "</li>"
+        ret = ret + "</ul>"
+        return ret
 
 
 class ItemCampo(models.Model):
+    class Meta:
+        verbose_name = 'Item Campo'
+        verbose_name_plural = 'Items Campo'
+        ordering = ['color']
     campo = models.ForeignKey('Campo')
     item = models.TextField("Item")
     semestre = models.IntegerField('Semestre', default=3)
@@ -251,27 +267,27 @@ class MatriculaAlumnado(models.Model):
     curso = models.ForeignKey('Curso')    
     alumno = models.ForeignKey('Alumno')    
     activo = models.BooleanField('Activo', default=True)
+    obs_p_etapa = models.TextField("observaciones primera etapa", blank= True, default="")
+    obs_s_etapa = models.TextField("observaciones segunda etapa", blank= True, default="")    
 
     def __str__(self):
         return str(self.alumno) + "  - " + str(self.curso)
-
-
-class Informe(models.Model):
-    matricula = models.OneToOneField('MatriculaAlumnado', primary_key=True)
-    obs_p_etapa = models.TextField("observaciones primera etapa", blank= True)
-    obs_s_etapa = models.TextField("observaciones segunda etapa", blank= True)    
-
-    def __str__(self):
-        return matricula
     
 
 class DescripcionCampo(models.Model):
-    campo = models.ForeignKey('Campo')    
-    informe = models.ForeignKey('Informe')    
-    descripcion = models.TextField("Descripción", blank= True)
+    class Meta:
+        ordering = ['campo']
         
+    campo = models.ForeignKey('Campo')    
+    matricula_alumno = models.ForeignKey('MatriculaAlumnado')    
+    descripcion = models.TextField("Descripción", blank= True, default = "")
+    semestre = models.IntegerField('Semestre', default=1)
+        
+    def toString(self):        
+        return str(self.campo)
+    
     def __str__(self):
-        return str(campo) + "  -  " +str(informe.matricula.alumno)
+        return str(self.campo.titulo)
     
 class MatriculaDocentes(models.Model):
 

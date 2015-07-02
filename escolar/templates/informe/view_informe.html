@@ -1,0 +1,7 @@
+{% extends 'informe/informe.html' %}
+{% block header %}
+
+<a href="{% url 'escolar:edit_informe' matricula.id etapa %}" class="btn btn-sm btn-warning "><i class="fa fa-file-code-o"></i>Volver</a>
+<a href="{% url 'escolar:informe_matricula' matricula.id etapa %}" class="btn btn-sm btn-success "><i class="fa fa-print"></i>Imprimir</a>
+
+{% endblock %}

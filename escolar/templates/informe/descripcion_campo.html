@@ -1,0 +1,142 @@
+{% extends 'informe/home_informe.html' %}
+
+{% block edicion_campos %}
+
+<h3>{{descripcion.toString}} - Etapa: {{etapa}} <button id="sendMatricular" class="btn btn-primary btn-success pull-right btn-margin" type="button" onclick="save_campo('{{descripcion.id}}', $('#campo-{{descripcion.id}}'));">
+    <i class="fa fa-save"></i> Guardar
+    </button></h3>
+<hr>
+<div class="row">
+
+    <div class="col-md-5 "
+         style="height:440px; overflow-y: scroll;">        
+        <div class="row">
+
+            <div class="col-md-2">
+                <button class="btn btn-info btn-xs" onclick="mostrarTodos()"><i class="fa fa-plus"></i> Todos</button>
+            </div>
+            <div class="col-md-10">
+                <input data-text=" FILTRAR POR COLOR " class="form-control" id="color" type="text" name="color" /> 
+            </div>
+        </div>
+        <hr>
+        {% for item in items %}
+
+        <div class="well items" style="border-radius: 5px; background-color: {{item.color}}">                
+            <span onclick="add_item($('#item-{{item.id}}'), $('#campo-{{descripcion.id}}'));" class="btn btn-default btn-xs">
+                <i class="fa fa-plus"></i>
+            </span>            
+            <span id="item-{{item.id}}">{{ item.item }}</span>            
+        </div>
+
+        {% endfor %}
+    </div>
+    <div class="col-md-7 "> 
+
+        <textarea class="textarea " id="campo-{{descripcion.id}}" style="resize:none; width: 100%; height:440px; overflow-y: scroll;">{{descripcion.descripcion}}</textarea>        
+
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts%}
+
+{{ block.super }}
+<script src="{{STATIC_URL}}js/color-picker.min.js"></script>
+<script type="application/javascript">
+    var sexo = '{{matricula.alumno.sexo}}';
+
+    $('#color').colorPicker({showHexField: false,
+                             pickerDefault: "32CD32",
+                             colors: ["FF3333", "32CD32", "6666FF", "FF3399", "FFFF33","E0E0E0",
+                                      "FF8C00", "EE82EE", "FF4500", "BDB76B", "008000","008B8B",
+                                      "778899","FFE4E1","B0E0E6","BDB76B"],
+                             onColorChange : function(id, colorSelected){                                 
+                                 $('.items').each(function(id, elem){
+                                     colorval = $(this).css('backgroundColor');
+
+                                     var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+                                     delete(parts[0]);
+                                     for (var i = 1; i <= 3; ++i) {
+                                         parts[i] = parseInt(parts[i]).toString(16);
+                                         if (parts[i].length == 1) parts[i] = '0' + parts[i];
+                                     }
+                                     var color = '#' + parts.join('');
+
+                                     console.log(color);
+
+                                     if (color==colorSelected){
+                                         $(this).show();
+                                     }else{
+                                         $(this).hide();   
+                                     }
+                                 });
+                             },
+                            });
+
+
+
+    function mostrarTodos(){
+        $('.items').each(function(id, elem){
+            $(this).show();                       
+        });
+        $('.colorPicker-picker').css('backgroundColor', '#FFFFFF');
+        $('.colorPicker-picker').css('border', '2px solid black'); 
+    }
+    function add_item(item, campo){
+        if (campo.val() === ''){
+            campo.val(sexReplace(item.text()));        
+        }else{
+            campo.val(campo.val() + "\n" + sexReplace(item.text()));        
+        }
+    }
+
+    function sexReplace(text){
+
+        var mapSex = [
+            {'if': '@', 'A': 'o','Z':'a'},
+            {'if': 'un/una', 'A': 'un','Z':'una'},
+            {'if': 'Un/Una', 'A': 'Un','Z':'Una'},
+            {'if': 'el/la', 'A': 'el','Z':'la'},
+            {'if': 'El/La', 'A': 'El','Z':'La'},
+            {'if': 'el/ella', 'A': 'el','Z':'ella'},
+            {'if': 'El/Ella', 'A': 'El','Z':'Ella'}];
+        
+
+        for (i in mapSex){                    
+            text = text.split(mapSex[i]['if']).join(mapSex[i][sexo])
+        };
+        return text
+    }
+
+
+
+
+    function save_campo(id_descripcion, texto){
+        var data={
+            id_descripcion:id_descripcion,                    
+            descripcion:texto.val(),
+            csrfmiddlewaretoken:'{{csrf_token}}',}
+
+        $.ajax(
+            {
+                url: "{% url 'escolar:update_descripcion_campo' %}",
+                type: "post",
+                data:data,
+                dataType: "html",
+                error: function(data){
+                    $("#messages").hide();
+                    alert("Hubo un error en la consulta\n" + data.responseText);
+                },
+                success: function( strData ){
+                    $("#messages").show();
+                    $("#lista_campos").html( strData );
+                }
+            }							
+        );
+    }
+    mostrarTodos();
+
+</script>
+
+{% endblock %}

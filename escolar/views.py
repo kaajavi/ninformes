@@ -10,9 +10,10 @@ from django.contrib.auth.models import AnonymousUser
 from django.contrib.auth.decorators import login_required
 from django.forms import widgets
 
-from escolar.models import Docente, Curso, Alumno, MatriculaAlumnado, Campo, MatriculaDocentes, SITUACION_DOCENTE, TIPO_MATRICULA_DOCENTE, ItemCampo
+from escolar.models import Docente, Curso, Alumno, MatriculaAlumnado, Campo, MatriculaDocentes, SITUACION_DOCENTE, TIPO_MATRICULA_DOCENTE, ItemCampo, DescripcionCampo
 from escolar.forms import AlumnoAddForm, DivErrorList, AlumnoEditForm, CampoAddForm
 from escolar.default_data.campos_default import CAMPOS_SALA_4, CAMPOS_SALA_5
+from escolar.default_data.images_base64 import LOGO_PROVINCIAL, LOGO_AMPARO
 
 ##Errores
 from django.http import Http404
@@ -30,6 +31,7 @@ from datetime import date
 import logging
 # Get an instance of a logger
 logger = logging.getLogger('django')
+
 
 #MESES:
 MESES=['Enero','Febrero','Marzo',
@@ -669,3 +671,155 @@ def edit_orden_campo(request):
                                'campos':campos,
                               }
                               , context)
+
+
+@login_required(login_url="/loguearse")
+def edit_informe(request, id_matricula_alumno, etapa):
+    context = RequestContext(request)
+    docente = 'A'
+    try:
+        matricula = MatriculaAlumnado.objects.get(pk=id_matricula_alumno)        
+        #campos = Campo.objects.filter(curso=matricula.curso) #TODO FILTRAR SOLO LOS CAMPOS DEL PROFE
+    except:
+        raise Http404("Error")     
+        
+    try:
+        logger.warning('1')
+        profe =  Docente.objects.get(pk=request.user)   
+        logger.warning('2')
+        matricula_profe = MatriculaDocentes.objects.filter(Q(curso=matricula.curso) & Q(docente=profe))[0]
+        logger.warning('3')
+        logger.warning(matricula_profe)
+        if (profe.tipoDocente == 'G' or profe.tipoDocente == 'D'):            
+            campos = Campo.objects.filter(Q(curso=matricula.curso))   
+            docente = 'A'
+        else:
+            campos = Campo.objects.filter(Q(curso=matricula.curso) & Q(tipoDocente=matricula_profe.tipoDocente))
+            if (len(campos)==1):
+                return redirect('escolar:edit_descripcion_campo', 
+                                id_matricula_alumno=id_matricula_alumno,
+                                id_campo = campos[0].id,
+                               etapa=etapa)    
+            docente = 'E'
+            
+    except:
+        logger.warning('Usuario: no es docente')
+        docente = 'A'
+    
+    
+    if (request.user.is_superuser):
+        campos = Campo.objects.filter(Q(curso=matricula.curso))    
+    
+    for campo in campos:
+        DescripcionCampo.objects.get_or_create(campo=campo, matricula_alumno= matricula, semestre=etapa)
+    
+    return render_to_response('informe/home_informe.html', 
+                              {'curso': matricula.curso,
+                               'matricula': matricula,
+                               'campos':campos,
+                               'etapa':int(etapa),    
+                               'docente':docente,
+                               'obs':'-',
+                              } 
+                              , context)
+
+@login_required(login_url="/loguearse")
+def edit_descripcion_campo(request, id_matricula_alumno, id_campo, etapa):
+    context = RequestContext(request)
+    #try:        
+    campo = Campo.objects.get(pk=id_campo)
+    matricula = MatriculaAlumnado.objects.get(pk=id_matricula_alumno)               
+    descripcion = DescripcionCampo.objects.get_or_create(campo=campo, matricula_alumno= matricula, semestre=etapa)
+    try:
+        logger.warning('1')
+        profe =  Docente.objects.get(pk=request.user)   
+        logger.warning('2')
+        matricula_profe = MatriculaDocentes.objects.filter(Q(curso=matricula.curso) & Q(docente=profe))[0]
+        logger.warning('3')
+        logger.warning(matricula_profe)
+        if (profe.tipoDocente == 'G' or profe.tipoDocente == 'D'):            
+            campos = Campo.objects.filter(Q(curso=matricula.curso))   
+            docente = 'A'
+        else:
+            campos = Campo.objects.filter(Q(curso=matricula.curso) & Q(tipoDocente=matricula_profe.tipoDocente))
+            docente = 'E'
+            
+    except:
+        logger.warning('Usuario: no es docente')
+        docente = 'A'
+    
+    if (request.user.is_superuser):
+        campos = Campo.objects.filter(Q(curso=matricula.curso))    
+    items = ItemCampo.objects.filter(Q(campo=campo) & Q(semestre=etapa))
+    #except:
+           
+    
+    return render_to_response('informe/descripcion_campo.html', 
+                              {'descripcion':descripcion[0],                                                      
+                               'curso': matricula.curso,
+                               'matricula': matricula,
+                               'campos':campos,
+                               'docente':docente,
+                               'items':items,
+                               'etapa':etapa,                               
+                              }
+                              , context)
+
+@login_required(login_url="/loguearse")
+def update_descripcion_campo(request):
+    context = RequestContext(request)
+    if request.method == 'POST':
+        desc = DescripcionCampo.objects.get(pk=int(request.POST['id_descripcion']))
+        desc.descripcion = request.POST['descripcion']
+        desc.save()
+        return HttpResponse("Se guardo correctamente")
+    else:
+        return HttpResponse("Error al guardarse")
+    
+@login_required(login_url="/loguearse")
+def update_observaciones(request):
+    context = RequestContext(request)
+    if request.method == 'POST':
+        matricula = MatriculaAlumnado.objects.get(pk=int(request.POST['id_matricula']))
+        obse = request.POST['descripcion'] 
+        etapa = int(request.POST['etapa'])
+        if (etapa == 1):
+            matricula.obs_p_etapa = obse
+            logger.warning(obse)
+        elif (etapa == 2):
+            matricula.obs_s_etapa = obse
+        matricula.save()
+        return HttpResponse("Se guardo correctamente")
+    else:
+        return HttpResponse("Error al guardarse")
+    
+@login_required(login_url="/loguearse")
+def update_aprendizaje(request):
+    context = RequestContext(request)
+    if request.method == 'POST':
+        Campo.objects.filter(pk=int(request.POST['id_campo'])).update(aprendizajes = request.POST['aprendizajes'])        
+        return HttpResponse(Campo.objects.get(pk=int(request.POST['id_campo'])).aprendizajes_to_html())
+    else:
+        return HttpResponse("Error al guardarse")
+    
+    
+@login_required(login_url="/loguearse")
+def view_informe_matricula(request, id_matricula_alumno, etapa):
+    context = RequestContext(request)       
+    # Prepare context
+    
+    matricula = MatriculaAlumnado.objects.get(pk=id_matricula_alumno)
+    descrCampo = DescripcionCampo.objects.filter(matricula_alumno=matricula, semestre=etapa, campo__especial=False)
+    descrCampoInstitucionales = DescripcionCampo.objects.filter(matricula_alumno=matricula, semestre=etapa, campo__especial=True)
+    
+    
+    data = {'etapa':int(etapa),
+            'matricula':matricula,
+            'descrCampo':descrCampo,
+            'descrCampoInstitucionales':descrCampoInstitucionales,
+            'logo_provincial':LOGO_PROVINCIAL
+           }                
+
+    return render_to_response('informe/view_informe.html', data, context)
+    
+    return response

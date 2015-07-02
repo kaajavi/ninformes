@@ -2,39 +2,7 @@
 
 {% block header%}
 <style>
-    .deleteParent{  
-        position:absolute;
-        z-index: 10;
-        margin-left: 85%;
-    }
-
-
-
-    div.colorPicker-picker {
-
-    }
-
-    div.colorPicker-palette {
-        /*  width: 110px;*/
-        position: absolute;
-        border: 1px solid #598FEF;
-        background-color: #EFEFEF;
-        padding: 2px;
-        z-index: 9999;
-    }
-    div.colorPicker_hexWrap {width: 100%; float:left }
-    div.colorPicker_hexWrap label {font-size: 95%; color: #2F2F2F; margin: 5px 2px; width: 25%}
-    div.colorPicker_hexWrap input {margin: 5px 2px; padding: 0; font-size: 95%; border: 1px solid #000; width: 65%; }
-
-    div.colorPicker-swatch {
-        height: 18px;
-        width: 22px;
-        border: 1px solid #000;
-        margin: 2px;
-        float: left;
-        cursor: pointer;
-        line-height: 12px;
-    }
+    
 
 </style>
 {% endblock %}
@@ -61,7 +29,7 @@
                 {% csrf_token %}
                 <textarea id ="txtArea" name='item' class="form-control"
                           style="height:280px;"></textarea>
-                <input class="form-control" id="color" type="text" name="color" />
+                <input data-text="PUEDE SELECCIONAR UN COLOR" class="form-control" id="color" type="text" name="color" />
                 <br>
                 <button onclick="$('#agregar').submit();" class="btn btn-success pull-right btn-margin" value="">Agregar</button>
                 <button id="btn_clean" class="btn btn-danger pull-right btn-margin" value="">Limpiar</button>
@@ -80,7 +48,7 @@
 
 <script>
     $('#color').colorPicker({showHexField: false,
-                             pickerDefault: "E0E0E0",
+                             pickerDefault: "32CD32",
                              colors: ["FF3333", "32CD32", "6666FF", "FF3399", "FFFF33","E0E0E0",
                                      "FF8C00", "EE82EE", "FF4500", "BDB76B", "008000","008B8B",
                                      "778899","FFE4E1","B0E0E6","BDB76B"]});

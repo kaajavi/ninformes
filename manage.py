@@ -2,6 +2,9 @@
 import os
 import sys
 
+reload(sys)  # Reload does the trick!
+sys.setdefaultencoding('UTF8')
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ninformes.settings")
 
