@@ -44,8 +44,11 @@
         </div><div class="row">
         {% endif %}
     {% endfor %}
+    
 </div>
-
+    {% if dire %}
+        <a class="btn btn-default pull-right" href="{% url 'escolar:render_copy_items' ciclo_actual %}">Copiar items</a>
+    {% endif %}
 </div>
 <span id='span_formulario' style="display:None" >
     <form action="{% url 'escolar:home' %}" id="form_formulario" method="post">

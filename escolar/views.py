@@ -31,7 +31,7 @@ from datetime import date
 import logging
 # Get an instance of a logger
 logger = logging.getLogger('django')
-
+anioactual = date.today().year
 
 #MESES:
 MESES=['Enero','Febrero','Marzo',
@@ -730,13 +730,12 @@ def edit_descripcion_campo(request, id_matricula_alumno, id_campo, etapa):
     campo = Campo.objects.get(pk=id_campo)
     matricula = MatriculaAlumnado.objects.get(pk=id_matricula_alumno)               
     descripcion = DescripcionCampo.objects.get_or_create(campo=campo, matricula_alumno= matricula, semestre=etapa)
-    try:
-        logger.warning('1')
+    try:        
         profe =  Docente.objects.get(pk=request.user)   
-        logger.warning('2')
+        
         matricula_profe = MatriculaDocentes.objects.filter(Q(curso=matricula.curso) & Q(docente=profe))[0]
-        logger.warning('3')
-        logger.warning(matricula_profe)
+        
+        
         if (profe.tipoDocente == 'G' or profe.tipoDocente == 'D'):            
             campos = Campo.objects.filter(Q(curso=matricula.curso))   
             docente = 'A'
@@ -821,5 +820,39 @@ def view_informe_matricula(request, id_matricula_alumno, etapa):
            }                
 
     return render_to_response('informe/view_informe.html', data, context)
-    
-    return response
+
+
+
+
+@login_required(login_url="/loguearse")
+def render_copy_items(request, ciclo):
+    context = RequestContext(request)    
+    data = {'cursos': Curso.objects.filter(ciclo=ciclo)}
+
+    return render_to_response('campo/principal/copy_items.html', data, context)
+
+@login_required(login_url="/loguearse")
+def copy_items(request):
+    context = RequestContext(request)       
+    # Prepare context
+    if request.method == 'POST':           
+        id_curso_from=request.POST['from']
+        id_curso_to=request.POST['to']
+        semestre=int(request.POST['semestre'])
+        curso_from=Curso.objects.get(pk=id_curso_from)
+        curso_to=Curso.objects.get(pk=id_curso_to)
+        for campo_from in curso_from.getCampos():
+            items_from = ItemCampo.objects.filter(Q(campo=campo_from) & Q(semestre=semestre))
+            campo_to = Campo.objects.filter(curso=curso_to,titulo = campo_from.titulo)[0]
+            items_to = ItemCampo.objects.filter(Q(campo=campo_to) & Q(semestre=semestre))
+
+            logger.warning("items from: " + str(len(items_from)))
+            logger.warning("items to: " + str(len(items_to)))
+            #logger.warning(len(items_to))        
+            if (len(items_to)<len(items_from)):
+                for item_from in items_from:            
+                    item_to = ItemCampo(campo = campo_to,item = item_from.item, semestre=semestre, color=item_from.color)
+                    item_to.save()
+
+        return HttpResponse("Se crearon los duplicados...")
+    return HttpResponse("PROBLEMAS! NO POST")

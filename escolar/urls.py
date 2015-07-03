@@ -38,7 +38,10 @@ urlpatterns = patterns('',
                        url(r'^curso/miscampos/add/(?P<id_curso>\d+)/$', 'escolar.views.add_campo', name='agregar_campo'),
                        url(r'^curso/miscampos/campo/agregar_item/(?P<id_campo>\d+)/(?P<semestre>\d+)/$', 'escolar.views.add_item_campo', name='agregar_item_campo'),
                        url(r'^curso/miscampos/edit_orden/$', 'escolar.views.edit_orden_campo', name='edit_orden_campo'),      
-                       url(r'^curso/miscampos/update_aprendizaje/$', 'escolar.views.update_aprendizaje', name='update_aprendizaje'),      
+                       url(r'^curso/miscampos/update_aprendizaje/$', 'escolar.views.update_aprendizaje', name='update_aprendizaje'),
+                       #url(r'^items_campos/copy/(?P<id_curso_from>\d+)/(?P<id_curso_to>\d+)/(?P<semestre>\d+)/$', 'escolar.views.copy_items', name='copy_items'),
+                       url(r'^items_campos/copy/$', 'escolar.views.copy_items', name='copy_items'),
+                       url(r'^items_campos/render/copy/(?P<ciclo>\d+)/$', 'escolar.views.render_copy_items', name='render_copy_items'),
                        
                        ##LISTADOS
                        url(r'^listados/curso/(?P<id_curso>\d+)/$', 'escolar.listados.generar_listado_alumnos_pdf', name='generar_listado_alumnos_pdf'),

@@ -1,0 +1,78 @@
+
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+
+<div class="page-header">
+    <h1 >  
+        Copiar Items de Cursos</h1>    
+</div>  
+
+<div id="page-wrapper">    
+    <form method="post" action="{% url 'escolar:copy_items' %}">
+        {% csrf_token %}
+        <br>
+        <label >Desde el curso:</label>
+        <select class="form-control" name="from">
+            {% for curso in cursos %}
+            <option value='{{curso.id}}'>{{curso}}</option>
+            {% endfor %}
+        </select>
+        <label >Al:</label>
+        <select class="form-control" name="to">
+            {% for curso in cursos %}
+            <option value='{{curso.id}}'>{{curso}}</option>
+            {% endfor %}
+        </select>
+        <label >Semestre:</label>
+        <select name="semestre" class="form-control">
+            {% for semestre in '12' %}
+            <option value='{{semestre}}'>{{semestre}}° semestre</option>
+            {% endfor %}
+        </select>
+        <br>
+        <input type="submit" value="Enviar" class="btn btn-success pull-right">
+    </form>
+</div>
+
+
+
+{% endblock %}
+{% block scripts%}
+<script>
+
+
+
+    function save_aprendizaje(){
+        console.log($('#aprendizaje_editado').val())
+        var data={
+            id_campo:{{campo.id}},                    
+            aprendizajes:$('#aprendizaje_editado').val(),
+                csrfmiddlewaretoken:'{{csrf_token}}',}
+
+                $.ajax(
+                    {
+                        url: "{% url 'escolar:update_aprendizaje' %}",
+                        type: "post",
+                        data:data,
+                        dataType: "html",
+                        error: function(data){
+                            alert("Hubo un error en la consulta\n" + data.responseText);
+                        },
+                        success: function( strData ){
+                            $("#edit_off").val(strData);
+                            change();
+                        }
+                    }							
+                );
+    }
+
+</script>
+{% endblock %}
+
+
+
+
+
+

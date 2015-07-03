@@ -5,7 +5,7 @@
         <a href="{% url 'escolar:mostrar_campos_curso' curso.id %}" class="btn btn-sm {% if disabled == 1 %} btn-default disabled {% else %} btn-info {% endif %}">Campos de Aprendizaje</a>
         <a href="{% url 'escolar:matricular_curso' curso.id %}" class="btn btn-sm {% if disabled == 2 %} btn-default disabled {% else %} btn-info {% endif %}">Matricular Alumnos</a>
         {% if gestor %}
-        <a href="{% url 'escolar:mostrar_docentes_curso' curso.id %}" class="btn btn-sm {% if disabled == 3 %} btn-default disabled {% else %} btn-info {% endif %}">Matricular Docente</a>       
+        <a href="{% url 'escolar:mostrar_docentes_curso' curso.id %}" class="btn btn-sm {% if disabled == 3 %} btn-default disabled {% else %} btn-info {% endif %}">Matricular Docente</a>        
         {% endif %}
     </div>
 
