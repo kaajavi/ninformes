@@ -280,7 +280,7 @@ class DescripcionCampo(models.Model):
         ordering = ['campo']
         
     campo = models.ForeignKey('Campo')    
-    matricula_alumno = models.ForeignKey('MatriculaAlumnado')    
+    matricula_alumno = models.ForeignKey('MatriculaAlumnado', default = 1)    
     descripcion = models.TextField("Descripción", blank= True, default = "")
     semestre = models.IntegerField('Semestre', default=1)
         
