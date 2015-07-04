@@ -14,7 +14,8 @@ from escolar.models import Docente, Curso, Alumno, MatriculaAlumnado, Campo, Mat
 from escolar.forms import AlumnoAddForm, DivErrorList, AlumnoEditForm, CampoAddForm
 from escolar.default_data.campos_default import CAMPOS_SALA_4, CAMPOS_SALA_5
 from escolar.default_data.images_base64 import LOGO_PROVINCIAL, LOGO_AMPARO
-
+#Funciones
+from escolar.functions import ordenarPorColor
 ##Errores
 from django.http import Http404
 
@@ -604,7 +605,7 @@ def add_item_campo(request, id_campo, semestre):
             item.save()
                 
     items = ItemCampo.objects.filter(Q(campo=campo) & Q(semestre=semestre))
-    return render(request, 'campo/principal/agregar_item.html', {'campo':campo,'semestre':semestre,'items':items})
+    return render(request, 'campo/principal/agregar_item.html', {'campo':campo,'semestre':semestre,'items':ordenarPorColor(items)})
 
 @login_required(login_url="/loguearse")
 def mostrar_campos_curso(request, id_curso):
@@ -750,7 +751,7 @@ def edit_descripcion_campo(request, id_matricula_alumno, id_campo, etapa):
     if (request.user.is_superuser):
         campos = Campo.objects.filter(Q(curso=matricula.curso))    
     items = ItemCampo.objects.filter(Q(campo=campo) & Q(semestre=etapa))
-    #except:
+    #TODO: Ordenar items
            
     
     return render_to_response('informe/descripcion_campo.html', 
@@ -759,7 +760,7 @@ def edit_descripcion_campo(request, id_matricula_alumno, id_campo, etapa):
                                'matricula': matricula,
                                'campos':campos,
                                'docente':docente,
-                               'items':items,
+                               'items':ordenarPorColor(items),
                                'etapa':etapa,                               
                               }
                               , context)
