@@ -105,6 +105,7 @@ class Alumno(models.Model):
     telefonoHogar = models.CharField("Teléfono", max_length=256)
     celularPapa = models.CharField("Celular Papa", max_length=256)
     celularMama = models.CharField("Celular Mama", max_length=256)
+    
 
     def presentacion_completa(self):
         return self.apellidos + u", " + self.nombres + u" ("+ str(self.dni) + u")"
@@ -269,7 +270,7 @@ class MatriculaAlumnado(models.Model):
     activo = models.BooleanField('Activo', default=True)
     obs_p_etapa = models.TextField("observaciones primera etapa", blank= True, default="")
     obs_s_etapa = models.TextField("observaciones segunda etapa", blank= True, default="")    
-
+    numMatricula = models.IntegerField('Número de Matrícula', default=0)
     def __str__(self):
         return str(self.alumno) + "  - " + str(self.curso)
     

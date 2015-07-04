@@ -21,10 +21,12 @@ urlpatterns = patterns('',
                        url(r'^curso/alumno/desmatricular/(?P<id_matricula_alumno>\d+)/$', 'escolar.views.desmatricular_alumno', name='desmatricular_alumno'),
                        url(r'^curso/alumno/matricula/eliminar/(?P<id_matricula_alumno>\d+)/$', 'escolar.views.eliminar_matricula_alumno', name='eliminar_matricula_alumno'),
                        url(r'^curso/alumno/rematricular/(?P<id_matricula_alumno>\d+)/$', 'escolar.views.rematricular_alumno', name='rematricular_alumno'),
-                       #ALUMNO
+                       #ALUMNOS
                        url(r'^alumno/filtrar/', 'escolar.views.filter_alumnos', name='filtrar_alumnos'),
                        url(r'^alumno/editar/(?P<id_alumno>\d+)/(?P<id_curso>\d+)/$', 'escolar.views.edit_alumno', name="editar_alumno"), 
                        url(r'^alumno/agregar/(?P<id_curso>\d+)/$', 'escolar.views.add_alumno', name='agregar_alumno'),
+                       url(r'^alumno/renumerarMatricula/(?P<ciclo>\d+)/$', 'escolar.views.renumerarMatriculas', name='renumerarMatriculas'),
+                       
                        ##INFORMES
                        url(r'^alumno/informe/edit_informe/(?P<id_matricula_alumno>\d+)/(?P<etapa>\d+)/$', 'escolar.views.edit_informe', name='edit_informe'),
                        url(r'^alumno/informe/edit_descripcion_campo/(?P<id_matricula_alumno>\d+)/(?P<id_campo>\d+)/(?P<etapa>\d+)/$', 'escolar.views.edit_descripcion_campo', name='edit_descripcion_campo'),

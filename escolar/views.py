@@ -854,6 +854,19 @@ def copy_items(request):
                 for item_from in items_from:            
                     item_to = ItemCampo(campo = campo_to,item = item_from.item, semestre=semestre, color=item_from.color)
                     item_to.save()
-
-        return HttpResponse("Se crearon los duplicados...")
+        messages.add_message(request, messages.SUCCESS, 'Items Copiados')
+        return redirect('escolar:home',{})
     return HttpResponse("PROBLEMAS! NO POST")
+
+
+@login_required(login_url="/loguearse")
+def renumerarMatriculas(request, ciclo):
+    cursos = Curso.objects.filter(ciclo=ciclo)
+    lista_matriculas = MatriculaAlumnado.objects.filter(Q(curso__in = cursos))
+    count=0
+    for matricula in lista_matriculas:
+        count = count + 1
+        matricula.numMatricula = count
+        matricula.save()
+    messages.add_message(request, messages.SUCCESS, 'Matriculas año ' + str(ciclo) +" renumeradas.")   
+    return redirect('escolar:home',{})
