@@ -685,23 +685,22 @@ def edit_informe(request, id_matricula_alumno, etapa):
         raise Http404("Error")     
         
     try:
-        logger.warning('1')
-        profe =  Docente.objects.get(pk=request.user)   
-        logger.warning('2')
-        matricula_profe = MatriculaDocentes.objects.filter(Q(curso=matricula.curso) & Q(docente=profe))[0]
-        logger.warning('3')
-        logger.warning(matricula_profe)
+        
+        profe =  Docente.objects.get(pk=request.user)                   
+        
         if (profe.tipoDocente == 'G' or profe.tipoDocente == 'D'):            
             campos = Campo.objects.filter(Q(curso=matricula.curso))   
             docente = 'A'
         else:
+            matricula_profe = MatriculaDocentes.objects.filter(Q(curso=matricula.curso) & Q(docente=profe))[0]
             campos = Campo.objects.filter(Q(curso=matricula.curso) & Q(tipoDocente=matricula_profe.tipoDocente))
             if (len(campos)==1):
+                docente = 'E'
                 return redirect('escolar:edit_descripcion_campo', 
                                 id_matricula_alumno=id_matricula_alumno,
                                 id_campo = campos[0].id,
                                etapa=etapa)    
-            docente = 'E'
+            docente = 'A'
             
     except:
         logger.warning('Usuario: no es docente')
