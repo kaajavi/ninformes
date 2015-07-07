@@ -19,8 +19,7 @@
 
 <div id="page-wrapper">    
     
-    <h3>{{campo.titulo}}</h3>
-    
+    <h3>{{campo.titulo}}</h3>    
     <div class="row">
 
         <div class="col-md-5 well height:440px; overflow-y: hide;">
@@ -49,12 +48,10 @@
 <script>
     $('#color').colorPicker({showHexField: false,
                              pickerDefault: "32CD32",
-                             colors: ["FF3333", "32CD32", "6666FF", "FF3399", "FFFF33","E0E0E0",
-                                     "FF8C00", "EE82EE", "FF4500", "BDB76B", "008000","008B8B",
-                                     "778899","FFE4E1","B0E0E6","BDB76B"]});
+                             colors: {{colores | safe}}});
     $('#btn_clean').click(function(){
         $('#txtArea').val("");
-        $('.colorPicker-picker').css("background-color", "#E0E0E0");    
+        $('.colorPicker-picker').css("background-color", "#32CD32");    
         $('#color').val("#E0E0E0");    
     });
 

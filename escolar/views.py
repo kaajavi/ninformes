@@ -9,13 +9,14 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import AnonymousUser
 from django.contrib.auth.decorators import login_required
 from django.forms import widgets
+from django.conf import settings
 
 from escolar.models import Docente, Curso, Alumno, MatriculaAlumnado, Campo, MatriculaDocentes, SITUACION_DOCENTE, TIPO_MATRICULA_DOCENTE, ItemCampo, DescripcionCampo
 from escolar.forms import AlumnoAddForm, DivErrorList, AlumnoEditForm, CampoAddForm
 from escolar.default_data.campos_default import CAMPOS_SALA_4, CAMPOS_SALA_5
 from escolar.default_data.images_base64 import LOGO_PROVINCIAL, LOGO_AMPARO
 #Funciones
-from escolar.functions import getOrdenColor
+from escolar.functions import getOrdenColor, COLORES, getColoresToPrint
 ##Errores
 from django.http import Http404
 
@@ -606,7 +607,7 @@ def add_item_campo(request, id_campo, semestre):
             item.save()
                 
     items = ItemCampo.objects.filter(Q(campo=campo) & Q(semestre=semestre))
-    return render(request, 'campo/principal/agregar_item.html', {'campo':campo,'semestre':semestre,'items':items})
+    return render(request, 'campo/principal/agregar_item.html', {'campo':campo,'semestre':semestre,'items':items, 'colores':getColoresToPrint})
 
 @login_required(login_url="/loguearse")
 def mostrar_campos_curso(request, id_curso):
@@ -761,7 +762,8 @@ def edit_descripcion_campo(request, id_matricula_alumno, id_campo, etapa):
                                'campos':campos,
                                'docente':docente,
                                'items':items,
-                               'etapa':etapa,                               
+                               'etapa':etapa,
+                               'colores':getColoresToPrint(),
                               }
                               , context)
 

@@ -48,9 +48,7 @@
 
     $('#color').colorPicker({showHexField: false,
                              pickerDefault: "32CD32",
-                             colors: ["FF3333", "32CD32", "6666FF", "FF3399", "FFFF33","E0E0E0",
-                                      "FF8C00", "EE82EE", "FF4500", "BDB76B", "008000","008B8B",
-                                      "778899","FFE4E1","B0E0E6","BDB76B"],
+                             colors: {{colores | safe}},
                              onColorChange : function(id, colorSelected){                                 
                                  $('.items').each(function(id, elem){
                                      colorval = $(this).css('backgroundColor');
