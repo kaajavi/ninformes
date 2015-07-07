@@ -602,7 +602,7 @@ def add_item_campo(request, id_campo, semestre):
             item.item = request.POST['item']
             item.color = request.POST['color']
             item.semestre = semestre
-            item.orden = getOrdenColor(color)
+            item.orden = getOrdenColor(item.color)
             item.save()
                 
     items = ItemCampo.objects.filter(Q(campo=campo) & Q(semestre=semestre))
