@@ -251,11 +251,12 @@ class ItemCampo(models.Model):
     class Meta:
         verbose_name = 'Item Campo'
         verbose_name_plural = 'Items Campo'
-        ordering = ['color']
+        ordering = ['orden']
     campo = models.ForeignKey('Campo')
     item = models.TextField("Item")
     semestre = models.IntegerField('Semestre', default=3)
-    color = models.CharField("Color", max_length=8)    
+    color = models.CharField("Color", max_length=8)   
+    orden = models.IntegerField('Orden', default=1)
     
     
 class MatriculaAlumnado(models.Model):

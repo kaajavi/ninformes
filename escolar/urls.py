@@ -10,6 +10,8 @@ urlpatterns = patterns('',
                        url(r'^docentes/$', 'escolar.views.docentes', name='docentes'),
                        url(r'^loguearse/$', 'escolar.views.loguearse', name='loguearse'),
                        url(r'^desloguearse/$', 'escolar.views.desloguearse', name='desloguearse'),
+                       url(r'^regenerarOrdenColores/$', 'escolar.views.regenerarOrdenColores', name='regenerarOrdenColores'),
+                       
                        #CURSO
                        url(r'^curso/(?P<id_curso>\d+)/$', 'escolar.views.mostrar_alumnos_curso', name='mostrar_alumnos_curso'),
                        url(r'^curso/miscampos/(?P<id_curso>\d+)/$', 'escolar.views.mostrar_campos_curso', name='mostrar_campos_curso'),

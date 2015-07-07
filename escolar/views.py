@@ -15,7 +15,7 @@ from escolar.forms import AlumnoAddForm, DivErrorList, AlumnoEditForm, CampoAddF
 from escolar.default_data.campos_default import CAMPOS_SALA_4, CAMPOS_SALA_5
 from escolar.default_data.images_base64 import LOGO_PROVINCIAL, LOGO_AMPARO
 #Funciones
-from escolar.functions import ordenarPorColor
+from escolar.functions import getOrdenColor
 ##Errores
 from django.http import Http404
 
@@ -602,10 +602,11 @@ def add_item_campo(request, id_campo, semestre):
             item.item = request.POST['item']
             item.color = request.POST['color']
             item.semestre = semestre
+            item.orden = getOrdenColor(color)
             item.save()
                 
     items = ItemCampo.objects.filter(Q(campo=campo) & Q(semestre=semestre))
-    return render(request, 'campo/principal/agregar_item.html', {'campo':campo,'semestre':semestre,'items':ordenarPorColor(items)})
+    return render(request, 'campo/principal/agregar_item.html', {'campo':campo,'semestre':semestre,'items':items})
 
 @login_required(login_url="/loguearse")
 def mostrar_campos_curso(request, id_curso):
@@ -759,7 +760,7 @@ def edit_descripcion_campo(request, id_matricula_alumno, id_campo, etapa):
                                'matricula': matricula,
                                'campos':campos,
                                'docente':docente,
-                               'items':ordenarPorColor(items),
+                               'items':items,
                                'etapa':etapa,                               
                               }
                               , context)
@@ -852,6 +853,7 @@ def copy_items(request):
             if (len(items_to)<len(items_from)):
                 for item_from in items_from:            
                     item_to = ItemCampo(campo = campo_to,item = item_from.item, semestre=semestre, color=item_from.color)
+                    item_to.orden = getOrdenColor(item_from.color)
                     item_to.save()
         messages.add_message(request, messages.SUCCESS, 'Items Copiados')
         return redirect('escolar:home',{})
@@ -869,3 +871,11 @@ def renumerarMatriculas(request, ciclo):
         matricula.save()
     messages.add_message(request, messages.SUCCESS, 'Matriculas año ' + str(ciclo) +" renumeradas.")   
     return redirect('escolar:home',{})
+
+@login_required(login_url="/loguearse")
+def regenerarOrdenColores(request):
+    items = ItemCampo.objects.all()
+    for item in items:
+        item.orden = getOrdenColor(item.color)
+        item.save()
+    return HttpResponse("SE CAMBIO EL ORDEN DE LOS ITEMS")
