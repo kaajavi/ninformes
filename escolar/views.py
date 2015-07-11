@@ -846,19 +846,20 @@ def copy_items(request):
         curso_to=Curso.objects.get(pk=id_curso_to)
         for campo_from in curso_from.getCampos():
             items_from = ItemCampo.objects.filter(Q(campo=campo_from) & Q(semestre=semestre))
-            campo_to = Campo.objects.filter(curso=curso_to,titulo = campo_from.titulo)[0]
-            items_to = ItemCampo.objects.filter(Q(campo=campo_to) & Q(semestre=semestre))
+            if (Campo.objects.filter(curso=curso_to,titulo = campo_from.titulo).exists()):
+                campo_to = Campo.objects.filter(curso=curso_to,titulo = campo_from.titulo)[0]
+            else:
+                continue
+            #items_to = ItemCampo.objects.filter(Q(campo=campo_to) & Q(semestre=semestre))
 
-            logger.warning("items from: " + str(len(items_from)))
-            logger.warning("items to: " + str(len(items_to)))
-            #logger.warning(len(items_to))        
-            if (len(items_to)<len(items_from)):
-                for item_from in items_from:            
+            
+            for item_from in items_from:            
+                if not ItemCampo.objects.filter(Q(campo=campo_to) & Q(item=item_from.item) & Q(semestre=semestre) & Q(color=item_from.color)).exists():
                     item_to = ItemCampo(campo = campo_to,item = item_from.item, semestre=semestre, color=item_from.color)
                     item_to.orden = getOrdenColor(item_from.color)
                     item_to.save()
         messages.add_message(request, messages.SUCCESS, 'Items Copiados')
-        return redirect('escolar:home',{})
+        return redirect('/')
     return HttpResponse("PROBLEMAS! NO POST")
 
 
