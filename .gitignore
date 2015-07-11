@@ -64,3 +64,4 @@ migrations/
 uploads/
 #testing/
 #test_dev.py
+scriptBackup.sh
