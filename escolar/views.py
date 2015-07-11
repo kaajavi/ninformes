@@ -3,13 +3,17 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response, render, redirect
 from django.template import RequestContext
 from django.template.defaulttags import NowNode
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import AnonymousUser
 from django.contrib.auth.decorators import login_required
 from django.forms import widgets
 from django.conf import settings
+#RESPUESTAS JSON
+import json
+from django.core import serializers
+
 
 from escolar.models import Docente, Curso, Alumno, MatriculaAlumnado, Campo, MatriculaDocentes, SITUACION_DOCENTE, TIPO_MATRICULA_DOCENTE, ItemCampo, DescripcionCampo
 from escolar.forms import AlumnoAddForm, DivErrorList, AlumnoEditForm, CampoAddForm
@@ -835,6 +839,15 @@ def render_copy_items(request, ciclo):
     return render_to_response('campo/principal/copy_items.html', data, context)
 
 @login_required(login_url="/loguearse")
+def get_campos_curso(request):
+    id_curso=request.POST['id_curso']
+    curso=Curso.objects.get(pk=id_curso)
+    #campos = Campo.objects.filter(curso=curso).values('id', 'titulo')
+    #json_campos = serializers.serialize('json', objectQuerySet, fields=('fileName','id'))
+    json_campos = serializers.serialize("json", Campo.objects.filter(curso=curso), fields=('id', 'titulo'))
+    return HttpResponse(json_campos)
+
+@login_required(login_url="/loguearse")
 def copy_items(request):
     context = RequestContext(request)       
     # Prepare context
@@ -842,23 +855,38 @@ def copy_items(request):
         id_curso_from=request.POST['from']
         id_curso_to=request.POST['to']
         semestre=int(request.POST['semestre'])
+        campo = int(request.POST['campo'])
         curso_from=Curso.objects.get(pk=id_curso_from)
         curso_to=Curso.objects.get(pk=id_curso_to)
-        for campo_from in curso_from.getCampos():
+        if (campo ==0):
+            for campo_from in curso_from.getCampos():
+                items_from = ItemCampo.objects.filter(Q(campo=campo_from) & Q(semestre=semestre))
+                if (Campo.objects.filter(curso=curso_to,titulo = campo_from.titulo).exists()):
+                    campo_to = Campo.objects.filter(curso=curso_to,titulo = campo_from.titulo)[0]
+                else:
+                    continue
+                #items_to = ItemCampo.objects.filter(Q(campo=campo_to) & Q(semestre=semestre))
+
+
+                for item_from in items_from:            
+                    if not ItemCampo.objects.filter(Q(campo=campo_to) & Q(item=item_from.item) & Q(semestre=semestre) & Q(color=item_from.color)).exists():
+                        item_to = ItemCampo(campo = campo_to,item = item_from.item, semestre=semestre, color=item_from.color)
+                        item_to.orden = getOrdenColor(item_from.color)
+                        item_to.save()
+            messages.add_message(request, messages.SUCCESS, 'Items Copiados')
+        else:
+            campo_from = Campo.objects.get(pk=campo)
+            
             items_from = ItemCampo.objects.filter(Q(campo=campo_from) & Q(semestre=semestre))
             if (Campo.objects.filter(curso=curso_to,titulo = campo_from.titulo).exists()):
                 campo_to = Campo.objects.filter(curso=curso_to,titulo = campo_from.titulo)[0]
-            else:
-                continue
-            #items_to = ItemCampo.objects.filter(Q(campo=campo_to) & Q(semestre=semestre))
-
-            
-            for item_from in items_from:            
-                if not ItemCampo.objects.filter(Q(campo=campo_to) & Q(item=item_from.item) & Q(semestre=semestre) & Q(color=item_from.color)).exists():
-                    item_to = ItemCampo(campo = campo_to,item = item_from.item, semestre=semestre, color=item_from.color)
-                    item_to.orden = getOrdenColor(item_from.color)
-                    item_to.save()
-        messages.add_message(request, messages.SUCCESS, 'Items Copiados')
+                for item_from in items_from:            
+                    if not ItemCampo.objects.filter(Q(campo=campo_to) & Q(item=item_from.item) & Q(semestre=semestre) & Q(color=item_from.color)).exists():
+                        item_to = ItemCampo(campo = campo_to,item = item_from.item, semestre=semestre, color=item_from.color)
+                        item_to.orden = getOrdenColor(item_from.color)
+                        item_to.save()
+            messages.add_message(request, messages.SUCCESS, 'Copiados los items del campo ' + campo_from.titulo)
+                    
         return redirect('/')
     return HttpResponse("PROBLEMAS! NO POST")
 
