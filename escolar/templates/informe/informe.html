@@ -24,6 +24,7 @@
             .txt_content{
                 font-size: 12px;
             }
+            
             pre{
                 font-family:Arial;
                 font-style:italic;
@@ -75,7 +76,9 @@
         <div class='data_page'>
             <div class='centrado'>
                 <span class="title bold">{{desc.campo.titulo}}</span>
+                {% if desc.campo.aprendizajes|length > 10 %}
                 <hr/><span class="title bold">APRENDIZAJES</span><hr/>
+                {% endif %}
             </div>
             {{desc.campo.aprendizajes | linebreaksbr}}            
             <div class='centrado'>
