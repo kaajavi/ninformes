@@ -9,7 +9,7 @@
                 top: 2cm;
                 button: 2cm; 
                 right:2cm;
-                font-size: 12px;
+                font-size: 13px;
 
             }
             .centrado{
@@ -22,9 +22,12 @@
                 font-weight: bold;
             }
             .txt_content{
-                font-size: 12px;
+                font-size: 13px;
             }
-            
+            .aprendizajes{
+                font-size: 12px;
+	    }
+
             pre{
                 font-family:Arial;
                 font-style:italic;
@@ -80,7 +83,9 @@
                 <hr/><span class="title bold">APRENDIZAJES</span><hr/>
                 {% endif %}
             </div>
+	    <div class='apredizajes'>
             {{desc.campo.aprendizajes | linebreaksbr}}            
+            </div>
             <div class='centrado'>
                 <hr/><span class="title bold">
                 {% if etapa == 1%}PRIMERA ETAPA{% else %}SEGUNDA ETAPA {% endif %}
@@ -110,7 +115,9 @@
             <div class='centrado'>                
                 <hr><span class="title bold">{{desc.campo.titulo}} - APRENDIZAJES</span><hr/>
             </div>
+	    <div class='apredizajes'>
             {{desc.campo.aprendizajes | linebreaksbr}}            
+            </div>
             <div class='centrado'>
                 <hr/><span class="title bold">
                 {% if etapa == 1%}PRIMERA ETAPA{% else %}SEGUNDA ETAPA {% endif %}
