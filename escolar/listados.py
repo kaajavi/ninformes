@@ -261,6 +261,7 @@ def generar_base_para_certificados(request, id_curso):
 
 
     writer = csv.writer(response)
+    writer.writerow(['Orden','Nombre','DNI','ciudad', 'dpto','provincia','pais','dia','mes','anio'])
     for matricula in matriculados:
 
         alumno = matricula.alumno
