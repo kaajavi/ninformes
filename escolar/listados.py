@@ -259,11 +259,6 @@ def generar_base_para_certificados(request, id_curso):
     matriculados = MatriculaAlumnado.objects.filter(curso=curso).exclude(activo=False)
 
 
-    # Create the HttpResponse object with the appropriate CSV header.
-    response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename="somefilename.csv"'
-
-
 
     writer = csv.writer(response)
     for matricula in matriculados:
