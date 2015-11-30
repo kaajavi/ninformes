@@ -263,8 +263,8 @@ def generar_base_para_certificados(request, id_curso):
     writer = csv.writer(response)
     writer.writerow(['Orden','Nombre','DNI','ciudad', 'dpto','provincia','pais','dia','mes','anio'])
     for matricula in matriculados:
-
-        alumno = '{}'.format(matricula.alumno).zfill(3)
+        mat_order = "{}".format(matricula.numMatricula).zfill(3)
+        alumno = matricula.alumno
         nombre = "{} {}".format(alumno.nombres.upper(), alumno.apellidos.upper())
         dni = "{:,}".format(int(alumno.dni)).replace(',','.')
 
@@ -278,7 +278,7 @@ def generar_base_para_certificados(request, id_curso):
         mes = alumno.fechaDeNacimiento.strftime("%B").lower()
         anio = numero_to_letras(int(alumno.fechaDeNacimiento.strftime("%Y"))).lower()
 
-        writer.writerow([matricula.numMatricula,nombre,dni,ciudad, dpto,provincia,pais,dia,mes,anio])
+        writer.writerow([mat_order,nombre,dni,ciudad, dpto,provincia,pais,dia,mes,anio])
 
     return response
 
