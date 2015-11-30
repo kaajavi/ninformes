@@ -51,6 +51,7 @@ urlpatterns = patterns('',
                        
                        ##LISTADOS
                        url(r'^listados/curso/(?P<id_curso>\d+)/$', 'escolar.listados.generar_listado_alumnos_pdf', name='generar_listado_alumnos_pdf'),
+                       url(r'^listados/certificados/(?P<id_curso>\d+)/$', 'escolar.listados.generar_base_para_certificados', name='generar_base_para_certificados'),
                        url(r'^listados/gdipe/(?P<anio>\d+)/$', 'escolar.listados.generar_listado_gdipe', name='generar_listado_gdipe'),
                        ##TESTING
                        url(r'^testing/crear_principal/$', 'escolar.test_dev.view_create_principal', name='view_create_principal'),
@@ -62,4 +63,4 @@ urlpatterns = patterns('',
 #urlpatterns += patterns(
 
 #)
-#url(r'^listados/curso/(?P<id_curso>\d+)/$', 'escolar.views.generate_PDF', name='generate_PDF'), 
+#url(r'^listados/curso/(?P<id_curso>\d+)/$', 'escolar.views.generate_PDF', name='generate_PDF'),

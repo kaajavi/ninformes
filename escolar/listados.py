@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 import os
 from django.conf import settings
 from django.http import HttpResponse
@@ -15,6 +16,11 @@ logger = logging.getLogger('django')
 
 ##BASE DE DATOS
 from django.db.models import Q
+
+from functions import numero_to_letras, convierte_cifra
+import csv
+
+
 
 FILE_LIST = settings.BASE_DIR+'/test.pdf'
 # Convert HTML URIs to absolute system paths so xhtml2pdf can access those resources
@@ -234,3 +240,51 @@ def informe_matricula(request, id_matricula_alumno, etapa):
             pass
     
     return response
+
+
+
+
+
+def generar_base_para_certificados(request, id_curso):
+    import locale
+    locale.setlocale(locale.LC_ALL,'es_AR.utf8')
+    try:
+        curso = Curso.objects.get(pk=id_curso)
+    except Curso.DoesNotExist:
+        raise Http404("El curso no existe")
+
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="{}.csv"'.format(curso.curso_abreviado())
+
+    matriculados = MatriculaAlumnado.objects.filter(curso=curso).exclude(activo=False)
+
+
+    # Create the HttpResponse object with the appropriate CSV header.
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="somefilename.csv"'
+
+
+
+    writer = csv.writer(response)
+    for matricula in matriculados:
+
+        alumno = matricula.alumno
+        nombre = "{}, {}".format(alumno.apellidos.upper(), alumno.nombres.upper())
+        dni = "{:,}".format(int(alumno.dni)).replace(',','.')
+
+        try:
+            ciudad, dpto = alumno.lugarDeNacimiento.split(' ')
+        except:
+            ciudad, dpto = "Córdoba", "Capital"
+        provincia = alumno.provincia
+        pais = alumno.pais
+        dia = numero_to_letras(int(alumno.fechaDeNacimiento.strftime("%d")))
+        mes = alumno.fechaDeNacimiento.strftime("%B").upper()
+        anio = numero_to_letras(int(alumno.fechaDeNacimiento.strftime("%Y")))
+
+        writer.writerow([matricula.numMatricula,nombre,dni,ciudad, dpto,provincia,pais,dia,mes,anio])
+
+    return response
+
+
+
