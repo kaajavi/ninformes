@@ -264,7 +264,7 @@ def generar_base_para_certificados(request, id_curso):
     for matricula in matriculados:
 
         alumno = matricula.alumno
-        nombre = "{}, {}".format(alumno.apellidos.upper(), alumno.nombres.upper())
+        nombre = "{} {}".format(alumno.nombres.upper(), alumno.apellidos.upper())
         dni = "{:,}".format(int(alumno.dni)).replace(',','.')
 
         try:
