@@ -264,7 +264,7 @@ def generar_base_para_certificados(request, id_curso):
     writer.writerow(['Orden','Nombre','DNI','ciudad', 'dpto','provincia','pais','dia','mes','anio'])
     for matricula in matriculados:
 
-        alumno = matricula.alumno
+        alumno = '{}'.format(matricula.alumno).zfill(3)
         nombre = "{} {}".format(alumno.nombres.upper(), alumno.apellidos.upper())
         dni = "{:,}".format(int(alumno.dni)).replace(',','.')
 
@@ -274,9 +274,9 @@ def generar_base_para_certificados(request, id_curso):
             ciudad, dpto = "Córdoba", "Capital"
         provincia = alumno.provincia
         pais = alumno.pais
-        dia = numero_to_letras(int(alumno.fechaDeNacimiento.strftime("%d")))
-        mes = alumno.fechaDeNacimiento.strftime("%B").upper()
-        anio = numero_to_letras(int(alumno.fechaDeNacimiento.strftime("%Y")))
+        dia = numero_to_letras(int(alumno.fechaDeNacimiento.strftime("%d"))).lower()
+        mes = alumno.fechaDeNacimiento.strftime("%B").lower()
+        anio = numero_to_letras(int(alumno.fechaDeNacimiento.strftime("%Y"))).lower()
 
         writer.writerow([matricula.numMatricula,nombre,dni,ciudad, dpto,provincia,pais,dia,mes,anio])
 
