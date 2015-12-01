@@ -1,0 +1,116 @@
+{% load tg_alumno %}
+<html>
+    <header>
+        <meta charset="utf-8">
+        <!-- Custom CSS -->
+
+
+        <style>
+            @page {
+                size: a4 portrait;
+
+
+                @frame content_frame {          /* Content Frame */
+                    left: 2cm; top: 2cm; right: 2cm;
+                    border: 0pt solid white;
+                }
+
+            }
+
+            .table th {
+                vertical-align:middle;
+                text-align:center;
+                border: 1pt solid black;
+                height: 60pt;
+                padding-top: 2px;
+            }
+            .table td {
+                vertical-align:middle;
+                text-align:left;
+                border: 1pt solid black;
+                padding-top: 2px;
+                padding-left: 3px;
+            }
+            .td_left {
+                text-align:left;
+            }
+            .td_center {
+                text-align:center !important;
+            }
+
+            .bg-grey{
+                background:#EEEFFF;
+            }
+
+            .td_10 {
+                width:10%;
+                vertical-align:middle;
+                /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/
+            }
+            .td_20 {
+                width:20%;
+                vertical-align:middle;
+                /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/
+            }
+            .td_30 {
+                width:30%;
+                vertical-align:middle;
+                /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/
+            }
+            .td_40 {
+                width:40%;
+                vertical-align:middle;
+                /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/
+            }
+            .td_50 {
+                width:50%;
+                vertical-align:middle;
+                /* **overflow:hidden;** (Optional)This might be useful for some overflow contents*/
+            }
+
+        </style>
+    </header>
+
+    <body>
+
+            <!-- HTML Content -->
+        {% for curso in cursos %}
+            <center>
+                <H1>ALUMNOS PROMOVIDOS A PRIMER GRADO DE LA EDUCACIÓN PRIMARIA</H1>
+                <H1>Ley de Educación Nacional Nº 26.206 - Ley Provincial Nº 9870</H1>
+            </center>
+
+            <h2>Sección: "{{curso.sala}}"</h2>
+            <h2>Turno: "{{curso.turno_str}}"</h2>
+            <center>
+                <table class="table">
+                    <thead>
+
+                        <tr>
+                            <th class ="td_10 td_center">N° de Orden</td>
+                            <th class ="td_center">Nombre</td>
+                            <th class ="td_20 td_center">D.N.I.</td>
+
+
+                        </tr>
+
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for matricula in curso.getMatriculasAlumnos %}
+                        <tr>
+                            <td align="center" class ="td_10">{{forloop.counter|zerofill_2}}</td>
+                            <td class ="">{{matricula.alumno.apellidos|upper}}, {{matricula.alumno.nombres|upper}}</td>
+                            <td align="center" class ="td_20">{{matricula.alumno.dni|adjust_dni}}</td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </center>
+            <pdf:nextpage />
+            {% endfor %}
+            </body>
+            </html>

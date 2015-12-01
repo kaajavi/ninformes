@@ -158,7 +158,10 @@ class Curso(models.Model):
     def getDocentes(self):
         lista_matriculados = MatriculaDocentes.objects.filter(curso=self).values_list('docente', flat=True)
         docentes = Docente.objects.filter(Q(id__in = lista_matriculados))
-        return docentes                      
+        return docentes
+
+    def getMatriculasAlumnos(self):
+        return self.matriculas_alumno.filter(activo=True)
     
     def getAlumnos(self):
         lista_matriculados = MatriculaAlumnado.objects.filter(curso=self, activo=True).values_list('alumno', flat=True)
@@ -266,7 +269,7 @@ class MatriculaAlumnado(models.Model):
         verbose_name_plural = 'Matriculación Alumnado'
         ordering = ['curso', 'alumno']
         
-    curso = models.ForeignKey('Curso')    
+    curso = models.ForeignKey('Curso', related_name="matriculas_alumno")
     alumno = models.ForeignKey('Alumno')    
     activo = models.BooleanField('Activo', default=True)
     obs_p_etapa = models.TextField("observaciones primera etapa", blank= True, default="")
