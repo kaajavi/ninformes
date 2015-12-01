@@ -18,3 +18,10 @@ def select_matriculando(idx_alumno=None, idx_curso=None, seleccionados=[]):
     else:
         return "<option value='"+str(idx_alumno)+"' selected=\"True\" disabled=''>"+str(alumno.presentacion_completa())+"</option>"
     
+@register.filter
+def adjust_dni(dni):
+    return "{:,}".format(int(dni)).replace(',','.')
+
+@register.filter
+def zerofill_2(val):
+    return "{}".format(val).zfill(2)

@@ -284,3 +284,41 @@ def generar_base_para_certificados(request, id_curso):
 
 
 
+def generar_listado_promovidos(request, anio):
+
+    response = HttpResponse(content_type='application/pdf')
+    logger.info("Levanto http")
+    response['Content-Disposition'] = 'attachment; filename="listado_promovidos_{}.pdf"'.format(anio)
+    cursos = Curso.objects.filter(ciclo=anio)
+    # Prepare context
+    data = {
+           'cursos':cursos,
+           }
+
+    # Render html content through html template with context
+    template = get_template('listados/listado_promovidos.html')
+
+    logger.info("Recibo template")
+    html  = template.render(Context(data))
+    logger.info("Render template")
+    # Write PDF to file
+    file = open(FILE_LIST, "w+b")
+    pisaStatus = pisa.CreatePDF(html, dest=file,
+            link_callback = link_callback)
+
+    logger.info("Convierto pdf")
+    # Return PDF document through a Django HTTP response
+    file.seek(0)
+    pdf = file.read()
+    file.close()
+    logger.info("Meto pdf")
+    response.write(pdf)
+    # Don't forget to close the file handle
+    #BORRO EL ARCHIVO
+    if os.path.exists(FILE_LIST):
+        try:
+            os.remove(FILE_LIST)
+        except OSError, e:
+            pass
+
+    return response
