@@ -289,7 +289,7 @@ def generar_listado_promovidos(request, anio):
     response = HttpResponse(content_type='application/pdf')
     logger.info("Levanto http")
     response['Content-Disposition'] = 'attachment; filename="listado_promovidos_{}.pdf"'.format(anio)
-    cursos = Curso.objects.filter(ciclo=anio)
+    cursos = Curso.objects.filter(ciclo=anio, anio=5)
     # Prepare context
     data = {
            'cursos':cursos,
