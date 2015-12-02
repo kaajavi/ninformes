@@ -20,7 +20,11 @@ from django.db.models import Q
 from functions import numero_to_letras, convierte_cifra
 import csv
 
+##EXCEL
 
+from openpyxl import Workbook
+from openpyxl.writer.excel import save_virtual_workbook
+from openpyxl.styles import PatternFill, Border, Side, Alignment, Protection, Font
 
 FILE_LIST = settings.BASE_DIR+'/test.pdf'
 # Convert HTML URIs to absolute system paths so xhtml2pdf can access those resources
@@ -48,6 +52,7 @@ def link_callback(uri, rel):
 
 def generar_listado_gdipe(request, anio):
     response = HttpResponse(content_type='application/pdf')
+
     logger.info("Levanto http")    
     response['Content-Disposition'] = 'attachment; filename="listado_gdipe.pdf"'
     cursos = Curso.objects.filter(ciclo=anio)
@@ -284,7 +289,7 @@ def generar_base_para_certificados(request, id_curso):
 
 
 
-def generar_listado_promovidos(request, anio):
+def generar_listado_promovidos_pdf(request, anio):
 
     response = HttpResponse(content_type='application/pdf')
     logger.info("Levanto http")
@@ -322,3 +327,77 @@ def generar_listado_promovidos(request, anio):
             pass
 
     return response
+
+def generar_listado_promovidos_xls(request, anio):
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;')
+    response['Content-Disposition'] = 'attachment; filename=lista_promovidos_{}.xlsx'.format(anio)
+
+
+    title = Font(name='Arial', size=14, vertAlign="baseline", b=True, )
+    subtitle14 = Font(name='Arial', size=14)
+    subtitle12 = Font(name='Arial', size=12, b=True)
+    thin_border = Border(left=Side(style='thin'),
+                     right=Side(style='thin'),
+                     top=Side(style='thin'),
+                     bottom=Side(style='thin'))
+
+    cursos = Curso.objects.filter(ciclo=anio, anio=5)
+    # Prepare context
+    data = {
+           'cursos':cursos,
+           }
+    workbook = Workbook()
+    workbook.remove_sheet(workbook.active)
+    for curso in cursos:
+        ws = workbook.create_sheet()
+        ws.title = "{}-{}".format(anio, curso.sala)
+        title_range = ws.merge_cells('A2:C2')
+        subtitle_range = ws.merge_cells('A3:C3')
+        ws.column_dimensions["A"].width = 12
+        ws.column_dimensions["B"].width = 50
+        ws.column_dimensions["C"].width = 13
+        ws['A2'].font = title
+        ws['A3'].font = subtitle14
+        ws['A2'] = "ALUMNOS PROMOVIDOS A PRIMER GRADO DE LA EDUCACIÓN PRIMARIA"
+        ws.row_dimensions[2].height = 40
+        ws['A2'].alignment = Alignment(horizontal='center',vertical='center')
+        ws['A3'] = "Ley de Educación Nacional Nº 26.206 - Ley Provincial Nº 9870"
+        ws['A3'].alignment = Alignment(horizontal='center',vertical='center')
+        ws['A5'].font = subtitle12
+        ws['A5'] = "Sección: '{}'".format(curso.sala)
+        ws['A6'].font = subtitle12
+        ws['A6'] = "Turno: {}".format(curso.turno_str())
+
+        ws['A8'].border = thin_border
+        ws['A8'] = "N° de Orden"
+        ws['A8'].alignment = Alignment(horizontal='center',vertical='center')
+        ws['B8'].border = thin_border
+        ws['B8'] = "Nombre"
+        ws['B8'].alignment = Alignment(horizontal='center',vertical='center')
+        ws['C8'].border = thin_border
+        ws['C8'] = "D.N.I."
+        ws['C8'].alignment = Alignment(horizontal='center',vertical='center')
+        count = 0
+        number = 8
+        for matricula in curso.getMatriculasAlumnos():
+            count+=1
+            orden = ws['A{}'.format(number+count)]
+            name = ws['B{}'.format(number+count)]
+            dni = ws['C{}'.format(number+count)]
+            orden.border = thin_border
+            orden.alignment = Alignment(horizontal='center',vertical='center')
+            name.border = thin_border
+            name.alignment = Alignment(horizontal='left',vertical='center')
+            dni.border = thin_border
+            dni.alignment = Alignment(horizontal='center',vertical='center')
+            ws['A{}'.format(number+count)] = "{}".format(count).zfill(2)
+            ws['B{}'.format(number+count)] = "{}, {}".format(matricula.alumno.apellidos, matricula.alumno.nombres).upper()
+            ws['C{}'.format(number+count)] = "{:,}".format(int(matricula.alumno.dni)).replace(',','.')
+
+
+
+    workbook.save(response)
+    return response
+
+
+
