@@ -50,7 +50,12 @@ urlpatterns = patterns('',
                        url(r'^items_campos/render/copy/(?P<ciclo>\d+)/$', 'escolar.views.render_copy_items', name='render_copy_items'),
                        
                        ##LISTADOS
-                       url(r'^listados/curso/(?P<id_curso>\d+)/$', 'escolar.listados.generar_listado_alumnos_pdf', name='generar_listado_alumnos_pdf'),
+                       url(r'^listados/curso/(?P<id_curso>\d+)/$',
+                           'escolar.listados.generar_listado_alumnos_pdf',
+                           name='generar_listado_alumnos_pdf'),
+                       url(r'^listados/curso/telefonos/(?P<id_curso>\d+)/$',
+                           'escolar.listados.generar_listado_telefonos_alumnos_pdf',
+                           name='generar_listado_telefonos_alumnos_pdf'),
                        url(r'^listados/certificados/(?P<id_curso>\d+)/$', 'escolar.listados.generar_base_para_certificados', name='generar_base_para_certificados'),
                        url(r'^listados/gdipe/(?P<anio>\d+)/$', 'escolar.listados.generar_listado_gdipe', name='generar_listado_gdipe'),
                        url(r'^listados/promovidos/pdf/(?P<anio>\d+)/$', 'escolar.listados.generar_listado_promovidos_pdf', name='generar_listado_promovidos_pdf'),
