@@ -24,8 +24,8 @@
                 <td>                            
                     <img type="image/png" src="{{matricula.alumno.sex_icon}}" />
                     {{forloop.counter}}</td>
-                <td>{{matricula.alumno.apellidos}}</td>
-                <td>{{matricula.alumno.nombres}}</td>                        
+                <td>{{matricula.alumno.apellidos|upper}}</td>
+                <td>{{matricula.alumno.nombres|upper}}</td>
                 <td>{{matricula.alumno.dni}}</td>   
                 <td>                    
                     <a  title="Editar alumno" class="btn btn-xs btn-default" href="{% url 'escolar:editar_alumno' matricula.alumno.id curso.id %}">

@@ -178,8 +178,8 @@
                     {% for matricula in matriculados %}
                     <tr>
                         <td class ="td_10 td_center">{{forloop.counter}}</td>
-                        <td class ="td_40">{{matricula.alumno.apellidos|title}}</td>
-                        <td class ="td_40">{{matricula.alumno.nombres|title}}</td>
+                        <td class ="td_40">{{matricula.alumno.apellidos|upper}}</td>
+                        <td class ="td_40">{{matricula.alumno.nombres|upper}}</td>
                         <td class ="">{{matricula.alumno.telefonoHogar}}</td>
                         <td class ="">{{matricula.alumno.celularPapa}}</td>
                         <td class ="">{{matricula.alumno.celularMama}}</td>
