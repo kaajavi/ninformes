@@ -159,6 +159,47 @@ def generar_listado_alumnos_pdf(request, id_curso):
     return response
 
 
+def generar_listado_telefonos_alumnos_pdf(request, id_curso):
+    response = HttpResponse(content_type='application/pdf')
+
+    try:
+        curso = Curso.objects.get(pk=id_curso)
+    except Curso.DoesNotExist:
+        raise Http404("El curso no existe")
+
+    response['Content-Disposition'] = 'attachment; filename="listado_tel_%s.pdf"' % (curso.curso_abreviado())
+    matriculados = MatriculaAlumnado.objects.filter(curso=curso).exclude(activo=False)
+
+    # Prepare context
+    data = {'curso':curso,
+           'matriculados':matriculados,
+           }
+
+    # Render html content through html template with context
+    template = get_template('listados/listado_telefonos_alumnos.html')
+    html  = template.render(Context(data))
+
+    # Write PDF to file
+    file = open(FILE_LIST, "w+b")
+    pisaStatus = pisa.CreatePDF(html, dest=file,
+            link_callback = link_callback)
+
+    # Return PDF document through a Django HTTP response
+    file.seek(0)
+    pdf = file.read()
+    file.close()
+
+    response.write(pdf)
+    # Don't forget to close the file handle
+    #BORRO EL ARCHIVO
+    if os.path.exists(FILE_LIST):
+        try:
+            os.remove(FILE_LIST)
+        except OSError, e:
+            pass
+
+    return response
+
 def generar_informe_matricula(request, matricula_id, etapa):
     response = HttpResponse(content_type='application/pdf')
     
