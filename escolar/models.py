@@ -91,11 +91,11 @@ class Alumno(models.Model):
                 ('Z', 'Mujer')),
         max_length=1)
     direccionPrincipal = models.CharField("Dirección Postal", max_length=256)
-    direccionSecundaria = models.CharField("Dirección Postal secundaria",
-        max_length=256,
-        blank=True)
     fechaDeNacimiento = models.DateField('Fecha de Nacimiento')
     lugarDeNacimiento = models.CharField("Ciudad de Nacimiento", max_length=256)
+    direccionSecundaria = models.CharField("Departamento",
+                                           max_length=256,
+                                           blank=True)
     provincia = models.CharField("Provincia de Nacimiento", max_length=256)
     pais = models.CharField("País de Nacimiento", max_length=256)
     nombreTutor = models.CharField("Nombre de Tutor Legal (completo)",
