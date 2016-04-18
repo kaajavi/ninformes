@@ -86,6 +86,7 @@ class Alumno(models.Model):
     apellidos = models.CharField("Apellidos", max_length=256)
     nombres = models.CharField("Nombres", max_length=256)
     dni = models.IntegerField("D.N.I.", unique=True)
+    cuil = models.BigIntegerField("C.U.I.L", blank=True, null=True)
     sexo = models.CharField("Sexo",
         choices=(('A', 'Varón'),
                 ('Z', 'Mujer')),
