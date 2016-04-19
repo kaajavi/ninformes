@@ -5,6 +5,7 @@
     <h2>Listados</h2>
 
     <div class="list-group">  
+        <a href="{% url 'escolar:generar_xls_ministerio' ciclo_actual %}" class="list-group-item">Listado Ministerio de Educación (Con C.U.I.L.) año {{ciclo_actual}}</a>
         <a href="{% url 'escolar:generar_listado_gdipe' ciclo_actual %}" class="list-group-item">Matrícula gdipe año {{ciclo_actual}}</a>        
         <a href="{% url 'escolar:generar_listado_promovidos_pdf' ciclo_actual %}" class="list-group-item">Listado Promovidos año {{ciclo_actual}} - (PDF)</a>
         <a href="{% url 'escolar:generar_listado_promovidos_xls' ciclo_actual %}" class="list-group-item">Listado Promovidos año {{ciclo_actual}} - (EXCEL)</a>

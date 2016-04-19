@@ -121,6 +121,12 @@ class Alumno(models.Model):
             url = static('images/girl.png')
         return url
     
+    def sex_type(self):
+        if (self.sexo=='A'):
+            return "Masculino"
+        else:
+            return "Femenino"
+
     def edad(self):         
         today = date.today()
         birth = self.fechaDeNacimiento

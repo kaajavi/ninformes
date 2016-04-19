@@ -60,6 +60,9 @@ urlpatterns = patterns('',
                        url(r'^listados/gdipe/(?P<anio>\d+)/$', 'escolar.listados.generar_listado_gdipe', name='generar_listado_gdipe'),
                        url(r'^listados/promovidos/pdf/(?P<anio>\d+)/$', 'escolar.listados.generar_listado_promovidos_pdf', name='generar_listado_promovidos_pdf'),
                        url(r'^listados/promovidos/xls/(?P<anio>\d+)/$', 'escolar.listados.generar_listado_promovidos_xls', name='generar_listado_promovidos_xls'),
+                       url(r'^listados/cuil/(?P<anio>\d+)/$',
+                           'escolar.listados.generar_xls_ministerio',
+                           name='generar_xls_ministerio'),
 
                        ##TESTING
                        url(r'^testing/crear_principal/$', 'escolar.test_dev.view_create_principal', name='view_create_principal'),

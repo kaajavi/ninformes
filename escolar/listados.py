@@ -442,3 +442,53 @@ def generar_listado_promovidos_xls(request, anio):
 
 
 
+def generar_xls_ministerio(request, anio):
+    from openpyxl import load_workbook
+
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;')
+    response['Content-Disposition'] = 'attachment; filename=ESCUALAS_ALUMNOS_{}.xls'.format(anio)
+
+    workbook = load_workbook(settings.FILE_XLS_ME_CUIL)
+    ws = workbook['NivelInicial']
+    CODIGO_PLAN = "687196449"
+    NIVEL = "INICIAL"
+    COD_EMPRESA="EE1110025"
+    CUE="1404229"
+    CUE_ANEXO="00"
+    NIVEL_EDUCATIVO="INICIAL"
+    ESCUELA="AMPARO DE MARIA"
+    ZONA="ZONA 1"
+
+    cursos = Curso.objects.filter(ciclo=anio)
+    #workbook = Workbook()
+    #workbook.remove_sheet(workbook.active)
+    count=2
+    text_font = Font(name='Arial', size=10, vertAlign="baseline")
+    for curso in cursos:
+        for matricula in curso.getMatriculasAlumnos():
+            count+=1
+            ws['A{}'.format(count)] = COD_EMPRESA
+            ws['B{}'.format(count)] = CUE
+            ws['C{}'.format(count)] = CUE_ANEXO
+            ws['D{}'.format(count)] = NIVEL_EDUCATIVO
+            ws['E{}'.format(count)] = ESCUELA
+            ws['F{}'.format(count)] = ZONA
+            ws['G{}'.format(count)] = matricula.alumno.cuil
+            ws['H{}'.format(count)] = matricula.alumno.apellidos.upper()
+            ws['I{}'.format(count)] = matricula.alumno.nombres.upper()
+            ws['J{}'.format(count)] = matricula.alumno.sex_type().upper()
+            ws['K{}'.format(count)] = matricula.alumno.fechaDeNacimiento.strftime('%m/%d/%Y')
+            ws['L{}'.format(count)] = matricula.alumno.pais.upper()
+            ws['M{}'.format(count)] = CODIGO_PLAN
+            ws['N{}'.format(count)] = NIVEL
+            ws['O{}'.format(count)] = curso.anio
+            ws['P{}'.format(count)] = curso.sala
+            ws['Q{}'.format(count)] = curso.turno_str().upper()
+            for l in 'ABCDEFGHIJKLMNOPQ':
+                ws['{}{}'.format(l,count)].font = text_font
+
+    workbook.save(response)
+    return response
+
+
+
