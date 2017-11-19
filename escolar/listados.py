@@ -318,8 +318,13 @@ def generar_base_para_certificados(request, id_curso):
             ciudad, dpto = alumno.lugarDeNacimiento.split(' ')
         except:
             ciudad, dpto = "Córdoba", "Capital"
-        provincia = alumno.provincia
-        pais = alumno.pais
+
+        if (len(dpto)<3):
+            dpto = "Capital"
+        ciudad=ciudad.title()
+        dpto=dpto.title()
+        provincia = alumno.provincia.title()
+        pais = alumno.pais.title()
         dia = numero_to_letras(int(alumno.fechaDeNacimiento.strftime("%d"))).lower()
         mes = alumno.fechaDeNacimiento.strftime("%B").lower()
         anio = numero_to_letras(int(alumno.fechaDeNacimiento.strftime("%Y"))).lower()
